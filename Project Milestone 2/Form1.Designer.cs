@@ -233,7 +233,7 @@ namespace Project_Milestone_2
             this.tcMainScreen.Location = new System.Drawing.Point(0, 0);
             this.tcMainScreen.Name = "tcMainScreen";
             this.tcMainScreen.SelectedIndex = 0;
-            this.tcMainScreen.Size = new System.Drawing.Size(308, 227);
+            this.tcMainScreen.Size = new System.Drawing.Size(566, 362);
             this.tcMainScreen.TabIndex = 0;
             // 
             // tpLogin
@@ -243,7 +243,7 @@ namespace Project_Milestone_2
             this.tpLogin.Location = new System.Drawing.Point(4, 22);
             this.tpLogin.Name = "tpLogin";
             this.tpLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLogin.Size = new System.Drawing.Size(798, 449);
+            this.tpLogin.Size = new System.Drawing.Size(558, 336);
             this.tpLogin.TabIndex = 0;
             this.tpLogin.Text = "Login";
             this.tpLogin.UseVisualStyleBackColor = true;
@@ -340,7 +340,7 @@ namespace Project_Milestone_2
             this.tpRegister.Location = new System.Drawing.Point(4, 22);
             this.tpRegister.Name = "tpRegister";
             this.tpRegister.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRegister.Size = new System.Drawing.Size(798, 449);
+            this.tpRegister.Size = new System.Drawing.Size(558, 336);
             this.tpRegister.TabIndex = 1;
             this.tpRegister.Text = "Register";
             this.tpRegister.UseVisualStyleBackColor = true;
@@ -1107,7 +1107,7 @@ namespace Project_Milestone_2
             this.tpOrder.Controls.Add(this.panel13);
             this.tpOrder.Location = new System.Drawing.Point(4, 22);
             this.tpOrder.Name = "tpOrder";
-            this.tpOrder.Size = new System.Drawing.Size(798, 449);
+            this.tpOrder.Size = new System.Drawing.Size(558, 336);
             this.tpOrder.TabIndex = 5;
             this.tpOrder.Text = "Order";
             this.tpOrder.UseVisualStyleBackColor = true;
@@ -1514,7 +1514,7 @@ namespace Project_Milestone_2
             this.tpEditLogin.Controls.Add(this.panel17);
             this.tpEditLogin.Location = new System.Drawing.Point(4, 22);
             this.tpEditLogin.Name = "tpEditLogin";
-            this.tpEditLogin.Size = new System.Drawing.Size(300, 201);
+            this.tpEditLogin.Size = new System.Drawing.Size(558, 336);
             this.tpEditLogin.TabIndex = 7;
             this.tpEditLogin.Text = "Edit Login";
             this.tpEditLogin.UseVisualStyleBackColor = true;
@@ -1650,7 +1650,7 @@ namespace Project_Milestone_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 227);
+            this.ClientSize = new System.Drawing.Size(566, 362);
             this.Controls.Add(this.tcMainScreen);
             this.Name = "frmTuckShop";
             this.Text = "Tuck Shop";
