@@ -31,7 +31,7 @@ namespace Project_Milestone_2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMainMenu;
+            tcMainScreen.SelectedTab = tpMenu;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
