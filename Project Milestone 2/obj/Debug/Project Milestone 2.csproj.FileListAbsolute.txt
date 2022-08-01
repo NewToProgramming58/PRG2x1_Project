@@ -18,3 +18,14 @@ C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Pro\Github\PRG2x1_Project\Proj
 C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Pro\Github\PRG2x1_Project\Project Milestone 2\obj\Debug\Project Milestone 2.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Pro\Github\PRG2x1_Project\Project Milestone 2\obj\Debug\Project Milestone 2.exe
 C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Pro\Github\PRG2x1_Project\Project Milestone 2\obj\Debug\Project Milestone 2.pdb
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\bin\Debug\Project Milestone 2.exe.config
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\bin\Debug\Project Milestone 2.exe
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\bin\Debug\Project Milestone 2.pdb
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\obj\Debug\Project Milestone 2.csproj.AssemblyReference.cache
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\obj\Debug\Project Milestone 2.csproj.SuggestedBindingRedirects.cache
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\obj\Debug\Project_Milestone_2.frmTuckShop.resources
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\obj\Debug\Project_Milestone_2.Properties.Resources.resources
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\obj\Debug\Project Milestone 2.csproj.GenerateResource.cache
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\obj\Debug\Project Milestone 2.csproj.CoreCompileInputs.cache
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\obj\Debug\Project Milestone 2.exe
+C:\Users\navy2\OneDrive\Documents\GitHub\PRG2x1_Project\PRG2x1_Project\Project Milestone 2\obj\Debug\Project Milestone 2.pdb

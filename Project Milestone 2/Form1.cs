@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,16 @@ namespace Project_Milestone_2
         }
         private void frmTuckShop_Load(object sender, EventArgs e)
         {
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+        // DataBase connection
+            SqlConnection sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Database=TuckShop");
+            try {
+                sqlConnection.Open();
+            } catch (Exception ex) {
+                MessageBox.Show(ex.ToString());
+            };
+         ///////////////////////////////////////////////////////////////////////////////////////////////
+
             tcMainScreen.Appearance = TabAppearance.FlatButtons;
             tcMainScreen.ItemSize = new Size(0, 1);
             tcMainScreen.SizeMode = TabSizeMode.Fixed;
