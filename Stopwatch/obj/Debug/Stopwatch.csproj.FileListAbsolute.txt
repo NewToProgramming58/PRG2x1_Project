@@ -1,7 +1,0 @@
-C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Code\Stopwatch\bin\Debug\Stopwatch.exe.config
-C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Code\Stopwatch\bin\Debug\Stopwatch.exe
-C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Code\Stopwatch\bin\Debug\Stopwatch.pdb
-C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Code\Stopwatch\obj\Debug\Stopwatch.csprojAssemblyReference.cache
-C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Code\Stopwatch\obj\Debug\Stopwatch.csproj.CoreCompileInputs.cache
-C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Code\Stopwatch\obj\Debug\Stopwatch.exe
-C:\Users\User\Documents\BELGIUM CAMPUS\Year 2\PRG\Code\Stopwatch\obj\Debug\Stopwatch.pdb
