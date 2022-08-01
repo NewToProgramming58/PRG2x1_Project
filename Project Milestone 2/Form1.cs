@@ -68,11 +68,13 @@ namespace Project_Milestone_2
         private void btnEditRecords_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpEdit;
+            Size = new Size(966, 558);
         }
 
         private void btnViewRecords_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpView;
+            Size = new Size(966, 558);
         }
 
         private void btnEditLogin_Click(object sender, EventArgs e)
