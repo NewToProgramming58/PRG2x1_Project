@@ -1,0 +1,20 @@
+GO
+
+USE TuckShop;
+GO
+CREATE TABLE Users (
+	[UserID] INT IDENTITY(1,1),
+	[Email] TEXT NOT NULL,
+	[Password] VARCHAR(100) NOT NULL,
+	[Name] VARCHAR(200) NULL,
+	[Surname] VARCHAR(100) NOT NULL,
+	CONSTRAINT [PK_Email] PRIMARY KEY ([UserID]),
+)
+GO
+CREATE TABLE Items (
+	[ItemID] INT IDENTITY(1,1),
+	[ItemName] CHAR (100) NOT NULL,
+	[Price] FLOAT DEFAULT(0.0),
+	[Category] TEXT NOT NULL,
+	[Quantity] INT DEFAULT(0)
+)

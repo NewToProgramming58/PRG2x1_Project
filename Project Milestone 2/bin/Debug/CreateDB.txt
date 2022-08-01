@@ -1,0 +1,13 @@
+IF EXISTS (SELECT * FROM SYSDATABASES WHERE NAME='TuckShop')
+		DROP DATABASE TuckShop
+
+DECLARE @InstanceDefaultDataPath VARCHAR(100)
+SET @InstanceDefaultDataPath = CONVERT(VARCHAR(100), (SELECT SERVERPROPERTY ('InstanceDefaultDataPath')))
+DECLARE @InstanceDefaultLogPath VARCHAR(100)
+SET @InstanceDefaultLogPath = CONVERT(VARCHAR(100), (SELECT SERVERPROPERTY ('InstanceDefaultLogPath')))
+
+EXECUTE (N'CREATE DATABASE TuckShop
+	ON PRIMARY (NAME = N''TuckShop'', FILENAME = N''' + @InstanceDefaultDataPath + N'TuckShop.mdf'')
+	LOG ON (NAME = N''TuckShop_log'',  FILENAME = N''' + @InstanceDefaultLogPath + N'TuckShop.ldf'')
+	BACKUP DATABASE TuckShop
+	TO DISK = '''+@InstanceDefaultLogPath+'TuckShop.bak''');

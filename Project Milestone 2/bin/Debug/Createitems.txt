@@ -1,0 +1,6 @@
+CREATE TABLE Items (
+	[ItemID] INT IDENTITY(1,1),
+	[ItemName] CHAR (100) NOT NULL,
+	[Price] FLOAT DEFAULT(0.0),
+	[Category] TEXT NOT NULL,
+	[Quantity] INT DEFAULT(0)
