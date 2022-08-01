@@ -28,6 +28,9 @@ namespace Stopwatch
                     StopwatchMinutesThread.Abort();
                 }
             }
+
+            Console.WriteLine("Stopwatch finished");
+            Console.ReadKey();
         }
     }
 }
