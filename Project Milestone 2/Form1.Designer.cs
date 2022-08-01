@@ -77,6 +77,16 @@ namespace Project_Milestone_2
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlEditFilter = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnRemoveEditFilters = new System.Windows.Forms.Button();
+            this.btnCancelEditFilter = new System.Windows.Forms.Button();
+            this.btnApplyEditFilters = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btnEditAdd = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnEditFilter = new System.Windows.Forms.Button();
@@ -95,6 +105,16 @@ namespace Project_Milestone_2
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.pnlViewFilter = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnRemoveViewFilters = new System.Windows.Forms.Button();
+            this.btnCancelViewFilter = new System.Windows.Forms.Button();
+            this.btnApplyViewFilter = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cboField = new System.Windows.Forms.ComboBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.btnViewFilter = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -103,8 +123,62 @@ namespace Project_Milestone_2
             this.label16 = new System.Windows.Forms.Label();
             this.cboViewCurrentTable = new System.Windows.Forms.ComboBox();
             this.tpOrder = new System.Windows.Forms.TabPage();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.rtbOrderItems = new System.Windows.Forms.RichTextBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.btnClearOrder = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.btnRemoveOrder = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.btnOrderAdd = new System.Windows.Forms.Button();
+            this.btnOrderSearch = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnExitOrder = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
             this.tpAdminEditLogin = new System.Windows.Forms.TabPage();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.dgvAdmin = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.pnlAdminFilter = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.btnRemoveAdminFilters = new System.Windows.Forms.Button();
+            this.btnCancelAdminFilter = new System.Windows.Forms.Button();
+            this.btnApplyAdminFilter = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.btnAdminAdd = new System.Windows.Forms.Button();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.btnAdminFilter = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.btnExitAdminEditLogin = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.btnAdminChange = new System.Windows.Forms.Button();
+            this.btnAdminRemove = new System.Windows.Forms.Button();
             this.tpEditLogin = new System.Windows.Forms.TabPage();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnUserSurnameChange = new System.Windows.Forms.Button();
+            this.btnUserNameChange = new System.Windows.Forms.Button();
+            this.btnUserPasswordChange = new System.Windows.Forms.Button();
+            this.btnUserEmailChange = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.btnExitEditLogin = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
             this.tcMainScreen.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -119,12 +193,28 @@ namespace Project_Milestone_2
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdit)).BeginInit();
             this.panel1.SuspendLayout();
+            this.pnlEditFilter.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tpView.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.panel11.SuspendLayout();
+            this.pnlViewFilter.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.tpOrder.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.tpAdminEditLogin.SuspendLayout();
+            this.panel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).BeginInit();
+            this.panel16.SuspendLayout();
+            this.pnlAdminFilter.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.tpEditLogin.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMainScreen
@@ -143,7 +233,7 @@ namespace Project_Milestone_2
             this.tcMainScreen.Location = new System.Drawing.Point(0, 0);
             this.tcMainScreen.Name = "tcMainScreen";
             this.tcMainScreen.SelectedIndex = 0;
-            this.tcMainScreen.Size = new System.Drawing.Size(950, 519);
+            this.tcMainScreen.Size = new System.Drawing.Size(308, 227);
             this.tcMainScreen.TabIndex = 0;
             // 
             // tpLogin
@@ -153,7 +243,7 @@ namespace Project_Milestone_2
             this.tpLogin.Location = new System.Drawing.Point(4, 22);
             this.tpLogin.Name = "tpLogin";
             this.tpLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLogin.Size = new System.Drawing.Size(942, 493);
+            this.tpLogin.Size = new System.Drawing.Size(798, 449);
             this.tpLogin.TabIndex = 0;
             this.tpLogin.Text = "Login";
             this.tpLogin.UseVisualStyleBackColor = true;
@@ -250,7 +340,7 @@ namespace Project_Milestone_2
             this.tpRegister.Location = new System.Drawing.Point(4, 22);
             this.tpRegister.Name = "tpRegister";
             this.tpRegister.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRegister.Size = new System.Drawing.Size(942, 493);
+            this.tpRegister.Size = new System.Drawing.Size(798, 449);
             this.tpRegister.TabIndex = 1;
             this.tpRegister.Text = "Register";
             this.tpRegister.UseVisualStyleBackColor = true;
@@ -401,7 +491,7 @@ namespace Project_Milestone_2
             this.tpMenu.Location = new System.Drawing.Point(4, 22);
             this.tpMenu.Name = "tpMenu";
             this.tpMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMenu.Size = new System.Drawing.Size(942, 493);
+            this.tpMenu.Size = new System.Drawing.Size(798, 449);
             this.tpMenu.TabIndex = 2;
             this.tpMenu.Text = "Menu";
             this.tpMenu.UseVisualStyleBackColor = true;
@@ -526,7 +616,7 @@ namespace Project_Milestone_2
             this.tpEdit.Location = new System.Drawing.Point(4, 22);
             this.tpEdit.Name = "tpEdit";
             this.tpEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEdit.Size = new System.Drawing.Size(942, 493);
+            this.tpEdit.Size = new System.Drawing.Size(798, 449);
             this.tpEdit.TabIndex = 3;
             this.tpEdit.Text = "Edit";
             this.tpEdit.UseVisualStyleBackColor = true;
@@ -575,6 +665,7 @@ namespace Project_Milestone_2
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.pnlEditFilter);
             this.panel1.Controls.Add(this.btnEditAdd);
             this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Controls.Add(this.btnEditFilter);
@@ -587,6 +678,104 @@ namespace Project_Milestone_2
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(942, 108);
             this.panel1.TabIndex = 7;
+            // 
+            // pnlEditFilter
+            // 
+            this.pnlEditFilter.Controls.Add(this.label20);
+            this.pnlEditFilter.Controls.Add(this.comboBox2);
+            this.pnlEditFilter.Controls.Add(this.btnRemoveEditFilters);
+            this.pnlEditFilter.Controls.Add(this.btnCancelEditFilter);
+            this.pnlEditFilter.Controls.Add(this.btnApplyEditFilters);
+            this.pnlEditFilter.Controls.Add(this.textBox2);
+            this.pnlEditFilter.Controls.Add(this.label21);
+            this.pnlEditFilter.Controls.Add(this.label22);
+            this.pnlEditFilter.Controls.Add(this.comboBox3);
+            this.pnlEditFilter.Location = new System.Drawing.Point(653, 7);
+            this.pnlEditFilter.Name = "pnlEditFilter";
+            this.pnlEditFilter.Size = new System.Drawing.Size(281, 86);
+            this.pnlEditFilter.TabIndex = 23;
+            this.pnlEditFilter.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(102, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(65, 13);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Comparison:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(105, 19);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(49, 21);
+            this.comboBox2.TabIndex = 7;
+            // 
+            // btnRemoveEditFilters
+            // 
+            this.btnRemoveEditFilters.Location = new System.Drawing.Point(82, 49);
+            this.btnRemoveEditFilters.Name = "btnRemoveEditFilters";
+            this.btnRemoveEditFilters.Size = new System.Drawing.Size(102, 23);
+            this.btnRemoveEditFilters.TabIndex = 6;
+            this.btnRemoveEditFilters.Text = "Remove all filters";
+            this.btnRemoveEditFilters.UseVisualStyleBackColor = true;
+            this.btnRemoveEditFilters.Click += new System.EventHandler(this.btnRemoveEditFilters_Click);
+            // 
+            // btnCancelEditFilter
+            // 
+            this.btnCancelEditFilter.Location = new System.Drawing.Point(3, 49);
+            this.btnCancelEditFilter.Name = "btnCancelEditFilter";
+            this.btnCancelEditFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelEditFilter.TabIndex = 5;
+            this.btnCancelEditFilter.Text = "Cancel";
+            this.btnCancelEditFilter.UseVisualStyleBackColor = true;
+            this.btnCancelEditFilter.Click += new System.EventHandler(this.btnCancelEditFilter_Click);
+            // 
+            // btnApplyEditFilters
+            // 
+            this.btnApplyEditFilters.Location = new System.Drawing.Point(188, 49);
+            this.btnApplyEditFilters.Name = "btnApplyEditFilters";
+            this.btnApplyEditFilters.Size = new System.Drawing.Size(75, 23);
+            this.btnApplyEditFilters.TabIndex = 4;
+            this.btnApplyEditFilters.Text = "Apply";
+            this.btnApplyEditFilters.UseVisualStyleBackColor = true;
+            this.btnApplyEditFilters.Click += new System.EventHandler(this.btnApplyEditFilters_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(163, 18);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.TabIndex = 3;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(185, 3);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 13);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Filter value:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(3, 3);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(66, 13);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Field to filter:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(3, 19);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(96, 21);
+            this.comboBox3.TabIndex = 0;
             // 
             // btnEditAdd
             // 
@@ -614,6 +803,7 @@ namespace Project_Milestone_2
             this.btnEditFilter.TabIndex = 18;
             this.btnEditFilter.Text = "Filter results";
             this.btnEditFilter.UseVisualStyleBackColor = false;
+            this.btnEditFilter.Click += new System.EventHandler(this.btnEditFilter_Click);
             // 
             // panel9
             // 
@@ -686,7 +876,7 @@ namespace Project_Milestone_2
             this.tpView.Controls.Add(this.panel11);
             this.tpView.Location = new System.Drawing.Point(4, 22);
             this.tpView.Name = "tpView";
-            this.tpView.Size = new System.Drawing.Size(942, 493);
+            this.tpView.Size = new System.Drawing.Size(798, 449);
             this.tpView.TabIndex = 4;
             this.tpView.Text = "View";
             this.tpView.UseVisualStyleBackColor = true;
@@ -735,6 +925,7 @@ namespace Project_Milestone_2
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel11.Controls.Add(this.pnlViewFilter);
             this.panel11.Controls.Add(this.richTextBox2);
             this.panel11.Controls.Add(this.btnViewFilter);
             this.panel11.Controls.Add(this.panel12);
@@ -744,6 +935,104 @@ namespace Project_Milestone_2
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(942, 108);
             this.panel11.TabIndex = 9;
+            // 
+            // pnlViewFilter
+            // 
+            this.pnlViewFilter.Controls.Add(this.label19);
+            this.pnlViewFilter.Controls.Add(this.comboBox1);
+            this.pnlViewFilter.Controls.Add(this.btnRemoveViewFilters);
+            this.pnlViewFilter.Controls.Add(this.btnCancelViewFilter);
+            this.pnlViewFilter.Controls.Add(this.btnApplyViewFilter);
+            this.pnlViewFilter.Controls.Add(this.textBox1);
+            this.pnlViewFilter.Controls.Add(this.label18);
+            this.pnlViewFilter.Controls.Add(this.label17);
+            this.pnlViewFilter.Controls.Add(this.cboField);
+            this.pnlViewFilter.Location = new System.Drawing.Point(671, 6);
+            this.pnlViewFilter.Name = "pnlViewFilter";
+            this.pnlViewFilter.Size = new System.Drawing.Size(263, 86);
+            this.pnlViewFilter.TabIndex = 22;
+            this.pnlViewFilter.Visible = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(102, 3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(65, 13);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Comparison:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(105, 19);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(49, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // btnRemoveViewFilters
+            // 
+            this.btnRemoveViewFilters.Location = new System.Drawing.Point(82, 49);
+            this.btnRemoveViewFilters.Name = "btnRemoveViewFilters";
+            this.btnRemoveViewFilters.Size = new System.Drawing.Size(102, 23);
+            this.btnRemoveViewFilters.TabIndex = 6;
+            this.btnRemoveViewFilters.Text = "Remove all filters";
+            this.btnRemoveViewFilters.UseVisualStyleBackColor = true;
+            this.btnRemoveViewFilters.Click += new System.EventHandler(this.btnRemoveViewFilters_Click);
+            // 
+            // btnCancelViewFilter
+            // 
+            this.btnCancelViewFilter.Location = new System.Drawing.Point(3, 49);
+            this.btnCancelViewFilter.Name = "btnCancelViewFilter";
+            this.btnCancelViewFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelViewFilter.TabIndex = 5;
+            this.btnCancelViewFilter.Text = "Cancel";
+            this.btnCancelViewFilter.UseVisualStyleBackColor = true;
+            this.btnCancelViewFilter.Click += new System.EventHandler(this.btnCancelViewFilter_Click);
+            // 
+            // btnApplyViewFilter
+            // 
+            this.btnApplyViewFilter.Location = new System.Drawing.Point(188, 49);
+            this.btnApplyViewFilter.Name = "btnApplyViewFilter";
+            this.btnApplyViewFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnApplyViewFilter.TabIndex = 4;
+            this.btnApplyViewFilter.Text = "Apply";
+            this.btnApplyViewFilter.UseVisualStyleBackColor = true;
+            this.btnApplyViewFilter.Click += new System.EventHandler(this.btnApplyViewFilter_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(160, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(185, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(61, 13);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Filter value:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 3);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(66, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Field to filter:";
+            // 
+            // cboField
+            // 
+            this.cboField.FormattingEnabled = true;
+            this.cboField.Location = new System.Drawing.Point(3, 19);
+            this.cboField.Name = "cboField";
+            this.cboField.Size = new System.Drawing.Size(96, 21);
+            this.cboField.TabIndex = 0;
             // 
             // richTextBox2
             // 
@@ -762,6 +1051,7 @@ namespace Project_Milestone_2
             this.btnViewFilter.TabIndex = 18;
             this.btnViewFilter.Text = "Filter results";
             this.btnViewFilter.UseVisualStyleBackColor = false;
+            this.btnViewFilter.Click += new System.EventHandler(this.btnViewFilter_Click);
             // 
             // panel12
             // 
@@ -812,36 +1102,555 @@ namespace Project_Milestone_2
             // 
             // tpOrder
             // 
+            this.tpOrder.Controls.Add(this.panel15);
+            this.tpOrder.Controls.Add(this.panel14);
+            this.tpOrder.Controls.Add(this.panel13);
             this.tpOrder.Location = new System.Drawing.Point(4, 22);
             this.tpOrder.Name = "tpOrder";
-            this.tpOrder.Size = new System.Drawing.Size(942, 493);
+            this.tpOrder.Size = new System.Drawing.Size(798, 449);
             this.tpOrder.TabIndex = 5;
             this.tpOrder.Text = "Order";
             this.tpOrder.UseVisualStyleBackColor = true;
             // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.rtbOrderItems);
+            this.panel15.Location = new System.Drawing.Point(-1, 178);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(263, 118);
+            this.panel15.TabIndex = 17;
+            // 
+            // rtbOrderItems
+            // 
+            this.rtbOrderItems.Location = new System.Drawing.Point(1, 0);
+            this.rtbOrderItems.Name = "rtbOrderItems";
+            this.rtbOrderItems.Size = new System.Drawing.Size(261, 118);
+            this.rtbOrderItems.TabIndex = 0;
+            this.rtbOrderItems.Text = "Items in order:";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel14.Controls.Add(this.button1);
+            this.panel14.Controls.Add(this.label24);
+            this.panel14.Controls.Add(this.comboBox4);
+            this.panel14.Controls.Add(this.btnClearOrder);
+            this.panel14.Controls.Add(this.label23);
+            this.panel14.Controls.Add(this.btnRemoveOrder);
+            this.panel14.Controls.Add(this.numericUpDown1);
+            this.panel14.Controls.Add(this.btnOrderAdd);
+            this.panel14.Controls.Add(this.btnOrderSearch);
+            this.panel14.Location = new System.Drawing.Point(0, 35);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(261, 147);
+            this.panel14.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(47, 111);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Checkout";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(163, 10);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(46, 13);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Amount:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(43, 26);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(103, 21);
+            this.comboBox4.TabIndex = 0;
+            // 
+            // btnClearOrder
+            // 
+            this.btnClearOrder.Location = new System.Drawing.Point(47, 53);
+            this.btnClearOrder.Name = "btnClearOrder";
+            this.btnClearOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnClearOrder.TabIndex = 7;
+            this.btnClearOrder.Text = "Clear";
+            this.btnClearOrder.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(43, 10);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(30, 13);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Item:";
+            // 
+            // btnRemoveOrder
+            // 
+            this.btnRemoveOrder.Location = new System.Drawing.Point(128, 82);
+            this.btnRemoveOrder.Name = "btnRemoveOrder";
+            this.btnRemoveOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveOrder.TabIndex = 6;
+            this.btnRemoveOrder.Text = "Remove";
+            this.btnRemoveOrder.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(166, 27);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDown1.TabIndex = 2;
+            // 
+            // btnOrderAdd
+            // 
+            this.btnOrderAdd.Location = new System.Drawing.Point(47, 82);
+            this.btnOrderAdd.Name = "btnOrderAdd";
+            this.btnOrderAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderAdd.TabIndex = 5;
+            this.btnOrderAdd.Text = "Add";
+            this.btnOrderAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnOrderSearch
+            // 
+            this.btnOrderSearch.Location = new System.Drawing.Point(128, 53);
+            this.btnOrderSearch.Name = "btnOrderSearch";
+            this.btnOrderSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnOrderSearch.TabIndex = 4;
+            this.btnOrderSearch.Text = "Search";
+            this.btnOrderSearch.UseVisualStyleBackColor = true;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel13.Controls.Add(this.btnExitOrder);
+            this.panel13.Controls.Add(this.label27);
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(261, 36);
+            this.panel13.TabIndex = 15;
+            // 
+            // btnExitOrder
+            // 
+            this.btnExitOrder.Location = new System.Drawing.Point(0, 0);
+            this.btnExitOrder.Name = "btnExitOrder";
+            this.btnExitOrder.Size = new System.Drawing.Size(56, 36);
+            this.btnExitOrder.TabIndex = 10;
+            this.btnExitOrder.Text = "Back";
+            this.btnExitOrder.UseVisualStyleBackColor = true;
+            this.btnExitOrder.Click += new System.EventHandler(this.btnExitOrder_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(55, 3);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(154, 29);
+            this.label27.TabIndex = 13;
+            this.label27.Text = "Place Order";
+            // 
             // tpAdminEditLogin
             // 
+            this.tpAdminEditLogin.Controls.Add(this.panel19);
+            this.tpAdminEditLogin.Controls.Add(this.panel16);
             this.tpAdminEditLogin.Location = new System.Drawing.Point(4, 22);
             this.tpAdminEditLogin.Name = "tpAdminEditLogin";
-            this.tpAdminEditLogin.Size = new System.Drawing.Size(942, 493);
+            this.tpAdminEditLogin.Size = new System.Drawing.Size(798, 449);
             this.tpAdminEditLogin.TabIndex = 6;
             this.tpAdminEditLogin.Text = "Admin Edit Login";
             this.tpAdminEditLogin.UseVisualStyleBackColor = true;
             // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.dgvAdmin);
+            this.panel19.Location = new System.Drawing.Point(0, 107);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(948, 386);
+            this.panel19.TabIndex = 9;
+            // 
+            // dgvAdmin
+            // 
+            this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.dgvAdmin.Location = new System.Drawing.Point(0, 0);
+            this.dgvAdmin.Name = "dgvAdmin";
+            this.dgvAdmin.Size = new System.Drawing.Size(942, 398);
+            this.dgvAdmin.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Item ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Item Name";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Category";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel16.Controls.Add(this.label30);
+            this.panel16.Controls.Add(this.pnlAdminFilter);
+            this.panel16.Controls.Add(this.btnAdminAdd);
+            this.panel16.Controls.Add(this.richTextBox3);
+            this.panel16.Controls.Add(this.btnAdminFilter);
+            this.panel16.Controls.Add(this.panel18);
+            this.panel16.Controls.Add(this.btnAdminChange);
+            this.panel16.Controls.Add(this.btnAdminRemove);
+            this.panel16.Location = new System.Drawing.Point(0, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(942, 108);
+            this.panel16.TabIndex = 8;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(96, 60);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(94, 29);
+            this.label30.TabIndex = 24;
+            this.label30.Text = "ADMIN";
+            // 
+            // pnlAdminFilter
+            // 
+            this.pnlAdminFilter.Controls.Add(this.label25);
+            this.pnlAdminFilter.Controls.Add(this.comboBox5);
+            this.pnlAdminFilter.Controls.Add(this.btnRemoveAdminFilters);
+            this.pnlAdminFilter.Controls.Add(this.btnCancelAdminFilter);
+            this.pnlAdminFilter.Controls.Add(this.btnApplyAdminFilter);
+            this.pnlAdminFilter.Controls.Add(this.textBox3);
+            this.pnlAdminFilter.Controls.Add(this.label26);
+            this.pnlAdminFilter.Controls.Add(this.label28);
+            this.pnlAdminFilter.Controls.Add(this.comboBox6);
+            this.pnlAdminFilter.Location = new System.Drawing.Point(653, 6);
+            this.pnlAdminFilter.Name = "pnlAdminFilter";
+            this.pnlAdminFilter.Size = new System.Drawing.Size(281, 86);
+            this.pnlAdminFilter.TabIndex = 23;
+            this.pnlAdminFilter.Visible = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(102, 3);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(65, 13);
+            this.label25.TabIndex = 8;
+            this.label25.Text = "Comparison:";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(105, 19);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(49, 21);
+            this.comboBox5.TabIndex = 7;
+            // 
+            // btnRemoveAdminFilters
+            // 
+            this.btnRemoveAdminFilters.Location = new System.Drawing.Point(82, 49);
+            this.btnRemoveAdminFilters.Name = "btnRemoveAdminFilters";
+            this.btnRemoveAdminFilters.Size = new System.Drawing.Size(102, 23);
+            this.btnRemoveAdminFilters.TabIndex = 6;
+            this.btnRemoveAdminFilters.Text = "Remove all filters";
+            this.btnRemoveAdminFilters.UseVisualStyleBackColor = true;
+            this.btnRemoveAdminFilters.Click += new System.EventHandler(this.btnRemoveAdminFilters_Click);
+            // 
+            // btnCancelAdminFilter
+            // 
+            this.btnCancelAdminFilter.Location = new System.Drawing.Point(3, 49);
+            this.btnCancelAdminFilter.Name = "btnCancelAdminFilter";
+            this.btnCancelAdminFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelAdminFilter.TabIndex = 5;
+            this.btnCancelAdminFilter.Text = "Cancel";
+            this.btnCancelAdminFilter.UseVisualStyleBackColor = true;
+            this.btnCancelAdminFilter.Click += new System.EventHandler(this.btnCancelAdminFilter_Click);
+            // 
+            // btnApplyAdminFilter
+            // 
+            this.btnApplyAdminFilter.Location = new System.Drawing.Point(188, 49);
+            this.btnApplyAdminFilter.Name = "btnApplyAdminFilter";
+            this.btnApplyAdminFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnApplyAdminFilter.TabIndex = 4;
+            this.btnApplyAdminFilter.Text = "Apply";
+            this.btnApplyAdminFilter.UseVisualStyleBackColor = true;
+            this.btnApplyAdminFilter.Click += new System.EventHandler(this.btnApplyAdminFilter_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(163, 18);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 21);
+            this.textBox3.TabIndex = 3;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(185, 3);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(61, 13);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Filter value:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(3, 3);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(66, 13);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "Field to filter:";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(3, 19);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(96, 21);
+            this.comboBox6.TabIndex = 0;
+            // 
+            // btnAdminAdd
+            // 
+            this.btnAdminAdd.Location = new System.Drawing.Point(653, 52);
+            this.btnAdminAdd.Name = "btnAdminAdd";
+            this.btnAdminAdd.Size = new System.Drawing.Size(136, 39);
+            this.btnAdminAdd.TabIndex = 20;
+            this.btnAdminAdd.Text = "Add a new record";
+            this.btnAdminAdd.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(298, 17);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(318, 62);
+            this.richTextBox3.TabIndex = 19;
+            this.richTextBox3.Text = "Here is where the admin edits user-details\n\nThe admin can select any user in the " +
+    "database and change their details as needed.";
+            // 
+            // btnAdminFilter
+            // 
+            this.btnAdminFilter.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdminFilter.Location = new System.Drawing.Point(798, 52);
+            this.btnAdminFilter.Name = "btnAdminFilter";
+            this.btnAdminFilter.Size = new System.Drawing.Size(136, 37);
+            this.btnAdminFilter.TabIndex = 18;
+            this.btnAdminFilter.Text = "Filter results";
+            this.btnAdminFilter.UseVisualStyleBackColor = false;
+            this.btnAdminFilter.Click += new System.EventHandler(this.btnAdminFilter_Click);
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel18.Controls.Add(this.btnExitAdminEditLogin);
+            this.panel18.Controls.Add(this.label29);
+            this.panel18.Location = new System.Drawing.Point(-1, 3);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(268, 35);
+            this.panel18.TabIndex = 17;
+            // 
+            // btnExitAdminEditLogin
+            // 
+            this.btnExitAdminEditLogin.Location = new System.Drawing.Point(0, 0);
+            this.btnExitAdminEditLogin.Name = "btnExitAdminEditLogin";
+            this.btnExitAdminEditLogin.Size = new System.Drawing.Size(45, 35);
+            this.btnExitAdminEditLogin.TabIndex = 16;
+            this.btnExitAdminEditLogin.Text = "Back";
+            this.btnExitAdminEditLogin.UseVisualStyleBackColor = true;
+            this.btnExitAdminEditLogin.Click += new System.EventHandler(this.btnExitAdminEditLogin_Click);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(51, 3);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(209, 29);
+            this.label29.TabIndex = 15;
+            this.label29.Text = "Edit User Details";
+            // 
+            // btnAdminChange
+            // 
+            this.btnAdminChange.Location = new System.Drawing.Point(653, 6);
+            this.btnAdminChange.Name = "btnAdminChange";
+            this.btnAdminChange.Size = new System.Drawing.Size(136, 39);
+            this.btnAdminChange.TabIndex = 7;
+            this.btnAdminChange.Text = "Change record";
+            this.btnAdminChange.UseVisualStyleBackColor = true;
+            // 
+            // btnAdminRemove
+            // 
+            this.btnAdminRemove.Location = new System.Drawing.Point(798, 6);
+            this.btnAdminRemove.Name = "btnAdminRemove";
+            this.btnAdminRemove.Size = new System.Drawing.Size(136, 39);
+            this.btnAdminRemove.TabIndex = 6;
+            this.btnAdminRemove.Text = "Remove record";
+            this.btnAdminRemove.UseVisualStyleBackColor = true;
+            // 
             // tpEditLogin
             // 
+            this.tpEditLogin.Controls.Add(this.panel20);
+            this.tpEditLogin.Controls.Add(this.panel17);
             this.tpEditLogin.Location = new System.Drawing.Point(4, 22);
             this.tpEditLogin.Name = "tpEditLogin";
-            this.tpEditLogin.Size = new System.Drawing.Size(942, 493);
+            this.tpEditLogin.Size = new System.Drawing.Size(300, 201);
             this.tpEditLogin.TabIndex = 7;
             this.tpEditLogin.Text = "Edit Login";
             this.tpEditLogin.UseVisualStyleBackColor = true;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.lblSurname);
+            this.panel20.Controls.Add(this.lblName);
+            this.panel20.Controls.Add(this.lblPassword);
+            this.panel20.Controls.Add(this.lblEmail);
+            this.panel20.Controls.Add(this.button6);
+            this.panel20.Controls.Add(this.btnUserSurnameChange);
+            this.panel20.Controls.Add(this.btnUserNameChange);
+            this.panel20.Controls.Add(this.btnUserPasswordChange);
+            this.panel20.Controls.Add(this.btnUserEmailChange);
+            this.panel20.Location = new System.Drawing.Point(0, 33);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(300, 168);
+            this.panel20.TabIndex = 19;
+            // 
+            // lblSurname
+            // 
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Location = new System.Drawing.Point(3, 106);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(162, 13);
+            this.lblSurname.TabIndex = 28;
+            this.lblSurname.Text = "Surname: #Insert surname here#";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(3, 77);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(134, 13);
+            this.lblName.TabIndex = 27;
+            this.lblName.Text = "Name: #Insert name here#";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(3, 48);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.TabIndex = 26;
+            this.lblPassword.Text = "Password:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(3, 19);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(129, 13);
+            this.lblEmail.TabIndex = 25;
+            this.lblEmail.Text = "Email: #Insert email here#";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(71, 130);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(159, 35);
+            this.button6.TabIndex = 24;
+            this.button6.Text = "Remove user from system";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // btnUserSurnameChange
+            // 
+            this.btnUserSurnameChange.Location = new System.Drawing.Point(175, 101);
+            this.btnUserSurnameChange.Name = "btnUserSurnameChange";
+            this.btnUserSurnameChange.Size = new System.Drawing.Size(122, 23);
+            this.btnUserSurnameChange.TabIndex = 23;
+            this.btnUserSurnameChange.Text = "Change Surname";
+            this.btnUserSurnameChange.UseVisualStyleBackColor = true;
+            // 
+            // btnUserNameChange
+            // 
+            this.btnUserNameChange.Location = new System.Drawing.Point(175, 72);
+            this.btnUserNameChange.Name = "btnUserNameChange";
+            this.btnUserNameChange.Size = new System.Drawing.Size(122, 23);
+            this.btnUserNameChange.TabIndex = 22;
+            this.btnUserNameChange.Text = "Change Name";
+            this.btnUserNameChange.UseVisualStyleBackColor = true;
+            // 
+            // btnUserPasswordChange
+            // 
+            this.btnUserPasswordChange.Location = new System.Drawing.Point(175, 43);
+            this.btnUserPasswordChange.Name = "btnUserPasswordChange";
+            this.btnUserPasswordChange.Size = new System.Drawing.Size(122, 23);
+            this.btnUserPasswordChange.TabIndex = 21;
+            this.btnUserPasswordChange.Text = "Change Password";
+            this.btnUserPasswordChange.UseVisualStyleBackColor = true;
+            // 
+            // btnUserEmailChange
+            // 
+            this.btnUserEmailChange.Location = new System.Drawing.Point(175, 14);
+            this.btnUserEmailChange.Name = "btnUserEmailChange";
+            this.btnUserEmailChange.Size = new System.Drawing.Size(122, 23);
+            this.btnUserEmailChange.TabIndex = 20;
+            this.btnUserEmailChange.Text = "Change Email";
+            this.btnUserEmailChange.UseVisualStyleBackColor = true;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel17.Controls.Add(this.btnExitEditLogin);
+            this.panel17.Controls.Add(this.label31);
+            this.panel17.Location = new System.Drawing.Point(0, 0);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(300, 34);
+            this.panel17.TabIndex = 18;
+            // 
+            // btnExitEditLogin
+            // 
+            this.btnExitEditLogin.Location = new System.Drawing.Point(0, 0);
+            this.btnExitEditLogin.Name = "btnExitEditLogin";
+            this.btnExitEditLogin.Size = new System.Drawing.Size(45, 35);
+            this.btnExitEditLogin.TabIndex = 16;
+            this.btnExitEditLogin.Text = "Back";
+            this.btnExitEditLogin.UseVisualStyleBackColor = true;
+            this.btnExitEditLogin.Click += new System.EventHandler(this.btnExitEditLogin_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(51, 3);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(209, 29);
+            this.label31.TabIndex = 15;
+            this.label31.Text = "Edit User Details";
             // 
             // frmTuckShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 519);
+            this.ClientSize = new System.Drawing.Size(308, 227);
             this.Controls.Add(this.tcMainScreen);
             this.Name = "frmTuckShop";
             this.Text = "Tuck Shop";
@@ -866,6 +1675,8 @@ namespace Project_Milestone_2
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdit)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlEditFilter.ResumeLayout(false);
+            this.pnlEditFilter.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.tpView.ResumeLayout(false);
@@ -873,8 +1684,31 @@ namespace Project_Milestone_2
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.pnlViewFilter.ResumeLayout(false);
+            this.pnlViewFilter.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.tpOrder.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.tpAdminEditLogin.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).EndInit();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            this.pnlAdminFilter.ResumeLayout(false);
+            this.pnlAdminFilter.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            this.tpEditLogin.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -956,6 +1790,80 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cboViewCurrentTable;
+        private System.Windows.Forms.Panel pnlViewFilter;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnRemoveViewFilters;
+        private System.Windows.Forms.Button btnCancelViewFilter;
+        private System.Windows.Forms.Button btnApplyViewFilter;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cboField;
+        private System.Windows.Forms.Panel pnlEditFilter;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnRemoveEditFilters;
+        private System.Windows.Forms.Button btnCancelEditFilter;
+        private System.Windows.Forms.Button btnApplyEditFilters;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.RichTextBox rtbOrderItems;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button btnClearOrder;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button btnRemoveOrder;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button btnOrderAdd;
+        private System.Windows.Forms.Button btnOrderSearch;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button btnExitOrder;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.DataGridView dgvAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel pnlAdminFilter;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Button btnRemoveAdminFilters;
+        private System.Windows.Forms.Button btnCancelAdminFilter;
+        private System.Windows.Forms.Button btnApplyAdminFilter;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Button btnAdminAdd;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Button btnAdminFilter;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Button btnExitAdminEditLogin;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button btnAdminChange;
+        private System.Windows.Forms.Button btnAdminRemove;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Button btnExitEditLogin;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Label lblSurname;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnUserSurnameChange;
+        private System.Windows.Forms.Button btnUserNameChange;
+        private System.Windows.Forms.Button btnUserPasswordChange;
+        private System.Windows.Forms.Button btnUserEmailChange;
     }
 }
 
