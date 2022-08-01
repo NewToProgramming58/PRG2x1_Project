@@ -1,0 +1,10 @@
+C:\Users\navy2\Desktop\Project Milestone 2\bin\Debug\Project Milestone 2.exe.config
+C:\Users\navy2\Desktop\Project Milestone 2\bin\Debug\Project Milestone 2.exe
+C:\Users\navy2\Desktop\Project Milestone 2\bin\Debug\Project Milestone 2.pdb
+C:\Users\navy2\Desktop\Project Milestone 2\obj\Debug\Project Milestone 2.csproj.AssemblyReference.cache
+C:\Users\navy2\Desktop\Project Milestone 2\obj\Debug\Project_Milestone_2.frmTuckShop.resources
+C:\Users\navy2\Desktop\Project Milestone 2\obj\Debug\Project_Milestone_2.Properties.Resources.resources
+C:\Users\navy2\Desktop\Project Milestone 2\obj\Debug\Project Milestone 2.csproj.GenerateResource.cache
+C:\Users\navy2\Desktop\Project Milestone 2\obj\Debug\Project Milestone 2.csproj.CoreCompileInputs.cache
+C:\Users\navy2\Desktop\Project Milestone 2\obj\Debug\Project Milestone 2.exe
+C:\Users\navy2\Desktop\Project Milestone 2\obj\Debug\Project Milestone 2.pdb
