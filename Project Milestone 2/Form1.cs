@@ -36,6 +36,8 @@ namespace Project_Milestone_2
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            //Lets see if this comment can be read by anyone else????
+
             tcMainScreen.SelectedTab = tpRegister;
         }
 
