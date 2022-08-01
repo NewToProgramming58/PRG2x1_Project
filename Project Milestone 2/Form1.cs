@@ -23,32 +23,47 @@ namespace Project_Milestone_2
         }
         private void frmTuckShop_Load(object sender, EventArgs e)
         {
-        ///////////////////////////////////////////////////////////////////////////////////////////////
-        // DataBase connection
-            sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Database=TuckShop");
-            try {
-                sqlConnection.Open();
-                itemManger = new ItemManger(sqlConnection);
-            } catch (Exception ex) {
-                //String creationQuery = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "CreateDB.txt");
-                //String createitems = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "Createitems.txt");
-                //MessageBox.Show(creationQuery);
-                //SqlConnection myConn = new SqlConnection("Server=localhost;Integrated security=SSPI;database=master");              
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            // DataBase connection         
+            string cmdText = "SELECT * FROM master.dbo.sysdatabases WHERE name ='TuckShop'";
+            bool isExist = false;
+            using (SqlConnection con = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master"))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        isExist = reader.HasRows;
+                    }
+                }
+                con.Close();
+            }
+            if (!isExist) {
+                string creationQuery = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "CreateDB.txt");
+                string createitems = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "Createitems.txt");
+                SqlConnection myConn = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master");
 
-                //SqlCommand myCommand = new SqlCommand(creationQuery, myConn);
-                //try
-                //{
-                //    myConn.Open();
-                //    myCommand.ExecuteNonQuery();
-                //    myCommand = new SqlCommand(createitems, myConn);
-                //    myCommand.ExecuteNonQuery();
-                //    MessageBox.Show("DataBase is Created Successfully", "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-                //catch (System.Exception exeption)
-                //{
-                //    MessageBox.Show(exeption.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}            
-            };
+                SqlCommand myCommand = new SqlCommand(creationQuery, myConn);
+                try
+                {
+                    myConn.Open();
+                    myCommand.ExecuteNonQuery();
+                    sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
+                    sqlConnection.Open();
+                    myCommand = new SqlCommand(createitems, sqlConnection);
+                    myCommand.ExecuteNonQuery();
+                }
+                catch (System.Exception exeption)
+                {
+                    MessageBox.Show(exeption.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            } else
+            {
+                sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
+            }
+            itemManger = new ItemManger(sqlConnection);
+      
          ///////////////////////////////////////////////////////////////////////////////////////////////
 
             tcMainScreen.Appearance = TabAppearance.FlatButtons;

@@ -4,3 +4,4 @@ CREATE TABLE Items (
 	[Price] FLOAT DEFAULT(0.0),
 	[Category] TEXT NOT NULL,
 	[Quantity] INT DEFAULT(0)
+)
