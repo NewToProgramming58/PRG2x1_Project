@@ -15,9 +15,11 @@ namespace Project_Milestone_2
 {
     public partial class frmTuckShop : Form
     {
-        public string EditQuery = "SELECT * FROM Items";
+        public string editQuery = "SELECT * FROM Items";
+        public string editCurrentTable = "Items";
+
         static SqlConnection sqlConnection;
-        static ItemManger itemManger;
+        static ItemManger itemManager;
 
         public static void ConnectToDB() 
         {
@@ -154,6 +156,7 @@ namespace Project_Milestone_2
             if (cboEditCurrentTable.SelectedIndex == -1)
                 cboEditCurrentTable.SelectedIndex = cboEditCurrentTable.FindString("Items");
             // LOAD TABLE INTO DATAGRIDVIEW
+            dgvEdit.DataSource = itemManager.ShowAllItems();
         }
 
         private void btnViewRecords_Click(object sender, EventArgs e)
