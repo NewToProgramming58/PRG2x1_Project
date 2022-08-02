@@ -221,11 +221,24 @@ namespace Project_Milestone_2
 
         private void btnEditAdd_Click(object sender, EventArgs e)
         {
-            //
+            if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
+            {
+                pnlEditAddItem.Visible = true;
+            }
+            else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
+            {
+                pnlEditAddSale.Visible = true;
+            }
         }
         private void btnEditAddItemSubmit_Click(object sender, EventArgs e)
         {
-
+            string itemName = txtEditAddItemName.Text;
+            double itemPrice = double.Parse(txtEditAddItemPrice.Text);
+            string itemCategory = cboEditAddItemCategory.SelectedItem.ToString();
+            int itemQuantity = int.Parse(nudEditAddItemQuantity.Value.ToString());
+            itemManager.AddItem(itemName, itemCategory, itemQuantity, itemPrice);
+            dgvEdit.DataSource = itemManager.ShowAllItems();
+            pnlEditAddItem.Visible = false;
         }
 
         private void btnEditChange_Click(object sender, EventArgs e)
