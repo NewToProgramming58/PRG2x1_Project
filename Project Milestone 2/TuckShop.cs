@@ -548,26 +548,53 @@ namespace Project_Milestone_2
         private void BtnExitAdminEditLogin_Click(object sender, EventArgs e)
         {
             OpenMenu();
+            editItemsFilterList.Clear();
         }
 
-        private void BtnAdminFilter_Click(object sender, EventArgs e)
-        {
-            pnlAdminFilter.Visible = true;
-        }
+
 
         private void BtnCancelAdminFilter_Click(object sender, EventArgs e)
         {
+            EnableForm();
             pnlAdminFilter.Visible = false;
+            pnlAdminFilter.Enabled = false;
         }
 
         private void BtnRemoveAdminFilters_Click(object sender, EventArgs e)
         {
+            EnableForm();
+            editItemsFilterList.Clear();
+
             pnlAdminFilter.Visible = false;
+            pnlAdminFilter.Enabled = false;
         }
 
         private void BtnApplyAdminFilter_Click(object sender, EventArgs e)
         {
+            string value;
+            double numTest;
+
+            EnableForm();
             pnlAdminFilter.Visible = false;
+            pnlAdminFilter.Enabled = false;
+
+            // This checks correctness of formats.
+            try
+            {
+                numTest = double.Parse(textBox3.Text);
+                value = numTest.ToString();
+            }
+            catch (Exception)
+            {
+                if ((comboBox5.SelectedItem.ToString() == "LIKE") || (comboBox5.SelectedItem.ToString() == "NOT LIKE"))
+                {
+                    value = "'%" + textBox3.Text + "%'";
+                }
+                else
+                {
+                    value = "'" + textBox3.Text + "'";
+                }
+            }
         }
         //-----------------------------------------------------------------------------------------------
 
