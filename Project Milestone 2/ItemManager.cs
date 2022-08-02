@@ -77,37 +77,33 @@ namespace Project_Milestone_2
         }
 
         // This method changes the an items information.
-        public bool UpdateItemInfo(String id, ItemDetail itemDetail, string newValue, List<string> filters)
+        public bool UpdateItemInfo(string update)
         {
             List<string> fields = new List<string>();
             List<string> signs = new List<string>();
             List<string> values = new List<string>();
+            //id#ItemName#Price#Category#Quantity
+            // 0 = id
+            // 1 = ItemName
+            // 2 = Price
+            // 3 = Category
+            // 4 = Quantity
+            var splitFilters = update.Split('#');
 
-            foreach (string filter in filters)
-            {
-                var splitFilters = filter.Split('#');
-                fields.Add(splitFilters[0]);
-                signs.Add(splitFilters[1]);
-                values.Add(splitFilters[2]);
-            }
-            string whereFilter = $"WHERE {fields[0]} {signs[0]} {values[0]}";
-            if (fields.Count > 1)
-            {
-                for (int i = 1; i < signs.Count; i++)
-                {
-                    whereFilter += $" AND {fields[i]} {signs[i]} {values[i]}";
-                }
-            }
+            string id = splitFilters[0];
+            string itemName = splitFilters[1];
+            string price = splitFilters[2];
+            string category = splitFilters[3];
+            string quantity = splitFilters[4];
 
             bool success = false;
-            string cmdString = $"UPDATE Items SET \"{itemDetail.ToString()}\" = @value "+whereFilter;
+            string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, Category = '{category}', Quantity = {quantity} WHERE ItemID = @id";
             SqlCommand sqlCommand = new SqlCommand
             {
                 Connection = sqlConnection,
                 CommandText = cmdString
             };
-            sqlCommand.Parameters.AddWithValue("@id", id);           
-            sqlCommand.Parameters.AddWithValue("@value", newValue);
+            sqlCommand.Parameters.AddWithValue("@id", id);                   
             try
             {
                 int rows = sqlCommand.ExecuteNonQuery();
@@ -169,6 +165,9 @@ namespace Project_Milestone_2
                              
             foreach (string filter in filters) 
             {
+                // 0 = field
+                // 1 = sign
+                // 2 = value
                 var splitFilters = filter.Split('#');
                 fields.Add(splitFilters[0]);
                 if (splitFilters[1].Equals("="))
