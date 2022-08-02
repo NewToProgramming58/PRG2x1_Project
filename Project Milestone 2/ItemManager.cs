@@ -171,10 +171,16 @@ namespace Project_Milestone_2
             {
                 var splitFilters = filter.Split('#');
                 fields.Add(splitFilters[0]);
-                signs.Add(splitFilters[1]);
+                if (splitFilters[1].Equals("="))
+                    signs.Add("LIKE");
+                else if (splitFilters[1].Equals("!="))
+                    signs.Add("NOT LIKE");
+                else 
+                    signs.Add(splitFilters[1]);
+
                 if (splitFilters[0].Equals("Price"))
                     values.Add(splitFilters[2]);
-                else if (splitFilters[1].Equals("LIKE") || splitFilters[1].Equals("NOT LIKE"))
+                else if ((splitFilters[1].Equals("LIKE") || splitFilters[1].Equals("NOT LIKE")) && !splitFilters[1].Equals("="))
                     values.Add($"'%{splitFilters[2]}%'");
                 else
                     values.Add($"'{splitFilters[2]}'");
@@ -186,8 +192,7 @@ namespace Project_Milestone_2
                 {
                     cmdString += $" AND {fields[i]} {signs[i]} {values[i]}";
                 }
-            }
-            MessageBox.Show(cmdString);
+            }           
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
             DataSet ds = new DataSet();
