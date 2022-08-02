@@ -17,7 +17,7 @@ namespace Project_Milestone_2
     {
         static SqlConnection sqlConnection;
         static ItemManger itemManger;
-
+        static UserManger userManger;
         public static void ConnectToDB() 
         {
             ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,10 +41,14 @@ namespace Project_Milestone_2
             // When database doesnt exist, it is created programmatically.
             if (!isExist)
             {
+                string exeFilePath = AppDomain.CurrentDomain.BaseDirectory;
                 // This text file has Query for creation of the DB.
-                string creationQuery = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "CreateDB.txt");
+                string creationQuery = File.ReadAllText(exeFilePath + @"Queries\CreateDB.txt");
                 // This text file conatians the query for items table. (Cant use GO in SQlCommand).
-                string createitems = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "Createitems.txt");
+                string createItems = File.ReadAllText(exeFilePath + @"Queries\CreateItems.txt");
+                // This text file conatians the query for Users table.
+                string createUsers = File.ReadAllText(exeFilePath + @"Queries\CreateUsers.txt");
+
                 // USE a Master connection to build DB.
                 SqlConnection masterConnection = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master");
 
@@ -55,10 +59,14 @@ namespace Project_Milestone_2
                     masterConnection.Open();
                     myCommand.ExecuteNonQuery();
                     masterConnection.Close();
-                    //Create new connection to newly created database and create each table.
+                    // Create new connection to newly created database and create each table.                   
                     sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
                     sqlConnection.Open();
-                    myCommand = new SqlCommand(createitems, sqlConnection);
+                    // Items table
+                    myCommand = new SqlCommand(createItems, sqlConnection);
+                    myCommand.ExecuteNonQuery();
+                    // Users table
+                    myCommand = new SqlCommand(createUsers, sqlConnection);
                     myCommand.ExecuteNonQuery();
                 }
                 catch (System.Exception exeption)
@@ -70,10 +78,11 @@ namespace Project_Milestone_2
             {
                 // When DB is 100% then simply open a connection
                 sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
+                sqlConnection.Open();
             }
             //Object to Manage DB control concerning Items
             itemManger = new ItemManger(sqlConnection);
-
+            userManger = new UserManger(sqlConnection);
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
@@ -107,6 +116,8 @@ namespace Project_Milestone_2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            itemManger.AddItem("Chocolate", "Sweets", 4, 10.99);
+            itemManger.UpdateItemInfo("1", ItemDetail.ItemName, "5 Star");
             tcMainScreen.SelectedTab = tpMenu;
             Size = new Size(275, 312);
         }
