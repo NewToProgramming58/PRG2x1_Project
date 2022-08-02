@@ -244,6 +244,7 @@ namespace Project_Milestone_2
                 if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
                 {
                     itemManager.RemoveItem(ID);
+                    dgvEdit.DataSource = itemManager.ShowAllItems();
                 }
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
