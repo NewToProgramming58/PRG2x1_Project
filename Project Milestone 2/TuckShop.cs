@@ -41,17 +41,18 @@ namespace Project_Milestone_2
             // When database doesnt exist, it is created programmatically.
             if (!isExist)
             {
+                string exepath = AppDomain.CurrentDomain.BaseDirectory;
                 // This text file has Query for creation of the DB.
-                string creationQuery = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "CreateDB.txt");
+                string creationQuery = File.ReadAllText(exepath + @"Queries\CreateDB.txt");
                 // This text file conatians the query for items table. (Cant use GO in SQlCommand).
-                string createitems = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "Createitems.txt");
+                string createitems = File.ReadAllText(exepath + @"Queries\Createitems.txt");
                 // USE a Master connection to build DB.
                 SqlConnection masterConnection = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master");
 
                 SqlCommand myCommand = new SqlCommand(creationQuery, masterConnection);
                 try
                 {
-                    // Open connection ,run creation query and close.
+                    // Open connection, run creation query and close.
                     masterConnection.Open();
                     myCommand.ExecuteNonQuery();
                     masterConnection.Close();

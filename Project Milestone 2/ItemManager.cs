@@ -128,8 +128,7 @@ namespace Project_Milestone_2
             sqlCommand.CommandText = cmdString;
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
-            var commandBuilder = new SqlCommandBuilder(dataAdapter);
-            var ds = new DataSet();
+            DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
 
             return ds.Tables[0];
