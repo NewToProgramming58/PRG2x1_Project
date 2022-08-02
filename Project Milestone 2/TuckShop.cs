@@ -415,9 +415,9 @@ namespace Project_Milestone_2
             try
             {
                 // Stores values in correct format for method.
-                values = txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + cboEditChangeItemCategory.SelectedItem + "#" + 
+                values = txtEditChangeItemID.Text + "#" + txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + cboEditChangeItemCategory.SelectedItem + "#" + 
                          nudEditChangeItemQuantity.Value.ToString();
-                //itemManager.UpdateItemInfo(values);//////////////////////////////////////////////////////
+                itemManager.UpdateItemInfo(values);//////////////////////////////////////////////////////
 
                 //REFRESH DATA//////////////////////////////////////////////////////////////////////////////////
             }
