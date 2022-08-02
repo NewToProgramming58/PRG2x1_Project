@@ -133,5 +133,27 @@ namespace Project_Milestone_2
 
             return ds.Tables[0];
         }
+
+        public DataTable FilterItems(List<String> fields, List<String> signs, List<String> values) 
+        {
+
+            string cmdString = $"SELECT * FROM Items WHERE {fields[0]} {signs[0]} {values[0]}";
+            if (fields.Count > 1)
+            {
+                for (int i = 1; i < signs.Count; i++)
+                {
+                    cmdString += $"AND {fields[i]} {signs[i]} {values[i]}";
+                }
+            }
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandText = cmdString;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
+
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+
+            return ds.Tables[0];
+        }
     }
 }
