@@ -307,15 +307,9 @@ namespace Project_Milestone_2
             }
             catch (Exception)
             {
-                if ((cboEditFilterComparison.SelectedItem.ToString() == "LIKE") || (cboEditFilterComparison.SelectedItem.ToString() == "NOT LIKE"))
-                {
-                    value = "'%" + txtEditFilterValue.Text + "%'";
-                }
-                else
-                {
-                    value = "'" + txtEditFilterValue.Text + "'";
-                }
+                value = txtEditFilterValue.Text;
             }
+
 
             // Error check.
             try
