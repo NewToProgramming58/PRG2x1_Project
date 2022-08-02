@@ -71,6 +71,30 @@ namespace Project_Milestone_2
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.tpEdit = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.pnlEditAddSale = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label38 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.pnlEditAddItem = new System.Windows.Forms.Panel();
+            this.btnEditAddItemCancel = new System.Windows.Forms.Button();
+            this.btnEditAddItemSubmit = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.nudEditAddItemQuantity = new System.Windows.Forms.NumericUpDown();
+            this.label35 = new System.Windows.Forms.Label();
+            this.cboEditAddItemCategory = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtEditAddItemPrice = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtEditAddItemName = new System.Windows.Forms.TextBox();
             this.dgvEdit = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlEditFilter = new System.Windows.Forms.Panel();
@@ -167,18 +191,6 @@ namespace Project_Milestone_2
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnExitEditLogin = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
-            this.pnlEditAddItem = new System.Windows.Forms.Panel();
-            this.pnlEditAddSale = new System.Windows.Forms.Panel();
-            this.txtEditAddItemName = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txtEditAddItemPrice = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.cboEditAddItemCategory = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.nudEditAddItemQuantity = new System.Windows.Forms.NumericUpDown();
-            this.label36 = new System.Windows.Forms.Label();
-            this.btnEditAddItemSubmit = new System.Windows.Forms.Button();
             this.tcMainScreen.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -191,6 +203,10 @@ namespace Project_Milestone_2
             this.panel2.SuspendLayout();
             this.tpEdit.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.pnlEditAddSale.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.pnlEditAddItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEditAddItemQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdit)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlEditFilter.SuspendLayout();
@@ -215,8 +231,6 @@ namespace Project_Milestone_2
             this.tpEditLogin.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel17.SuspendLayout();
-            this.pnlEditAddItem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEditAddItemQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // tcMainScreen
@@ -633,6 +647,250 @@ namespace Project_Milestone_2
             this.panel8.Size = new System.Drawing.Size(942, 382);
             this.panel8.TabIndex = 8;
             // 
+            // pnlEditAddSale
+            // 
+            this.pnlEditAddSale.Controls.Add(this.button2);
+            this.pnlEditAddSale.Controls.Add(this.button3);
+            this.pnlEditAddSale.Controls.Add(this.label37);
+            this.pnlEditAddSale.Controls.Add(this.numericUpDown2);
+            this.pnlEditAddSale.Controls.Add(this.label38);
+            this.pnlEditAddSale.Controls.Add(this.comboBox7);
+            this.pnlEditAddSale.Controls.Add(this.label39);
+            this.pnlEditAddSale.Controls.Add(this.textBox4);
+            this.pnlEditAddSale.Controls.Add(this.label40);
+            this.pnlEditAddSale.Controls.Add(this.label41);
+            this.pnlEditAddSale.Controls.Add(this.textBox5);
+            this.pnlEditAddSale.Enabled = false;
+            this.pnlEditAddSale.Location = new System.Drawing.Point(518, 57);
+            this.pnlEditAddSale.Name = "pnlEditAddSale";
+            this.pnlEditAddSale.Size = new System.Drawing.Size(221, 227);
+            this.pnlEditAddSale.TabIndex = 6;
+            this.pnlEditAddSale.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(30, 176);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(111, 176);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Submit";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(4, 139);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(94, 13);
+            this.label37.TabIndex = 27;
+            this.label37.Text = "Quantity available:";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(126, 137);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(41, 20);
+            this.numericUpDown2.TabIndex = 26;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(4, 113);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(52, 13);
+            this.label38.TabIndex = 25;
+            this.label38.Text = "Category:";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "Cooldrink",
+            "Food",
+            "Breakfast",
+            "Snacks"});
+            this.comboBox7.Location = new System.Drawing.Point(126, 110);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(93, 21);
+            this.comboBox7.TabIndex = 18;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(2, 88);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(118, 13);
+            this.label39.TabIndex = 24;
+            this.label39.Text = "Price (only the number):";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(126, 83);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(93, 21);
+            this.textBox4.TabIndex = 23;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(4, 61);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(58, 13);
+            this.label40.TabIndex = 22;
+            this.label40.Text = "ItemName:";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(48, 8);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(119, 20);
+            this.label41.TabIndex = 21;
+            this.label41.Text = "Add new Sale";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(126, 56);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(93, 21);
+            this.textBox5.TabIndex = 20;
+            // 
+            // pnlEditAddItem
+            // 
+            this.pnlEditAddItem.Controls.Add(this.btnEditAddItemCancel);
+            this.pnlEditAddItem.Controls.Add(this.btnEditAddItemSubmit);
+            this.pnlEditAddItem.Controls.Add(this.label36);
+            this.pnlEditAddItem.Controls.Add(this.nudEditAddItemQuantity);
+            this.pnlEditAddItem.Controls.Add(this.label35);
+            this.pnlEditAddItem.Controls.Add(this.cboEditAddItemCategory);
+            this.pnlEditAddItem.Controls.Add(this.label34);
+            this.pnlEditAddItem.Controls.Add(this.txtEditAddItemPrice);
+            this.pnlEditAddItem.Controls.Add(this.label33);
+            this.pnlEditAddItem.Controls.Add(this.label32);
+            this.pnlEditAddItem.Controls.Add(this.txtEditAddItemName);
+            this.pnlEditAddItem.Enabled = false;
+            this.pnlEditAddItem.Location = new System.Drawing.Point(113, 57);
+            this.pnlEditAddItem.Name = "pnlEditAddItem";
+            this.pnlEditAddItem.Size = new System.Drawing.Size(221, 196);
+            this.pnlEditAddItem.TabIndex = 5;
+            this.pnlEditAddItem.Visible = false;
+            // 
+            // btnEditAddItemCancel
+            // 
+            this.btnEditAddItemCancel.Location = new System.Drawing.Point(29, 156);
+            this.btnEditAddItemCancel.Name = "btnEditAddItemCancel";
+            this.btnEditAddItemCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnEditAddItemCancel.TabIndex = 17;
+            this.btnEditAddItemCancel.Text = "Cancel";
+            this.btnEditAddItemCancel.UseVisualStyleBackColor = true;
+            this.btnEditAddItemCancel.Click += new System.EventHandler(this.btnEditAddItemCancel_Click);
+            // 
+            // btnEditAddItemSubmit
+            // 
+            this.btnEditAddItemSubmit.Location = new System.Drawing.Point(110, 156);
+            this.btnEditAddItemSubmit.Name = "btnEditAddItemSubmit";
+            this.btnEditAddItemSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnEditAddItemSubmit.TabIndex = 9;
+            this.btnEditAddItemSubmit.Text = "Submit";
+            this.btnEditAddItemSubmit.UseVisualStyleBackColor = true;
+            this.btnEditAddItemSubmit.Click += new System.EventHandler(this.btnEditAddItemSubmit_Click);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(3, 119);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(94, 13);
+            this.label36.TabIndex = 16;
+            this.label36.Text = "Quantity available:";
+            // 
+            // nudEditAddItemQuantity
+            // 
+            this.nudEditAddItemQuantity.Location = new System.Drawing.Point(125, 117);
+            this.nudEditAddItemQuantity.Name = "nudEditAddItemQuantity";
+            this.nudEditAddItemQuantity.Size = new System.Drawing.Size(41, 20);
+            this.nudEditAddItemQuantity.TabIndex = 15;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 93);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(52, 13);
+            this.label35.TabIndex = 14;
+            this.label35.Text = "Category:";
+            // 
+            // cboEditAddItemCategory
+            // 
+            this.cboEditAddItemCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEditAddItemCategory.FormattingEnabled = true;
+            this.cboEditAddItemCategory.Items.AddRange(new object[] {
+            "Cooldrink",
+            "Food",
+            "Breakfast",
+            "Snacks"});
+            this.cboEditAddItemCategory.Location = new System.Drawing.Point(125, 90);
+            this.cboEditAddItemCategory.Name = "cboEditAddItemCategory";
+            this.cboEditAddItemCategory.Size = new System.Drawing.Size(93, 21);
+            this.cboEditAddItemCategory.TabIndex = 0;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(1, 68);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(118, 13);
+            this.label34.TabIndex = 13;
+            this.label34.Text = "Price (only the number):";
+            // 
+            // txtEditAddItemPrice
+            // 
+            this.txtEditAddItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditAddItemPrice.Location = new System.Drawing.Point(125, 63);
+            this.txtEditAddItemPrice.Name = "txtEditAddItemPrice";
+            this.txtEditAddItemPrice.Size = new System.Drawing.Size(93, 21);
+            this.txtEditAddItemPrice.TabIndex = 12;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(3, 41);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(58, 13);
+            this.label33.TabIndex = 11;
+            this.label33.Text = "ItemName:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(51, 8);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(119, 20);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "Add new Item";
+            // 
+            // txtEditAddItemName
+            // 
+            this.txtEditAddItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditAddItemName.Location = new System.Drawing.Point(125, 36);
+            this.txtEditAddItemName.Name = "txtEditAddItemName";
+            this.txtEditAddItemName.Size = new System.Drawing.Size(93, 21);
+            this.txtEditAddItemName.TabIndex = 9;
+            // 
             // dgvEdit
             // 
             this.dgvEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -670,6 +928,7 @@ namespace Project_Milestone_2
             this.pnlEditFilter.Controls.Add(this.label21);
             this.pnlEditFilter.Controls.Add(this.label22);
             this.pnlEditFilter.Controls.Add(this.comboBox3);
+            this.pnlEditFilter.Enabled = false;
             this.pnlEditFilter.Location = new System.Drawing.Point(320, 6);
             this.pnlEditFilter.Name = "pnlEditFilter";
             this.pnlEditFilter.Size = new System.Drawing.Size(281, 86);
@@ -1586,123 +1845,6 @@ namespace Project_Milestone_2
             this.label31.TabIndex = 15;
             this.label31.Text = "Edit User Details";
             // 
-            // pnlEditAddItem
-            // 
-            this.pnlEditAddItem.Controls.Add(this.btnEditAddItemSubmit);
-            this.pnlEditAddItem.Controls.Add(this.label36);
-            this.pnlEditAddItem.Controls.Add(this.nudEditAddItemQuantity);
-            this.pnlEditAddItem.Controls.Add(this.label35);
-            this.pnlEditAddItem.Controls.Add(this.cboEditAddItemCategory);
-            this.pnlEditAddItem.Controls.Add(this.label34);
-            this.pnlEditAddItem.Controls.Add(this.txtEditAddItemPrice);
-            this.pnlEditAddItem.Controls.Add(this.label33);
-            this.pnlEditAddItem.Controls.Add(this.label32);
-            this.pnlEditAddItem.Controls.Add(this.txtEditAddItemName);
-            this.pnlEditAddItem.Location = new System.Drawing.Point(113, 57);
-            this.pnlEditAddItem.Name = "pnlEditAddItem";
-            this.pnlEditAddItem.Size = new System.Drawing.Size(221, 196);
-            this.pnlEditAddItem.TabIndex = 5;
-            // 
-            // pnlEditAddSale
-            // 
-            this.pnlEditAddSale.Location = new System.Drawing.Point(518, 57);
-            this.pnlEditAddSale.Name = "pnlEditAddSale";
-            this.pnlEditAddSale.Size = new System.Drawing.Size(221, 227);
-            this.pnlEditAddSale.TabIndex = 6;
-            // 
-            // txtEditAddItemName
-            // 
-            this.txtEditAddItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditAddItemName.Location = new System.Drawing.Point(125, 36);
-            this.txtEditAddItemName.Name = "txtEditAddItemName";
-            this.txtEditAddItemName.Size = new System.Drawing.Size(93, 21);
-            this.txtEditAddItemName.TabIndex = 9;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(51, 8);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(119, 20);
-            this.label32.TabIndex = 10;
-            this.label32.Text = "Add new Item";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(3, 41);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(58, 13);
-            this.label33.TabIndex = 11;
-            this.label33.Text = "ItemName:";
-            // 
-            // txtEditAddItemPrice
-            // 
-            this.txtEditAddItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditAddItemPrice.Location = new System.Drawing.Point(125, 63);
-            this.txtEditAddItemPrice.Name = "txtEditAddItemPrice";
-            this.txtEditAddItemPrice.Size = new System.Drawing.Size(93, 21);
-            this.txtEditAddItemPrice.TabIndex = 12;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(1, 68);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(118, 13);
-            this.label34.TabIndex = 13;
-            this.label34.Text = "Price (only the number):";
-            // 
-            // cboEditAddItemCategory
-            // 
-            this.cboEditAddItemCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEditAddItemCategory.FormattingEnabled = true;
-            this.cboEditAddItemCategory.Items.AddRange(new object[] {
-            "Cooldrink",
-            "Food",
-            "Breakfast",
-            "Snacks"});
-            this.cboEditAddItemCategory.Location = new System.Drawing.Point(125, 90);
-            this.cboEditAddItemCategory.Name = "cboEditAddItemCategory";
-            this.cboEditAddItemCategory.Size = new System.Drawing.Size(93, 21);
-            this.cboEditAddItemCategory.TabIndex = 0;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(3, 93);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(52, 13);
-            this.label35.TabIndex = 14;
-            this.label35.Text = "Category:";
-            // 
-            // nudEditAddItemQuantity
-            // 
-            this.nudEditAddItemQuantity.Location = new System.Drawing.Point(125, 117);
-            this.nudEditAddItemQuantity.Name = "nudEditAddItemQuantity";
-            this.nudEditAddItemQuantity.Size = new System.Drawing.Size(41, 20);
-            this.nudEditAddItemQuantity.TabIndex = 15;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(3, 119);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(94, 13);
-            this.label36.TabIndex = 16;
-            this.label36.Text = "Quantity available:";
-            // 
-            // btnEditAddItemSubmit
-            // 
-            this.btnEditAddItemSubmit.Location = new System.Drawing.Point(77, 152);
-            this.btnEditAddItemSubmit.Name = "btnEditAddItemSubmit";
-            this.btnEditAddItemSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnEditAddItemSubmit.TabIndex = 9;
-            this.btnEditAddItemSubmit.Text = "Submit";
-            this.btnEditAddItemSubmit.UseVisualStyleBackColor = true;
-            this.btnEditAddItemSubmit.Click += new System.EventHandler(this.btnEditAddItemSubmit_Click);
-            // 
             // frmTuckShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1730,6 +1872,12 @@ namespace Project_Milestone_2
             this.panel2.ResumeLayout(false);
             this.tpEdit.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.pnlEditAddSale.ResumeLayout(false);
+            this.pnlEditAddSale.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.pnlEditAddItem.ResumeLayout(false);
+            this.pnlEditAddItem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEditAddItemQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdit)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1767,9 +1915,6 @@ namespace Project_Milestone_2
             this.panel20.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
-            this.pnlEditAddItem.ResumeLayout(false);
-            this.pnlEditAddItem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEditAddItemQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1925,6 +2070,18 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txtEditAddItemName;
+        private System.Windows.Forms.Button btnEditAddItemCancel;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
 
