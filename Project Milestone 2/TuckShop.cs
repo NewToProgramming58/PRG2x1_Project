@@ -202,21 +202,25 @@ namespace Project_Milestone_2
         private void btnEditFilter_Click(object sender, EventArgs e)
         {
             pnlEditFilter.Visible = true;
+            pnlEditFilter.Enabled = true;
         }
 
         private void btnCancelEditFilter_Click(object sender, EventArgs e)
         {
             pnlEditFilter.Visible = false;
+            pnlEditFilter.Enabled = false;
         }
 
         private void btnRemoveEditFilters_Click(object sender, EventArgs e)
         {
             pnlEditFilter.Visible = false;
+            pnlEditFilter.Enabled = false;
         }
 
         private void btnApplyEditFilters_Click(object sender, EventArgs e)
         {
             pnlEditFilter.Visible = false;
+            pnlEditFilter.Enabled = false;
         }
 
         private void btnEditAdd_Click(object sender, EventArgs e)
@@ -224,10 +228,13 @@ namespace Project_Milestone_2
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
                 pnlEditAddItem.Visible = true;
+                pnlEditAddItem.Enabled = true;
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
+                // STILL HAVE TO DO
                 pnlEditAddSale.Visible = true;
+                pnlEditAddSale.Enabled = true;
             }
         }
         private void btnEditAddItemSubmit_Click(object sender, EventArgs e)
@@ -239,6 +246,12 @@ namespace Project_Milestone_2
             itemManager.AddItem(itemName, itemCategory, itemQuantity, itemPrice);
             dgvEdit.DataSource = itemManager.ShowAllItems();
             pnlEditAddItem.Visible = false;
+            pnlEditAddItem.Enabled = false;
+        }
+        private void btnEditAddItemCancel_Click(object sender, EventArgs e)
+        {
+            pnlEditAddItem.Visible = false;
+            pnlEditAddItem.Enabled = false;
         }
 
         private void btnEditChange_Click(object sender, EventArgs e)
@@ -264,6 +277,7 @@ namespace Project_Milestone_2
                 }
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
+                    // STILL HAVE TO DO
                     // Remove sale record
                 }
             }
