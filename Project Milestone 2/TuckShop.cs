@@ -258,6 +258,8 @@ namespace Project_Milestone_2
         {
             //
         }
+
+        // Asks user if he/she is sure they want to delete the record and if Yes is selected, deletes appropriate record
         private void btnEditRemove_Click(object sender, EventArgs e)
         {
             var row = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex];
@@ -278,7 +280,8 @@ namespace Project_Milestone_2
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
                     // STILL HAVE TO DO
-                    // Remove sale record
+                    //saleManager.RemoveItem(ID)
+                    //dgvEdit.DataSource = saleManager.ShowAllItems();
                 }
             }
         }
@@ -294,6 +297,7 @@ namespace Project_Milestone_2
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
                 // Show Sales
+                //dgvEdit.DataSource = saleManager.ShowAllItems();
             }
         }
         //-----------------------------------------------------------------------------------------------

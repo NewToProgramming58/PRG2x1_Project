@@ -947,6 +947,19 @@ namespace Project_Milestone_2
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "LIKE",
+            "=",
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "NOT LIKE",
+            "NOT =",
+            "NOT >",
+            "NOT >=",
+            "NOT <",
+            "NOT <="});
             this.comboBox2.Location = new System.Drawing.Point(105, 19);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(49, 21);
