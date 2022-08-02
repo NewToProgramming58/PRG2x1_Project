@@ -167,16 +167,6 @@ namespace Project_Milestone_2
             this.dgvAdmin = new System.Windows.Forms.DataGridView();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
-            this.pnlAdminFilter = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.btnRemoveAdminFilters = new System.Windows.Forms.Button();
-            this.btnCancelAdminFilter = new System.Windows.Forms.Button();
-            this.btnApplyAdminFilter = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.btnAdminAdd = new System.Windows.Forms.Button();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.btnAdminFilter = new System.Windows.Forms.Button();
@@ -210,6 +200,17 @@ namespace Project_Milestone_2
             this.label19 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.tcMainScreen.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -246,12 +247,12 @@ namespace Project_Milestone_2
             this.panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).BeginInit();
             this.panel16.SuspendLayout();
-            this.pnlAdminFilter.SuspendLayout();
             this.panel18.SuspendLayout();
             this.tpEditLogin.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel21.SuspendLayout();
+            this.panel22.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMainScreen
@@ -1640,8 +1641,8 @@ namespace Project_Milestone_2
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel16.Controls.Add(this.panel22);
             this.panel16.Controls.Add(this.label30);
-            this.panel16.Controls.Add(this.pnlAdminFilter);
             this.panel16.Controls.Add(this.btnAdminAdd);
             this.panel16.Controls.Add(this.richTextBox3);
             this.panel16.Controls.Add(this.btnAdminFilter);
@@ -1662,104 +1663,6 @@ namespace Project_Milestone_2
             this.label30.Size = new System.Drawing.Size(94, 29);
             this.label30.TabIndex = 24;
             this.label30.Text = "ADMIN";
-            // 
-            // pnlAdminFilter
-            // 
-            this.pnlAdminFilter.Controls.Add(this.label25);
-            this.pnlAdminFilter.Controls.Add(this.comboBox5);
-            this.pnlAdminFilter.Controls.Add(this.btnRemoveAdminFilters);
-            this.pnlAdminFilter.Controls.Add(this.btnCancelAdminFilter);
-            this.pnlAdminFilter.Controls.Add(this.btnApplyAdminFilter);
-            this.pnlAdminFilter.Controls.Add(this.textBox3);
-            this.pnlAdminFilter.Controls.Add(this.label26);
-            this.pnlAdminFilter.Controls.Add(this.label28);
-            this.pnlAdminFilter.Controls.Add(this.comboBox6);
-            this.pnlAdminFilter.Location = new System.Drawing.Point(653, 6);
-            this.pnlAdminFilter.Name = "pnlAdminFilter";
-            this.pnlAdminFilter.Size = new System.Drawing.Size(281, 86);
-            this.pnlAdminFilter.TabIndex = 23;
-            this.pnlAdminFilter.Visible = false;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(102, 3);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(65, 13);
-            this.label25.TabIndex = 8;
-            this.label25.Text = "Comparison:";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(105, 19);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(49, 21);
-            this.comboBox5.TabIndex = 7;
-            // 
-            // btnRemoveAdminFilters
-            // 
-            this.btnRemoveAdminFilters.Location = new System.Drawing.Point(82, 49);
-            this.btnRemoveAdminFilters.Name = "btnRemoveAdminFilters";
-            this.btnRemoveAdminFilters.Size = new System.Drawing.Size(102, 23);
-            this.btnRemoveAdminFilters.TabIndex = 6;
-            this.btnRemoveAdminFilters.Text = "Remove all filters";
-            this.btnRemoveAdminFilters.UseVisualStyleBackColor = true;
-            this.btnRemoveAdminFilters.Click += new System.EventHandler(this.BtnRemoveAdminFilters_Click);
-            // 
-            // btnCancelAdminFilter
-            // 
-            this.btnCancelAdminFilter.Location = new System.Drawing.Point(3, 49);
-            this.btnCancelAdminFilter.Name = "btnCancelAdminFilter";
-            this.btnCancelAdminFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelAdminFilter.TabIndex = 5;
-            this.btnCancelAdminFilter.Text = "Cancel";
-            this.btnCancelAdminFilter.UseVisualStyleBackColor = true;
-            this.btnCancelAdminFilter.Click += new System.EventHandler(this.BtnCancelAdminFilter_Click);
-            // 
-            // btnApplyAdminFilter
-            // 
-            this.btnApplyAdminFilter.Location = new System.Drawing.Point(188, 49);
-            this.btnApplyAdminFilter.Name = "btnApplyAdminFilter";
-            this.btnApplyAdminFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnApplyAdminFilter.TabIndex = 4;
-            this.btnApplyAdminFilter.Text = "Apply";
-            this.btnApplyAdminFilter.UseVisualStyleBackColor = true;
-            this.btnApplyAdminFilter.Click += new System.EventHandler(this.BtnApplyAdminFilter_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(163, 18);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 3;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(185, 3);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(61, 13);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Filter value:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(3, 3);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(66, 13);
-            this.label28.TabIndex = 1;
-            this.label28.Text = "Field to filter:";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(3, 19);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(96, 21);
-            this.comboBox6.TabIndex = 0;
             // 
             // btnAdminAdd
             // 
@@ -2097,6 +2000,127 @@ namespace Project_Milestone_2
             this.comboBox2.Size = new System.Drawing.Size(93, 21);
             this.comboBox2.TabIndex = 0;
             // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.PowderBlue;
+            this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel22.Controls.Add(this.label25);
+            this.panel22.Controls.Add(this.label26);
+            this.panel22.Controls.Add(this.comboBox3);
+            this.panel22.Controls.Add(this.button8);
+            this.panel22.Controls.Add(this.button9);
+            this.panel22.Controls.Add(this.button10);
+            this.panel22.Controls.Add(this.textBox2);
+            this.panel22.Controls.Add(this.label28);
+            this.panel22.Controls.Add(this.label52);
+            this.panel22.Controls.Add(this.comboBox5);
+            this.panel22.Enabled = false;
+            this.panel22.Location = new System.Drawing.Point(653, 3);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(281, 105);
+            this.panel22.TabIndex = 25;
+            this.panel22.Visible = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(87, 6);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(106, 20);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "Filter values";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(107, 31);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(65, 13);
+            this.label26.TabIndex = 8;
+            this.label26.Text = "Comparison:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "LIKE",
+            "=",
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "NOT LIKE",
+            "!="});
+            this.comboBox3.Location = new System.Drawing.Point(109, 46);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(56, 21);
+            this.comboBox3.TabIndex = 7;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(91, 74);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(102, 23);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "Remove all filters";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(8, 74);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 5;
+            this.button9.Text = "Cancel";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(200, 74);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 4;
+            this.button10.Text = "Apply";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(174, 45);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.TabIndex = 3;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(191, 31);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(61, 13);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "Filter value:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(20, 31);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(66, 13);
+            this.label52.TabIndex = 1;
+            this.label52.Text = "Field to filter:";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.ItemHeight = 13;
+            this.comboBox5.Location = new System.Drawing.Point(8, 46);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(93, 21);
+            this.comboBox5.TabIndex = 0;
+            // 
             // FrmTuckShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2160,8 +2184,6 @@ namespace Project_Milestone_2
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).EndInit();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            this.pnlAdminFilter.ResumeLayout(false);
-            this.pnlAdminFilter.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.tpEditLogin.ResumeLayout(false);
@@ -2171,6 +2193,8 @@ namespace Project_Milestone_2
             this.panel17.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2272,16 +2296,6 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.DataGridView dgvAdmin;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel pnlAdminFilter;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Button btnRemoveAdminFilters;
-        private System.Windows.Forms.Button btnCancelAdminFilter;
-        private System.Windows.Forms.Button btnApplyAdminFilter;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Button btnAdminAdd;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Button btnAdminFilter;
@@ -2357,6 +2371,17 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.ComboBox comboBox5;
     }
 }
 
