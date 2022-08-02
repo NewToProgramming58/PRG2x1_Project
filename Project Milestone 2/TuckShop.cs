@@ -286,31 +286,18 @@ namespace Project_Milestone_2
 
         private void BtnEditFiltersApply_Click(object sender, EventArgs e)
         {
-            string value;
             string filter;
-            double numTest;
 
             EnableEditForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
-
-            // This checks if the value needs to be formatted and puts it in the correct SQL format if needed.
-            try
-            {
-                numTest = double.Parse(txtEditFilterValue.Text);
-                value = numTest.ToString();
-            }
-            catch (Exception)
-            {
-                value = txtEditFilterValue.Text;
-            }
 
 
             // Error check.
             try
             {
                 // Puts the filters in the correct format for the method.
-                filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + value;
+                filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + txtEditFilterValue.Text;
 
                 if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
                 {
