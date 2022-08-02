@@ -96,6 +96,12 @@ namespace Project_Milestone_2
             }
             Size = new Size(215, 266);
         }
+        // Navigation
+        public void OpenMenu()
+        {
+            tcMainScreen.SelectedTab = tpMenu;
+            Size = new Size(275, 312);
+        }
 
         // Login page
         //-----------------------------------------------------------------------------------------------
@@ -107,8 +113,7 @@ namespace Project_Milestone_2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
         //-----------------------------------------------------------------------------------------------
 
@@ -145,6 +150,9 @@ namespace Project_Milestone_2
         {
             tcMainScreen.SelectedTab = tpEdit;
             Size = new Size(966, 558);
+            if (cboEditCurrentTable.SelectedIndex == -1)
+                cboEditCurrentTable.SelectedIndex = cboEditCurrentTable.FindString("Items");
+            // LOAD TABLE INTO DATAGRIDVIEW
         }
 
         private void btnViewRecords_Click(object sender, EventArgs e)
@@ -177,8 +185,7 @@ namespace Project_Milestone_2
         //-----------------------------------------------------------------------------------------------
         private void btnExitOrder_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
         //-----------------------------------------------------------------------------------------------
 
@@ -186,8 +193,7 @@ namespace Project_Milestone_2
         //-----------------------------------------------------------------------------------------------
         private void btnExitEdit_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
 
         private void btnEditFilter_Click(object sender, EventArgs e)
@@ -209,14 +215,31 @@ namespace Project_Milestone_2
         {
             pnlEditFilter.Visible = false;
         }
+
+        private void btnEditAdd_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void btnEditChange_Click(object sender, EventArgs e)
+        {
+            //
+        }
+        private void btnEditRemove_Click(object sender, EventArgs e)
+        {
+            //
+        }
+        private void cboEditCurrentTable_SelectedValueChanged(object sender, EventArgs e)
+        {
+            // CHANGE THE TABLE VIEWED
+        }
         //-----------------------------------------------------------------------------------------------
 
         // View page
         //-----------------------------------------------------------------------------------------------
         private void btnExitView_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
 
         private void btnViewFilter_Click(object sender, EventArgs e)
@@ -242,8 +265,7 @@ namespace Project_Milestone_2
         //-----------------------------------------------------------------------------------------------
         private void btnExitAdminEditLogin_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
 
         private void btnAdminFilter_Click(object sender, EventArgs e)
@@ -271,8 +293,7 @@ namespace Project_Milestone_2
         //-----------------------------------------------------------------------------------------------
         private void btnExitEditLogin_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
         //-----------------------------------------------------------------------------------------------
     }
