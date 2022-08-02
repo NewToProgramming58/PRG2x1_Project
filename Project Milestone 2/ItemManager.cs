@@ -120,7 +120,7 @@ namespace Project_Milestone_2
         }
 
         //Show all
-        public DataSet ShowAllItems()
+        public DataTable ShowAllItems()
         {
             string cmdString = "SELECT * FROM Items";
             SqlCommand sqlCommand = new SqlCommand();
@@ -131,7 +131,8 @@ namespace Project_Milestone_2
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
             var ds = new DataSet();
             dataAdapter.Fill(ds);
-            return ds;
+
+            return ds.Tables[0];
         }
     }
 }

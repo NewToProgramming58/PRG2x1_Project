@@ -98,6 +98,7 @@ namespace Project_Milestone_2
                 tab.Text = "";
             }
             Size = new Size(215, 266);
+            dgvEdit.DataSource = itemManager.ShowAllItems();
         }
         // Navigation
         public void OpenMenu()
