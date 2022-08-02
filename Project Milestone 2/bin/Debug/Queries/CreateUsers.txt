@@ -9,7 +9,7 @@ CREATE TABLE Users (
 
 INSERT INTO Users (Email,Password,Name,Surname)
 VALUES
-  ('vel.pede.blandit@protonmail.com',9113,'Wallace','Haney'),
+  ('ADMIN',9113,'Wallace','Haney'),
   ('volutpat.nunc@outlook.couk',2050,'Bianca','Giles'),
   ('erat@hotmail.ca',6548,'Kirestin','Price'),
   ('vel.venenatis.vel@hotmail.net',5881,'Amery','Hull'),
