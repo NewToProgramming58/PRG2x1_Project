@@ -71,6 +71,7 @@ namespace Project_Milestone_2
             {
                 // When DB is 100% then simply open a connection
                 sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
+                sqlConnection.Open();
             }
             //Object to Manage DB control concerning Items
             itemManager = new ItemManager(sqlConnection);
