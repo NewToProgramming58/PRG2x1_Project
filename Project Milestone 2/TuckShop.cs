@@ -15,6 +15,12 @@ namespace Project_Milestone_2
 {
     public partial class FrmTuckShop : Form
     {
+        // Lists used for saving filters to outputs
+        public List<string> editItemsFilterList = new List<string>();
+        int ItemFilterCount = 0;
+        public List<string> editSalesFilterList = new List<string>();
+        int SaleFilterCount = 0;
+
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
         static UserManager userManager;
@@ -206,6 +212,10 @@ namespace Project_Milestone_2
         {
             pnlEditFilter.Visible = true;
             pnlEditFilter.Enabled = true;
+            for (int i = 0; i < dgvEdit.ColumnCount; i++)
+            {
+                cboEditFilterField.Items.Add(dgvEdit.Columns[i].HeaderText);
+            }
         }
 
         private void BtnCancelEditFilter_Click(object sender, EventArgs e)
@@ -218,12 +228,42 @@ namespace Project_Milestone_2
         {
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
+            lblEditFilters.Text = "Filters: No filters are applied";
+            lblEditFilters.ForeColor = Color.Black;
+            //REPEATS////////////////////////////////////////////////////////////////////////////////////////////////////////
+            if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
+            {
+                editItemsFilterList.Clear();
+                dgvEdit.DataSource = itemManager.ShowAllItems();
+            }
+            else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
+            {
+                // Show Sales
+                editSalesFilterList.Clear();
+                //dgvEdit.DataSource = saleManager.ShowAllItems();
+            }
         }
 
         private void BtnApplyEditFilters_Click(object sender, EventArgs e)
         {
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
+            string filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + txtEditFilterValue.Text;
+            // Shows the user filters are applied
+            lblEditFilters.Text = "Filters: Filters are applied";
+            lblEditFilters.ForeColor = Color.Blue;
+
+            if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
+            {
+                editItemsFilterList.Add(filter);
+                dgvEdit.DataSource = itemManager.FilterItems(editItemsFilterList);
+            }
+            else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
+            {
+                // Show Sales
+                editSalesFilterList.Add(filter);
+                //dgvEdit.DataSource = saleManager.FilterItems(editSalesFilterList);
+            }
         }
 
         private void BtnEditAdd_Click(object sender, EventArgs e)
