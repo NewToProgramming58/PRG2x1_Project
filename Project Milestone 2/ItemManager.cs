@@ -141,13 +141,13 @@ namespace Project_Milestone_2
             return ds.Tables[0];
         }
 
-        public DataTable FilterItems(List<String> filters) 
+        public DataTable FilterItems(List<string> filters) 
         {
-            List<String> fields = new List<String>();
-            List<String> signs = new List<String>();
-            List<String> values = new List<String>();
+            List<string> fields = new List<string>();
+            List<string> signs = new List<string>();
+            List<string> values = new List<string>();
                              
-            foreach (String filter in filters) 
+            foreach (string filter in filters) 
             {
                 var splitFilters = filter.Split('#');
                 fields.Add(splitFilters[0]);
