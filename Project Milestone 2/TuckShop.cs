@@ -13,12 +13,13 @@ using System.Windows.Forms;
 
 namespace Project_Milestone_2
 {
+    public delegate void EventHandler(Exception exception);//////////////////
     public partial class FrmTuckShop : Form
     {
+        public static event EventHandler ErrorHandler;////////////////////
         // Lists used for saving filters to outputs
         public List<string> editItemsFilterList = new List<string>();
         public List<string> editSalesFilterList = new List<string>();
-
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
         static UserManager userManager;
@@ -204,16 +205,22 @@ namespace Project_Milestone_2
         private void BtnExitEdit_Click(object sender, EventArgs e)
         {
             OpenMenu();
+            // Clears the filters that were applied.
+            editItemsFilterList.Clear();
         }
 
         private void BtnEditFilter_Click(object sender, EventArgs e)
         {
+            // Makes sure user is aware of requirements to do this task.
             var result = MessageBox.Show("You might need some SQL experience to perform filters. Are you sure you want to continue?", "Filter", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 DisableForm();
                 pnlEditFilter.Visible = true;
                 pnlEditFilter.Enabled = true;
+
+                // Loads the field-titles into an input.
+                cboEditFilterField.Items.Clear();
                 for (int i = 0; i < dgvEdit.ColumnCount; i++)
                 {
                     cboEditFilterField.Items.Add(dgvEdit.Columns[i].HeaderText);
@@ -221,21 +228,21 @@ namespace Project_Milestone_2
             }
         }
 
-        private void BtnCancelEditFilter_Click(object sender, EventArgs e)
+        private void BtnEditFiltersCancel_Click(object sender, EventArgs e)
         {
             EnableForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
         }
 
-        private void BtnRemoveEditFilters_Click(object sender, EventArgs e)
+        private void BtnEditFiltersRemove_Click(object sender, EventArgs e)
         {
             EnableForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
             lblEditFilters.Text = "Filters: No filters are applied";
             lblEditFilters.ForeColor = Color.Black;
-            //REPEATS////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
                 editItemsFilterList.Clear();
@@ -243,13 +250,12 @@ namespace Project_Milestone_2
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
-                // Show Sales
                 editSalesFilterList.Clear();
-                //dgvEdit.DataSource = saleManager.ShowAllItems();
+                //dgvEdit.DataSource = saleManager.ShowAllItems();/////////////////////////////////////////////////////////////
             }
         }
 
-        private void BtnApplyEditFilters_Click(object sender, EventArgs e)
+        private void BtnEditFiltersApply_Click(object sender, EventArgs e)
         {
             string value;
             string filter;
@@ -258,7 +264,8 @@ namespace Project_Milestone_2
             EnableForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
-            //This checks if the value needs to be formatted and puts it in the correct SQL format if needed
+
+            // This checks if the value needs to be formatted and puts it in the correct SQL format if needed.
             try
             {
                 numTest = double.Parse(txtEditFilterValue.Text);
@@ -275,11 +282,13 @@ namespace Project_Milestone_2
                     value = "'" + txtEditFilterValue.Text + "'";
                 }
             }
-            // Shows the user filters are applied
+
+            // Shows the user filters are applied.
             lblEditFilters.Text = "Filters: Filters are applied";
             lblEditFilters.ForeColor = Color.Blue;
-            // Puts the filters in the correct format for the method
+            // Puts the filters in the correct format for the method.
             filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + value;
+
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
                 editItemsFilterList.Add(filter);
@@ -287,9 +296,8 @@ namespace Project_Milestone_2
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
-                // Show Sales
                 editSalesFilterList.Add(filter);
-                //dgvEdit.DataSource = saleManager.FilterItems(editSalesFilterList);
+                //dgvEdit.DataSource = saleManager.FilterItems(editSalesFilterList);////////////////////////////////////////////////////////////
             }
         }
 
@@ -303,7 +311,7 @@ namespace Project_Milestone_2
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
-                // STILL HAVE TO DO
+                // STILL HAVE TO DO//////////////////////////////////////////////////////////////////////////////////////
                 DisableForm();
                 pnlEditAddSale.Visible = true;
                 pnlEditAddSale.Enabled = true;
@@ -317,6 +325,7 @@ namespace Project_Milestone_2
             int itemQuantity = int.Parse(nudEditAddItemQuantity.Value.ToString());
 
             itemManager.AddItem(itemName, itemCategory, itemQuantity, itemPrice);
+            // Refreshes values.
             dgvEdit.DataSource = itemManager.ShowAllItems();
             EnableForm();
             pnlEditAddItem.Visible = false;
@@ -331,7 +340,45 @@ namespace Project_Milestone_2
 
         private void BtnEditChange_Click(object sender, EventArgs e)
         {
-            //
+            if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
+            {
+                DisableForm();
+                dgvEdit.Enabled = false;
+                pnlEditChangeItem.Visible = true;
+                pnlEditChangeItem.Enabled = true;
+                // Outputs the current values selected into the input-areas.
+                txtEditChangeItemID.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                txtEditChangeItemName.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[1].Value.ToString();
+                txtEditChangeItemPrice.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[2].Value.ToString();
+                cboEditChangeItemCategory.SelectedItem = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[3].Value.ToString();
+                nudEditChangeItemQuantity.Value = int.Parse(dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString());
+            }
+            else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
+            {
+                MessageBox.Show("Only Items can be changed. Sales can only be Removed or Added");
+            }
+        }
+
+        private void btnEditItemChangeCancel_Click(object sender, EventArgs e)
+        {
+            EnableForm();
+            pnlEditChangeItem.Visible = false;
+            pnlEditChangeItem.Enabled = false;
+            dgvEdit.Enabled = true;
+        }
+
+        private void btnEditChangeItemSubmit_Click(object sender, EventArgs e)
+        {
+            string values;
+            // Stores values in correct format for method.
+            values = txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + cboEditChangeItemCategory.SelectedItem + "#" + nudEditChangeItemQuantity.Value.ToString();
+            //itemManager.UpdateItemInfo(values);//////////////////////////////////////////////////////
+
+            //REFRESH DATA//////////////////////////////////////////////////////////////////////////////////
+            EnableForm();
+            pnlEditChangeItem.Visible = false;
+            pnlEditChangeItem.Enabled = false;
+            dgvEdit.Enabled = true;
         }
 
         private void BtnEditRemove_Click(object sender, EventArgs e)
@@ -350,20 +397,20 @@ namespace Project_Milestone_2
                 if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
                 {
                     itemManager.RemoveItem(ID);
+                    // Refreshes values.
                     dgvEdit.DataSource = itemManager.ShowAllItems();
                 }
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
-                    // STILL HAVE TO DO
-                    //saleManager.RemoveItem(ID)
+                    //saleManager.RemoveItem(ID)//////////////////////////////////////////////////////////////////
                     //dgvEdit.DataSource = saleManager.ShowAllItems();
                 }
             }
         }
 
+        // Whenever the combobox changes, the table viewed changes.
         private void CboEditCurrentTable_SelectedValueChanged(object sender, EventArgs e)
         {
-            // Whenever the combobox changes, the table viewed changes.
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
 
@@ -371,12 +418,11 @@ namespace Project_Milestone_2
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
-                // Show Sales
-                //dgvEdit.DataSource = saleManager.ShowAllItems();
+                //dgvEdit.DataSource = saleManager.ShowAllItems();///////////////////////////////////////////////////
             }
         }
 
-        //Methods
+        // Methods used for validation by disabling/enabling certain inputs.
         public void DisableForm()
         {
             cboEditCurrentTable.Enabled = false;

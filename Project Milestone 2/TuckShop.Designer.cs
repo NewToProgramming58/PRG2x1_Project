@@ -71,6 +71,22 @@ namespace Project_Milestone_2
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.tpEdit = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.pnlEditChangeItem = new System.Windows.Forms.Panel();
+            this.txtEditChangeItemID = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.btnEditItemChangeCancel = new System.Windows.Forms.Button();
+            this.btnEditChangeItemSubmit = new System.Windows.Forms.Button();
+            this.nudEditChangeItemQuantity = new System.Windows.Forms.NumericUpDown();
+            this.cboEditChangeItemCategory = new System.Windows.Forms.ComboBox();
+            this.txtEditChangeItemPrice = new System.Windows.Forms.TextBox();
+            this.txtEditChangeItemName = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
             this.lblEditFilters = new System.Windows.Forms.Label();
             this.pnlEditAddSale = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -101,9 +117,9 @@ namespace Project_Milestone_2
             this.pnlEditFilter = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
             this.cboEditFilterComparison = new System.Windows.Forms.ComboBox();
-            this.btnRemoveEditFilters = new System.Windows.Forms.Button();
-            this.btnCancelEditFilter = new System.Windows.Forms.Button();
-            this.btnApplyEditFilters = new System.Windows.Forms.Button();
+            this.btnEditFiltersRemove = new System.Windows.Forms.Button();
+            this.btnEditFiltersCancel = new System.Windows.Forms.Button();
+            this.btnEditFiltersApply = new System.Windows.Forms.Button();
             this.txtEditFilterValue = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -192,6 +208,7 @@ namespace Project_Milestone_2
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnExitEditLogin = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             this.tcMainScreen.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -204,6 +221,8 @@ namespace Project_Milestone_2
             this.panel2.SuspendLayout();
             this.tpEdit.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.pnlEditChangeItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEditChangeItemQuantity)).BeginInit();
             this.pnlEditAddSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.pnlEditAddItem.SuspendLayout();
@@ -628,6 +647,7 @@ namespace Project_Milestone_2
             // 
             // tpEdit
             // 
+            this.tpEdit.Controls.Add(this.pnlEditFilter);
             this.tpEdit.Controls.Add(this.panel8);
             this.tpEdit.Controls.Add(this.panel1);
             this.tpEdit.Location = new System.Drawing.Point(4, 22);
@@ -641,6 +661,7 @@ namespace Project_Milestone_2
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel8.Controls.Add(this.pnlEditChangeItem);
             this.panel8.Controls.Add(this.lblEditFilters);
             this.panel8.Controls.Add(this.pnlEditAddSale);
             this.panel8.Controls.Add(this.pnlEditAddItem);
@@ -649,6 +670,173 @@ namespace Project_Milestone_2
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(942, 382);
             this.panel8.TabIndex = 8;
+            // 
+            // pnlEditChangeItem
+            // 
+            this.pnlEditChangeItem.BackColor = System.Drawing.Color.PowderBlue;
+            this.pnlEditChangeItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEditChangeItem.Controls.Add(this.txtEditChangeItemID);
+            this.pnlEditChangeItem.Controls.Add(this.label49);
+            this.pnlEditChangeItem.Controls.Add(this.label48);
+            this.pnlEditChangeItem.Controls.Add(this.label47);
+            this.pnlEditChangeItem.Controls.Add(this.btnEditItemChangeCancel);
+            this.pnlEditChangeItem.Controls.Add(this.btnEditChangeItemSubmit);
+            this.pnlEditChangeItem.Controls.Add(this.nudEditChangeItemQuantity);
+            this.pnlEditChangeItem.Controls.Add(this.cboEditChangeItemCategory);
+            this.pnlEditChangeItem.Controls.Add(this.txtEditChangeItemPrice);
+            this.pnlEditChangeItem.Controls.Add(this.txtEditChangeItemName);
+            this.pnlEditChangeItem.Controls.Add(this.label43);
+            this.pnlEditChangeItem.Controls.Add(this.label44);
+            this.pnlEditChangeItem.Controls.Add(this.label45);
+            this.pnlEditChangeItem.Controls.Add(this.label46);
+            this.pnlEditChangeItem.Controls.Add(this.label42);
+            this.pnlEditChangeItem.Enabled = false;
+            this.pnlEditChangeItem.Location = new System.Drawing.Point(346, 65);
+            this.pnlEditChangeItem.Name = "pnlEditChangeItem";
+            this.pnlEditChangeItem.Size = new System.Drawing.Size(236, 227);
+            this.pnlEditChangeItem.TabIndex = 8;
+            this.pnlEditChangeItem.Visible = false;
+            // 
+            // txtEditChangeItemID
+            // 
+            this.txtEditChangeItemID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditChangeItemID.Location = new System.Drawing.Point(130, 57);
+            this.txtEditChangeItemID.Name = "txtEditChangeItemID";
+            this.txtEditChangeItemID.ReadOnly = true;
+            this.txtEditChangeItemID.Size = new System.Drawing.Size(41, 21);
+            this.txtEditChangeItemID.TabIndex = 30;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(7, 64);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(41, 13);
+            this.label49.TabIndex = 29;
+            this.label49.Text = "ItemID:";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.BackColor = System.Drawing.Color.CadetBlue;
+            this.label48.Location = new System.Drawing.Point(60, 41);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(113, 13);
+            this.label48.TabIndex = 28;
+            this.label48.Text = "-Leave the rest as it is.";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.BackColor = System.Drawing.Color.CadetBlue;
+            this.label47.Location = new System.Drawing.Point(6, 28);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(221, 13);
+            this.label47.TabIndex = 27;
+            this.label47.Text = "-Only change the values you wich to change.";
+            // 
+            // btnEditItemChangeCancel
+            // 
+            this.btnEditItemChangeCancel.Location = new System.Drawing.Point(37, 188);
+            this.btnEditItemChangeCancel.Name = "btnEditItemChangeCancel";
+            this.btnEditItemChangeCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnEditItemChangeCancel.TabIndex = 26;
+            this.btnEditItemChangeCancel.Text = "Cancel";
+            this.btnEditItemChangeCancel.UseVisualStyleBackColor = true;
+            this.btnEditItemChangeCancel.Click += new System.EventHandler(this.btnEditItemChangeCancel_Click);
+            // 
+            // btnEditChangeItemSubmit
+            // 
+            this.btnEditChangeItemSubmit.Location = new System.Drawing.Point(118, 188);
+            this.btnEditChangeItemSubmit.Name = "btnEditChangeItemSubmit";
+            this.btnEditChangeItemSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnEditChangeItemSubmit.TabIndex = 22;
+            this.btnEditChangeItemSubmit.Text = "Submit";
+            this.btnEditChangeItemSubmit.UseVisualStyleBackColor = true;
+            this.btnEditChangeItemSubmit.Click += new System.EventHandler(this.btnEditChangeItemSubmit_Click);
+            // 
+            // nudEditChangeItemQuantity
+            // 
+            this.nudEditChangeItemQuantity.Location = new System.Drawing.Point(130, 164);
+            this.nudEditChangeItemQuantity.Name = "nudEditChangeItemQuantity";
+            this.nudEditChangeItemQuantity.Size = new System.Drawing.Size(41, 20);
+            this.nudEditChangeItemQuantity.TabIndex = 25;
+            // 
+            // cboEditChangeItemCategory
+            // 
+            this.cboEditChangeItemCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEditChangeItemCategory.FormattingEnabled = true;
+            this.cboEditChangeItemCategory.Items.AddRange(new object[] {
+            "Cooldrink",
+            "Food",
+            "Breakfast",
+            "Snacks"});
+            this.cboEditChangeItemCategory.Location = new System.Drawing.Point(130, 137);
+            this.cboEditChangeItemCategory.Name = "cboEditChangeItemCategory";
+            this.cboEditChangeItemCategory.Size = new System.Drawing.Size(93, 21);
+            this.cboEditChangeItemCategory.TabIndex = 21;
+            // 
+            // txtEditChangeItemPrice
+            // 
+            this.txtEditChangeItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditChangeItemPrice.Location = new System.Drawing.Point(130, 110);
+            this.txtEditChangeItemPrice.Name = "txtEditChangeItemPrice";
+            this.txtEditChangeItemPrice.Size = new System.Drawing.Size(93, 21);
+            this.txtEditChangeItemPrice.TabIndex = 24;
+            // 
+            // txtEditChangeItemName
+            // 
+            this.txtEditChangeItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditChangeItemName.Location = new System.Drawing.Point(130, 83);
+            this.txtEditChangeItemName.Name = "txtEditChangeItemName";
+            this.txtEditChangeItemName.Size = new System.Drawing.Size(93, 21);
+            this.txtEditChangeItemName.TabIndex = 23;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(7, 164);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(94, 13);
+            this.label43.TabIndex = 20;
+            this.label43.Text = "Quantity available:";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(7, 138);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(52, 13);
+            this.label44.TabIndex = 19;
+            this.label44.Text = "Category:";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(5, 113);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(118, 13);
+            this.label45.TabIndex = 18;
+            this.label45.Text = "Price (only the number):";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(7, 86);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(58, 13);
+            this.label46.TabIndex = 17;
+            this.label46.Text = "ItemName:";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(33, 8);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(172, 20);
+            this.label42.TabIndex = 11;
+            this.label42.Text = "Change Item Values";
             // 
             // lblEditFilters
             // 
@@ -661,6 +849,8 @@ namespace Project_Milestone_2
             // 
             // pnlEditAddSale
             // 
+            this.pnlEditAddSale.BackColor = System.Drawing.Color.Maroon;
+            this.pnlEditAddSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEditAddSale.Controls.Add(this.button2);
             this.pnlEditAddSale.Controls.Add(this.button3);
             this.pnlEditAddSale.Controls.Add(this.label37);
@@ -782,6 +972,8 @@ namespace Project_Milestone_2
             // 
             // pnlEditAddItem
             // 
+            this.pnlEditAddItem.BackColor = System.Drawing.Color.PowderBlue;
+            this.pnlEditAddItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEditAddItem.Controls.Add(this.btnEditAddItemCancel);
             this.pnlEditAddItem.Controls.Add(this.btnEditAddItemSubmit);
             this.pnlEditAddItem.Controls.Add(this.label36);
@@ -794,7 +986,7 @@ namespace Project_Milestone_2
             this.pnlEditAddItem.Controls.Add(this.label32);
             this.pnlEditAddItem.Controls.Add(this.txtEditAddItemName);
             this.pnlEditAddItem.Enabled = false;
-            this.pnlEditAddItem.Location = new System.Drawing.Point(250, 68);
+            this.pnlEditAddItem.Location = new System.Drawing.Point(353, 65);
             this.pnlEditAddItem.Name = "pnlEditAddItem";
             this.pnlEditAddItem.Size = new System.Drawing.Size(221, 196);
             this.pnlEditAddItem.TabIndex = 5;
@@ -915,7 +1107,6 @@ namespace Project_Milestone_2
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.pnlEditFilter);
             this.panel1.Controls.Add(this.btnEditAdd);
             this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Controls.Add(this.btnEditFilter);
@@ -931,27 +1122,29 @@ namespace Project_Milestone_2
             // 
             // pnlEditFilter
             // 
+            this.pnlEditFilter.BackColor = System.Drawing.Color.PowderBlue;
             this.pnlEditFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEditFilter.Controls.Add(this.label50);
             this.pnlEditFilter.Controls.Add(this.label20);
             this.pnlEditFilter.Controls.Add(this.cboEditFilterComparison);
-            this.pnlEditFilter.Controls.Add(this.btnRemoveEditFilters);
-            this.pnlEditFilter.Controls.Add(this.btnCancelEditFilter);
-            this.pnlEditFilter.Controls.Add(this.btnApplyEditFilters);
+            this.pnlEditFilter.Controls.Add(this.btnEditFiltersRemove);
+            this.pnlEditFilter.Controls.Add(this.btnEditFiltersCancel);
+            this.pnlEditFilter.Controls.Add(this.btnEditFiltersApply);
             this.pnlEditFilter.Controls.Add(this.txtEditFilterValue);
             this.pnlEditFilter.Controls.Add(this.label21);
             this.pnlEditFilter.Controls.Add(this.label22);
             this.pnlEditFilter.Controls.Add(this.cboEditFilterField);
             this.pnlEditFilter.Enabled = false;
-            this.pnlEditFilter.Location = new System.Drawing.Point(653, 6);
+            this.pnlEditFilter.Location = new System.Drawing.Point(653, 3);
             this.pnlEditFilter.Name = "pnlEditFilter";
-            this.pnlEditFilter.Size = new System.Drawing.Size(281, 86);
+            this.pnlEditFilter.Size = new System.Drawing.Size(281, 105);
             this.pnlEditFilter.TabIndex = 23;
             this.pnlEditFilter.Visible = false;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(107, 6);
+            this.label20.Location = new System.Drawing.Point(107, 31);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(65, 13);
             this.label20.TabIndex = 8;
@@ -970,45 +1163,45 @@ namespace Project_Milestone_2
             "<=",
             "NOT LIKE",
             "!="});
-            this.cboEditFilterComparison.Location = new System.Drawing.Point(109, 21);
+            this.cboEditFilterComparison.Location = new System.Drawing.Point(109, 46);
             this.cboEditFilterComparison.Name = "cboEditFilterComparison";
             this.cboEditFilterComparison.Size = new System.Drawing.Size(56, 21);
             this.cboEditFilterComparison.TabIndex = 7;
             // 
-            // btnRemoveEditFilters
+            // btnEditFiltersRemove
             // 
-            this.btnRemoveEditFilters.Location = new System.Drawing.Point(91, 49);
-            this.btnRemoveEditFilters.Name = "btnRemoveEditFilters";
-            this.btnRemoveEditFilters.Size = new System.Drawing.Size(102, 23);
-            this.btnRemoveEditFilters.TabIndex = 6;
-            this.btnRemoveEditFilters.Text = "Remove all filters";
-            this.btnRemoveEditFilters.UseVisualStyleBackColor = true;
-            this.btnRemoveEditFilters.Click += new System.EventHandler(this.BtnRemoveEditFilters_Click);
+            this.btnEditFiltersRemove.Location = new System.Drawing.Point(91, 74);
+            this.btnEditFiltersRemove.Name = "btnEditFiltersRemove";
+            this.btnEditFiltersRemove.Size = new System.Drawing.Size(102, 23);
+            this.btnEditFiltersRemove.TabIndex = 6;
+            this.btnEditFiltersRemove.Text = "Remove all filters";
+            this.btnEditFiltersRemove.UseVisualStyleBackColor = true;
+            this.btnEditFiltersRemove.Click += new System.EventHandler(this.BtnEditFiltersRemove_Click);
             // 
-            // btnCancelEditFilter
+            // btnEditFiltersCancel
             // 
-            this.btnCancelEditFilter.Location = new System.Drawing.Point(8, 49);
-            this.btnCancelEditFilter.Name = "btnCancelEditFilter";
-            this.btnCancelEditFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelEditFilter.TabIndex = 5;
-            this.btnCancelEditFilter.Text = "Cancel";
-            this.btnCancelEditFilter.UseVisualStyleBackColor = true;
-            this.btnCancelEditFilter.Click += new System.EventHandler(this.BtnCancelEditFilter_Click);
+            this.btnEditFiltersCancel.Location = new System.Drawing.Point(8, 74);
+            this.btnEditFiltersCancel.Name = "btnEditFiltersCancel";
+            this.btnEditFiltersCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnEditFiltersCancel.TabIndex = 5;
+            this.btnEditFiltersCancel.Text = "Cancel";
+            this.btnEditFiltersCancel.UseVisualStyleBackColor = true;
+            this.btnEditFiltersCancel.Click += new System.EventHandler(this.BtnEditFiltersCancel_Click);
             // 
-            // btnApplyEditFilters
+            // btnEditFiltersApply
             // 
-            this.btnApplyEditFilters.Location = new System.Drawing.Point(200, 49);
-            this.btnApplyEditFilters.Name = "btnApplyEditFilters";
-            this.btnApplyEditFilters.Size = new System.Drawing.Size(75, 23);
-            this.btnApplyEditFilters.TabIndex = 4;
-            this.btnApplyEditFilters.Text = "Apply";
-            this.btnApplyEditFilters.UseVisualStyleBackColor = true;
-            this.btnApplyEditFilters.Click += new System.EventHandler(this.BtnApplyEditFilters_Click);
+            this.btnEditFiltersApply.Location = new System.Drawing.Point(200, 74);
+            this.btnEditFiltersApply.Name = "btnEditFiltersApply";
+            this.btnEditFiltersApply.Size = new System.Drawing.Size(75, 23);
+            this.btnEditFiltersApply.TabIndex = 4;
+            this.btnEditFiltersApply.Text = "Apply";
+            this.btnEditFiltersApply.UseVisualStyleBackColor = true;
+            this.btnEditFiltersApply.Click += new System.EventHandler(this.BtnEditFiltersApply_Click);
             // 
             // txtEditFilterValue
             // 
             this.txtEditFilterValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditFilterValue.Location = new System.Drawing.Point(174, 20);
+            this.txtEditFilterValue.Location = new System.Drawing.Point(174, 45);
             this.txtEditFilterValue.Name = "txtEditFilterValue";
             this.txtEditFilterValue.Size = new System.Drawing.Size(100, 21);
             this.txtEditFilterValue.TabIndex = 3;
@@ -1016,7 +1209,7 @@ namespace Project_Milestone_2
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(191, 6);
+            this.label21.Location = new System.Drawing.Point(191, 31);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 13);
             this.label21.TabIndex = 2;
@@ -1025,7 +1218,7 @@ namespace Project_Milestone_2
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 6);
+            this.label22.Location = new System.Drawing.Point(20, 31);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(66, 13);
             this.label22.TabIndex = 1;
@@ -1036,7 +1229,7 @@ namespace Project_Milestone_2
             this.cboEditFilterField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEditFilterField.FormattingEnabled = true;
             this.cboEditFilterField.ItemHeight = 13;
-            this.cboEditFilterField.Location = new System.Drawing.Point(8, 21);
+            this.cboEditFilterField.Location = new System.Drawing.Point(8, 46);
             this.cboEditFilterField.Name = "cboEditFilterField";
             this.cboEditFilterField.Size = new System.Drawing.Size(93, 21);
             this.cboEditFilterField.TabIndex = 0;
@@ -1870,6 +2063,16 @@ namespace Project_Milestone_2
             this.label31.TabIndex = 15;
             this.label31.Text = "Edit User Details";
             // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(87, 6);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(106, 20);
+            this.label50.TabIndex = 12;
+            this.label50.Text = "Filter values";
+            // 
             // FrmTuckShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1898,6 +2101,9 @@ namespace Project_Milestone_2
             this.tpEdit.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.pnlEditChangeItem.ResumeLayout(false);
+            this.pnlEditChangeItem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEditChangeItemQuantity)).EndInit();
             this.pnlEditAddSale.ResumeLayout(false);
             this.pnlEditAddSale.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
@@ -2027,9 +2233,9 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Panel pnlEditFilter;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cboEditFilterComparison;
-        private System.Windows.Forms.Button btnRemoveEditFilters;
-        private System.Windows.Forms.Button btnCancelEditFilter;
-        private System.Windows.Forms.Button btnApplyEditFilters;
+        private System.Windows.Forms.Button btnEditFiltersRemove;
+        private System.Windows.Forms.Button btnEditFiltersCancel;
+        private System.Windows.Forms.Button btnEditFiltersApply;
         private System.Windows.Forms.TextBox txtEditFilterValue;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -2109,6 +2315,23 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label lblEditFilters;
+        private System.Windows.Forms.Panel pnlEditChangeItem;
+        private System.Windows.Forms.Button btnEditItemChangeCancel;
+        private System.Windows.Forms.Button btnEditChangeItemSubmit;
+        private System.Windows.Forms.NumericUpDown nudEditChangeItemQuantity;
+        private System.Windows.Forms.ComboBox cboEditChangeItemCategory;
+        private System.Windows.Forms.TextBox txtEditChangeItemPrice;
+        private System.Windows.Forms.TextBox txtEditChangeItemName;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox txtEditChangeItemID;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
     }
 }
 
