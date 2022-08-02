@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Project_Milestone_2
 {
@@ -16,11 +17,11 @@ namespace Project_Milestone_2
         Price,
         Quantity
     }
-    internal class ItemManger
+    internal class ItemManager
     {
         readonly SqlConnection sqlConnection;
 
-        public ItemManger(SqlConnection sqlConnection)
+        public ItemManager(SqlConnection sqlConnection)
         {
             this.sqlConnection = sqlConnection;
         }
@@ -116,6 +117,22 @@ namespace Project_Milestone_2
                 MessageBox.Show(e.Message);
             }
             return success;
+        }
+
+        //Show all
+        public DataTable ShowAllItems()
+        {
+            string cmdString = "SELECT * FROM Items";
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandText = cmdString;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
+
+            var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            var ds = new DataSet();
+            dataAdapter.Fill(ds);
+
+            return ds.Tables[0];
         }
     }
 }

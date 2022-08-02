@@ -10,14 +10,14 @@ namespace Project_Milestone_2
         Name, 
         Surname
     }
-    internal class UserManger
+    internal class UserManager
     {
         public string userName;
         public string userSurname;
         public string userEmail;
         public string userPassword;
         readonly SqlConnection sqlConnection;
-        public UserManger(SqlConnection sqlConnection)
+        public UserManager(SqlConnection sqlConnection)
         {
             this.sqlConnection = sqlConnection;
         }
