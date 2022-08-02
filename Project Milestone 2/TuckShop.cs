@@ -17,6 +17,8 @@ namespace Project_Milestone_2
     {
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
+        static UserManager userManager;
+        static SalesManger sales;
 
         public static void ConnectToDB() 
         {
@@ -75,7 +77,8 @@ namespace Project_Milestone_2
             }
             //Object to Manage DB control concerning Items
             itemManager = new ItemManager(sqlConnection);
-
+            userManager = new UserManager(sqlConnection);
+            sales = new SalesManger(sqlConnection);
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
