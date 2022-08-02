@@ -17,38 +17,45 @@ namespace Project_Milestone_2
     {
         static SqlConnection sqlConnection;
         static ItemManger itemManger;
-        public frmTuckShop()
-        {
-            InitializeComponent();
-        }
-        private void frmTuckShop_Load(object sender, EventArgs e)
+
+        public static void ConnectToDB() 
         {
             ///////////////////////////////////////////////////////////////////////////////////////////////
             // DataBase connection         
-            string cmdText = "SELECT * FROM master.dbo.sysdatabases WHERE name ='TuckShop'";
+            string existQuery = "SELECT * FROM master.dbo.sysdatabases WHERE name ='TuckShop'";
             bool isExist = false;
             using (SqlConnection con = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master"))
             {
+                // Open connection ,run creation query and close.
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                using (SqlCommand command = new SqlCommand(existQuery, con))
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
+                        // Checks to see if database has rows. If not the HasRows = null.
                         isExist = reader.HasRows;
                     }
                 }
                 con.Close();
             }
-            if (!isExist) {
+            // When database doesnt exist, it is created programmatically.
+            if (!isExist)
+            {
+                // This text file has Query for creation of the DB.
                 string creationQuery = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "CreateDB.txt");
+                // This text file conatians the query for items table. (Cant use GO in SQlCommand).
                 string createitems = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "Createitems.txt");
-                SqlConnection myConn = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master");
+                // USE a Master connection to build DB.
+                SqlConnection masterConnection = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master");
 
-                SqlCommand myCommand = new SqlCommand(creationQuery, myConn);
+                SqlCommand myCommand = new SqlCommand(creationQuery, masterConnection);
                 try
                 {
-                    myConn.Open();
+                    // Open connection ,run creation query and close.
+                    masterConnection.Open();
                     myCommand.ExecuteNonQuery();
+                    masterConnection.Close();
+                    //Create new connection to newly created database and create each table.
                     sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
                     sqlConnection.Open();
                     myCommand = new SqlCommand(createitems, sqlConnection);
@@ -58,14 +65,27 @@ namespace Project_Milestone_2
                 {
                     MessageBox.Show(exeption.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            } else
+            }
+            else
             {
+                // When DB is 100% then simply open a connection
                 sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
             }
+            //Object to Manage DB control concerning Items
             itemManger = new ItemManger(sqlConnection);
-      
-         ///////////////////////////////////////////////////////////////////////////////////////////////
 
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+        }
+
+        public frmTuckShop()
+        {
+            InitializeComponent();
+        }
+
+        private void frmTuckShop_Load(object sender, EventArgs e)
+        {
+            // Database Startup
+            ConnectToDB();
             tcMainScreen.Appearance = TabAppearance.FlatButtons;
             tcMainScreen.ItemSize = new Size(0, 1);
             tcMainScreen.SizeMode = TabSizeMode.Fixed;
