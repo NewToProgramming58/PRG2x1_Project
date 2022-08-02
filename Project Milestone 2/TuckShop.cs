@@ -17,9 +17,7 @@ namespace Project_Milestone_2
     {
         // Lists used for saving filters to outputs
         public List<string> editItemsFilterList = new List<string>();
-        int ItemFilterCount = 0;
         public List<string> editSalesFilterList = new List<string>();
-        int SaleFilterCount = 0;
 
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
@@ -210,22 +208,29 @@ namespace Project_Milestone_2
 
         private void BtnEditFilter_Click(object sender, EventArgs e)
         {
-            pnlEditFilter.Visible = true;
-            pnlEditFilter.Enabled = true;
-            for (int i = 0; i < dgvEdit.ColumnCount; i++)
+            var result = MessageBox.Show("You might need some SQL experience to perform filters. Are you sure you want to continue?", "Filter", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                cboEditFilterField.Items.Add(dgvEdit.Columns[i].HeaderText);
+                DisableForm();
+                pnlEditFilter.Visible = true;
+                pnlEditFilter.Enabled = true;
+                for (int i = 0; i < dgvEdit.ColumnCount; i++)
+                {
+                    cboEditFilterField.Items.Add(dgvEdit.Columns[i].HeaderText);
+                }
             }
         }
 
         private void BtnCancelEditFilter_Click(object sender, EventArgs e)
         {
+            EnableForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
         }
 
         private void BtnRemoveEditFilters_Click(object sender, EventArgs e)
         {
+            EnableForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
             lblEditFilters.Text = "Filters: No filters are applied";
@@ -246,13 +251,35 @@ namespace Project_Milestone_2
 
         private void BtnApplyEditFilters_Click(object sender, EventArgs e)
         {
+            string value;
+            string filter;
+            double numTest;
+
+            EnableForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
-            string filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + txtEditFilterValue.Text;
+            //This checks if the value needs to be formatted and puts it in the correct SQL format if needed
+            try
+            {
+                numTest = double.Parse(txtEditFilterValue.Text);
+                value = numTest.ToString();
+            }
+            catch (Exception)
+            {
+                if ((cboEditFilterComparison.SelectedItem.ToString() == "LIKE") || (cboEditFilterComparison.SelectedItem.ToString() == "NOT LIKE"))
+                {
+                    value = "'%" + txtEditFilterValue.Text + "%'";
+                }
+                else
+                {
+                    value = "'" + txtEditFilterValue.Text + "'";
+                }
+            }
             // Shows the user filters are applied
             lblEditFilters.Text = "Filters: Filters are applied";
             lblEditFilters.ForeColor = Color.Blue;
-
+            // Puts the filters in the correct format for the method
+            filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + value;
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
                 editItemsFilterList.Add(filter);
@@ -270,12 +297,14 @@ namespace Project_Milestone_2
         {
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
+                DisableForm();
                 pnlEditAddItem.Visible = true;
                 pnlEditAddItem.Enabled = true;
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
                 // STILL HAVE TO DO
+                DisableForm();
                 pnlEditAddSale.Visible = true;
                 pnlEditAddSale.Enabled = true;
             }
@@ -286,13 +315,16 @@ namespace Project_Milestone_2
             double itemPrice = double.Parse(txtEditAddItemPrice.Text);
             string itemCategory = cboEditAddItemCategory.SelectedItem.ToString();
             int itemQuantity = int.Parse(nudEditAddItemQuantity.Value.ToString());
+
             itemManager.AddItem(itemName, itemCategory, itemQuantity, itemPrice);
             dgvEdit.DataSource = itemManager.ShowAllItems();
+            EnableForm();
             pnlEditAddItem.Visible = false;
             pnlEditAddItem.Enabled = false;
         }
         private void BtnEditAddItemCancel_Click(object sender, EventArgs e)
         {
+            EnableForm();
             pnlEditAddItem.Visible = false;
             pnlEditAddItem.Enabled = false;
         }
@@ -302,11 +334,11 @@ namespace Project_Milestone_2
             //
         }
 
-        // Asks user if he/she is sure they want to delete the record and if Yes is selected, deletes appropriate record
         private void BtnEditRemove_Click(object sender, EventArgs e)
         {
             var row = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex];
             string ID = row.Cells[0].Value.ToString();
+            // Asks user if he/she is sure they want to delete the record and if Yes is selected, deletes appropriate record.
             var result = MessageBox.Show("Are you sure you want to delete record in Items containing: \nItemID: " +
                                     row.Cells[0].Value.ToString() + "\nItemname: " +
                                     row.Cells[1].Value.ToString() + "\nPrice: " +
@@ -329,9 +361,9 @@ namespace Project_Milestone_2
             }
         }
 
-        //Whenever the combobox changes the table viewed changes
         private void CboEditCurrentTable_SelectedValueChanged(object sender, EventArgs e)
         {
+            // Whenever the combobox changes, the table viewed changes.
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
 
@@ -342,6 +374,26 @@ namespace Project_Milestone_2
                 // Show Sales
                 //dgvEdit.DataSource = saleManager.ShowAllItems();
             }
+        }
+
+        //Methods
+        public void DisableForm()
+        {
+            cboEditCurrentTable.Enabled = false;
+            btnEditAdd.Enabled = false;
+            btnEditChange.Enabled = false;
+            btnEditRemove.Enabled = false;
+            btnEditFilter.Enabled = false;
+            btnExitEdit.Enabled = false;
+        }
+        public void EnableForm()
+        {
+            cboEditCurrentTable.Enabled = true;
+            btnEditAdd.Enabled = true;
+            btnEditChange.Enabled = true;
+            btnEditRemove.Enabled = true;
+            btnEditFilter.Enabled = true;
+            btnExitEdit.Enabled = true;
         }
         //-----------------------------------------------------------------------------------------------
 

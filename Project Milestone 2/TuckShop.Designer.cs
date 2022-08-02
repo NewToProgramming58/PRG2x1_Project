@@ -71,6 +71,7 @@ namespace Project_Milestone_2
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.tpEdit = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.lblEditFilters = new System.Windows.Forms.Label();
             this.pnlEditAddSale = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -191,7 +192,6 @@ namespace Project_Milestone_2
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnExitEditLogin = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
-            this.lblEditFilters = new System.Windows.Forms.Label();
             this.tcMainScreen.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -650,6 +650,15 @@ namespace Project_Milestone_2
             this.panel8.Size = new System.Drawing.Size(942, 382);
             this.panel8.TabIndex = 8;
             // 
+            // lblEditFilters
+            // 
+            this.lblEditFilters.AutoSize = true;
+            this.lblEditFilters.Location = new System.Drawing.Point(3, 3);
+            this.lblEditFilters.Name = "lblEditFilters";
+            this.lblEditFilters.Size = new System.Drawing.Size(136, 13);
+            this.lblEditFilters.TabIndex = 7;
+            this.lblEditFilters.Text = "Filters: No filters are applied";
+            // 
             // pnlEditAddSale
             // 
             this.pnlEditAddSale.Controls.Add(this.button2);
@@ -664,7 +673,7 @@ namespace Project_Milestone_2
             this.pnlEditAddSale.Controls.Add(this.label41);
             this.pnlEditAddSale.Controls.Add(this.textBox5);
             this.pnlEditAddSale.Enabled = false;
-            this.pnlEditAddSale.Location = new System.Drawing.Point(518, 57);
+            this.pnlEditAddSale.Location = new System.Drawing.Point(661, 65);
             this.pnlEditAddSale.Name = "pnlEditAddSale";
             this.pnlEditAddSale.Size = new System.Drawing.Size(221, 227);
             this.pnlEditAddSale.TabIndex = 6;
@@ -785,7 +794,7 @@ namespace Project_Milestone_2
             this.pnlEditAddItem.Controls.Add(this.label32);
             this.pnlEditAddItem.Controls.Add(this.txtEditAddItemName);
             this.pnlEditAddItem.Enabled = false;
-            this.pnlEditAddItem.Location = new System.Drawing.Point(113, 57);
+            this.pnlEditAddItem.Location = new System.Drawing.Point(250, 68);
             this.pnlEditAddItem.Name = "pnlEditAddItem";
             this.pnlEditAddItem.Size = new System.Drawing.Size(221, 196);
             this.pnlEditAddItem.TabIndex = 5;
@@ -922,6 +931,7 @@ namespace Project_Milestone_2
             // 
             // pnlEditFilter
             // 
+            this.pnlEditFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEditFilter.Controls.Add(this.label20);
             this.pnlEditFilter.Controls.Add(this.cboEditFilterComparison);
             this.pnlEditFilter.Controls.Add(this.btnRemoveEditFilters);
@@ -932,7 +942,7 @@ namespace Project_Milestone_2
             this.pnlEditFilter.Controls.Add(this.label22);
             this.pnlEditFilter.Controls.Add(this.cboEditFilterField);
             this.pnlEditFilter.Enabled = false;
-            this.pnlEditFilter.Location = new System.Drawing.Point(320, 6);
+            this.pnlEditFilter.Location = new System.Drawing.Point(653, 6);
             this.pnlEditFilter.Name = "pnlEditFilter";
             this.pnlEditFilter.Size = new System.Drawing.Size(281, 86);
             this.pnlEditFilter.TabIndex = 23;
@@ -967,7 +977,7 @@ namespace Project_Milestone_2
             // 
             // btnRemoveEditFilters
             // 
-            this.btnRemoveEditFilters.Location = new System.Drawing.Point(82, 49);
+            this.btnRemoveEditFilters.Location = new System.Drawing.Point(91, 49);
             this.btnRemoveEditFilters.Name = "btnRemoveEditFilters";
             this.btnRemoveEditFilters.Size = new System.Drawing.Size(102, 23);
             this.btnRemoveEditFilters.TabIndex = 6;
@@ -977,7 +987,7 @@ namespace Project_Milestone_2
             // 
             // btnCancelEditFilter
             // 
-            this.btnCancelEditFilter.Location = new System.Drawing.Point(3, 49);
+            this.btnCancelEditFilter.Location = new System.Drawing.Point(8, 49);
             this.btnCancelEditFilter.Name = "btnCancelEditFilter";
             this.btnCancelEditFilter.Size = new System.Drawing.Size(75, 23);
             this.btnCancelEditFilter.TabIndex = 5;
@@ -987,7 +997,7 @@ namespace Project_Milestone_2
             // 
             // btnApplyEditFilters
             // 
-            this.btnApplyEditFilters.Location = new System.Drawing.Point(188, 49);
+            this.btnApplyEditFilters.Location = new System.Drawing.Point(200, 49);
             this.btnApplyEditFilters.Name = "btnApplyEditFilters";
             this.btnApplyEditFilters.Size = new System.Drawing.Size(75, 23);
             this.btnApplyEditFilters.TabIndex = 4;
@@ -1859,15 +1869,6 @@ namespace Project_Milestone_2
             this.label31.Size = new System.Drawing.Size(209, 29);
             this.label31.TabIndex = 15;
             this.label31.Text = "Edit User Details";
-            // 
-            // lblEditFilters
-            // 
-            this.lblEditFilters.AutoSize = true;
-            this.lblEditFilters.Location = new System.Drawing.Point(3, 3);
-            this.lblEditFilters.Name = "lblEditFilters";
-            this.lblEditFilters.Size = new System.Drawing.Size(136, 13);
-            this.lblEditFilters.TabIndex = 7;
-            this.lblEditFilters.Text = "Filters: No filters are applied";
             // 
             // FrmTuckShop
             // 
