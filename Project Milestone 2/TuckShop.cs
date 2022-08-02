@@ -154,6 +154,7 @@ namespace Project_Milestone_2
             // Loads the default table as Items
             if (cboEditCurrentTable.SelectedIndex == -1)
                 cboEditCurrentTable.SelectedIndex = cboEditCurrentTable.FindString("Items");
+            dgvEdit.DataSource = itemManager.ShowAllItems();
         }
 
         private void btnViewRecords_Click(object sender, EventArgs e)
@@ -228,16 +229,34 @@ namespace Project_Milestone_2
         }
         private void btnEditRemove_Click(object sender, EventArgs e)
         {
-            string ID = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[0].Value.ToString();
-            MessageBox.Show(ID);
+            // TEST IT
+            var row = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex];
+            string ID = row.Cells[0].Value.ToString();
+            var result = MessageBox.Show("Are you sure you want to delete record in Items containing: \nItemID: " +
+                                    row.Cells[0].Value.ToString() + "\nItemname: " +
+                                    row.Cells[1].Value.ToString() + "\nPrice: " +
+                                    row.Cells[2].Value.ToString() + "\nCategory: " +
+                                    row.Cells[3].Value.ToString() + "\nQuantity: " +
+                                    row.Cells[4].Value.ToString(), "Remove record", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
+                {
+                    itemManager.RemoveItem(ID);
+                }
+                else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
+                {
+                    // Remove sale record
+                }
+            }
         }
 
         //Whenever the combobox changes the table viewed changes
         private void cboEditCurrentTable_SelectedValueChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(cboEditCurrentTable.SelectedItem.ToString());
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
+
                 dgvEdit.DataSource = itemManager.ShowAllItems();
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
