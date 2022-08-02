@@ -248,7 +248,7 @@ namespace Project_Milestone_2
                 {
                     cboEditFilterField.Items.Add(dgvEdit.Columns[i].HeaderText);
                 }
-                DisableForm();
+                DisableEditForm();
                 pnlEditFilter.Visible = true;
                 pnlEditFilter.Enabled = true;
             }
@@ -256,14 +256,14 @@ namespace Project_Milestone_2
 
         private void BtnEditFiltersCancel_Click(object sender, EventArgs e)
         {
-            EnableForm();
+            EnableEditForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
         }
 
         private void BtnEditFiltersRemove_Click(object sender, EventArgs e)
         {
-            EnableForm();
+            EnableEditForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
             lblEditFilters.Text = "Filters: No filters are applied";
@@ -295,7 +295,7 @@ namespace Project_Milestone_2
             string filter;
             double numTest;
 
-            EnableForm();
+            DisableEditForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
 
@@ -348,14 +348,14 @@ namespace Project_Milestone_2
         {
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
-                DisableForm();
+                DisableEditForm();
                 pnlEditAddItem.Visible = true;
                 pnlEditAddItem.Enabled = true;
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
                 // STILL HAVE TO DO//////////////////////////////////////////////////////////////////////////////////////
-                DisableForm();
+                DisableEditForm();
                 pnlEditAddSale.Visible = true;
                 pnlEditAddSale.Enabled = true;
             }
@@ -378,14 +378,14 @@ namespace Project_Milestone_2
             {
                 ErrorHandler.Invoke(ex);
             }
-            
-            EnableForm();
+
+            EnableEditForm();
             pnlEditAddItem.Visible = false;
             pnlEditAddItem.Enabled = false;
         }
         private void BtnEditAddItemCancel_Click(object sender, EventArgs e)
         {
-            EnableForm();
+            EnableEditForm();
             pnlEditAddItem.Visible = false;
             pnlEditAddItem.Enabled = false;
         }
@@ -394,7 +394,7 @@ namespace Project_Milestone_2
         {
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
-                DisableForm();
+                DisableEditForm();
                 dgvEdit.Enabled = false;
                 pnlEditChangeItem.Visible = true;
                 pnlEditChangeItem.Enabled = true;
@@ -413,7 +413,7 @@ namespace Project_Milestone_2
 
         private void BtnEditChangeItemCancel_Click(object sender, EventArgs e)
         {
-            EnableForm();
+            EnableEditForm();
             pnlEditChangeItem.Visible = false;
             pnlEditChangeItem.Enabled = false;
             dgvEdit.Enabled = true;
@@ -437,7 +437,7 @@ namespace Project_Milestone_2
                 ErrorHandler.Invoke(ex);
             }
 
-            EnableForm();
+            EnableEditForm();
             pnlEditChangeItem.Visible = false;
             pnlEditChangeItem.Enabled = false;
             dgvEdit.Enabled = true;
@@ -493,7 +493,7 @@ namespace Project_Milestone_2
         }
 
         // Methods used for validation by disabling/enabling certain inputs.
-        public void DisableForm()
+        public void DisableEditForm()
         {
             cboEditCurrentTable.Enabled = false;
             btnEditAdd.Enabled = false;
@@ -502,7 +502,7 @@ namespace Project_Milestone_2
             btnEditFilter.Enabled = false;
             btnExitEdit.Enabled = false;
         }
-        public void EnableForm()
+        public void EnableEditForm()
         {
             cboEditCurrentTable.Enabled = true;
             btnEditAdd.Enabled = true;
