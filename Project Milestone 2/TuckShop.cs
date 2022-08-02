@@ -560,30 +560,30 @@ namespace Project_Milestone_2
 
         private void BtnApplyAdminFilter_Click(object sender, EventArgs e)
         {
-            //string value;
-            //double numTest;
+            string value;
+            double numTest;
 
-            //EnableForm();
-            //pnlAdminFilter.Visible = false;
-            //pnlAdminFilter.Enabled = false;
+            EnableForm();
+            pnlAdminFilter.Visible = false;
+            pnlAdminFilter.Enabled = false;
 
-            //// This checks correctness of formats.
-            //try
-            //{
-            //    numTest = double.Parse(textBox3.Text);
-            //    value = numTest.ToString();
-            //}
-            //catch (Exception)
-            //{
-            //    if ((comboBox5.SelectedItem.ToString() == "LIKE") || (comboBox5.SelectedItem.ToString() == "NOT LIKE"))
-            //    {
-            //        value = "'%" + textBox3.Text + "%'";
-            //    }
-            //    else
-            //    {
-            //        value = "'" + textBox3.Text + "'";
-            //    }
-            //}
+            // This checks correctness of formats.
+            try
+            {
+                numTest = double.Parse(textBox3.Text);
+                value = numTest.ToString();
+            }
+            catch (Exception)
+            {
+                if ((comboBox5.SelectedItem.ToString() == "LIKE") || (comboBox5.SelectedItem.ToString() == "NOT LIKE"))
+                {
+                    value = "'%" + textBox3.Text + "%'";
+                }
+                else
+                {
+                    value = "'" + textBox3.Text + "'";
+                }
+            }
         }
         //-----------------------------------------------------------------------------------------------
 
