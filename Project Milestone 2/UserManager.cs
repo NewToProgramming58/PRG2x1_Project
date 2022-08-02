@@ -14,8 +14,7 @@ namespace Project_Milestone_2
     {
         public string userName;
         public string userSurname;
-        public string userEmail;
-        public string userPassword;
+        public string userEmail;       
         readonly SqlConnection sqlConnection;
         public UserManager(SqlConnection sqlConnection)
         {
