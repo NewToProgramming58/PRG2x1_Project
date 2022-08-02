@@ -295,7 +295,7 @@ namespace Project_Milestone_2
             string filter;
             double numTest;
 
-            DisableEditForm();
+            EnableEditForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
 
