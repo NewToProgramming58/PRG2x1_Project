@@ -19,7 +19,7 @@ namespace Project_Milestone_2
         public string editCurrentTable = "Items";
 
         static SqlConnection sqlConnection;
-        static ItemManger itemManager;
+        static ItemManager itemManager;
 
         public static void ConnectToDB() 
         {
@@ -75,7 +75,7 @@ namespace Project_Milestone_2
                 sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
             }
             //Object to Manage DB control concerning Items
-            itemManger = new ItemManger(sqlConnection);
+            itemManager = new ItemManager(sqlConnection);
 
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
