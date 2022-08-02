@@ -139,16 +139,6 @@ namespace Project_Milestone_2
             this.panel10 = new System.Windows.Forms.Panel();
             this.dgvView = new System.Windows.Forms.DataGridView();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.pnlViewFilter = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnRemoveViewFilters = new System.Windows.Forms.Button();
-            this.btnCancelViewFilter = new System.Windows.Forms.Button();
-            this.btnApplyViewFilter = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cboField = new System.Windows.Forms.ComboBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.btnViewFilter = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -209,6 +199,17 @@ namespace Project_Milestone_2
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnExitEditLogin = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tcMainScreen.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -235,7 +236,6 @@ namespace Project_Milestone_2
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.panel11.SuspendLayout();
-            this.pnlViewFilter.SuspendLayout();
             this.panel12.SuspendLayout();
             this.tpOrder.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -251,6 +251,7 @@ namespace Project_Milestone_2
             this.tpEditLogin.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMainScreen
@@ -1376,7 +1377,7 @@ namespace Project_Milestone_2
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel11.Controls.Add(this.pnlViewFilter);
+            this.panel11.Controls.Add(this.panel21);
             this.panel11.Controls.Add(this.richTextBox2);
             this.panel11.Controls.Add(this.btnViewFilter);
             this.panel11.Controls.Add(this.panel12);
@@ -1386,104 +1387,6 @@ namespace Project_Milestone_2
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(942, 108);
             this.panel11.TabIndex = 9;
-            // 
-            // pnlViewFilter
-            // 
-            this.pnlViewFilter.Controls.Add(this.label19);
-            this.pnlViewFilter.Controls.Add(this.comboBox1);
-            this.pnlViewFilter.Controls.Add(this.btnRemoveViewFilters);
-            this.pnlViewFilter.Controls.Add(this.btnCancelViewFilter);
-            this.pnlViewFilter.Controls.Add(this.btnApplyViewFilter);
-            this.pnlViewFilter.Controls.Add(this.textBox1);
-            this.pnlViewFilter.Controls.Add(this.label18);
-            this.pnlViewFilter.Controls.Add(this.label17);
-            this.pnlViewFilter.Controls.Add(this.cboField);
-            this.pnlViewFilter.Location = new System.Drawing.Point(671, 6);
-            this.pnlViewFilter.Name = "pnlViewFilter";
-            this.pnlViewFilter.Size = new System.Drawing.Size(263, 86);
-            this.pnlViewFilter.TabIndex = 22;
-            this.pnlViewFilter.Visible = false;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(102, 3);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(65, 13);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "Comparison:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(105, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(49, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // btnRemoveViewFilters
-            // 
-            this.btnRemoveViewFilters.Location = new System.Drawing.Point(82, 49);
-            this.btnRemoveViewFilters.Name = "btnRemoveViewFilters";
-            this.btnRemoveViewFilters.Size = new System.Drawing.Size(102, 23);
-            this.btnRemoveViewFilters.TabIndex = 6;
-            this.btnRemoveViewFilters.Text = "Remove all filters";
-            this.btnRemoveViewFilters.UseVisualStyleBackColor = true;
-            this.btnRemoveViewFilters.Click += new System.EventHandler(this.BtnRemoveViewFilters_Click);
-            // 
-            // btnCancelViewFilter
-            // 
-            this.btnCancelViewFilter.Location = new System.Drawing.Point(3, 49);
-            this.btnCancelViewFilter.Name = "btnCancelViewFilter";
-            this.btnCancelViewFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelViewFilter.TabIndex = 5;
-            this.btnCancelViewFilter.Text = "Cancel";
-            this.btnCancelViewFilter.UseVisualStyleBackColor = true;
-            this.btnCancelViewFilter.Click += new System.EventHandler(this.BtnCancelViewFilter_Click);
-            // 
-            // btnApplyViewFilter
-            // 
-            this.btnApplyViewFilter.Location = new System.Drawing.Point(188, 49);
-            this.btnApplyViewFilter.Name = "btnApplyViewFilter";
-            this.btnApplyViewFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnApplyViewFilter.TabIndex = 4;
-            this.btnApplyViewFilter.Text = "Apply";
-            this.btnApplyViewFilter.UseVisualStyleBackColor = true;
-            this.btnApplyViewFilter.Click += new System.EventHandler(this.BtnApplyViewFilter_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(160, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(185, 3);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(61, 13);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Filter value:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 3);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(66, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Field to filter:";
-            // 
-            // cboField
-            // 
-            this.cboField.FormattingEnabled = true;
-            this.cboField.Location = new System.Drawing.Point(3, 19);
-            this.cboField.Name = "cboField";
-            this.cboField.Size = new System.Drawing.Size(96, 21);
-            this.cboField.TabIndex = 0;
             // 
             // richTextBox2
             // 
@@ -2073,6 +1976,127 @@ namespace Project_Milestone_2
             this.label31.TabIndex = 15;
             this.label31.Text = "Edit User Details";
             // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.PowderBlue;
+            this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel21.Controls.Add(this.label17);
+            this.panel21.Controls.Add(this.label18);
+            this.panel21.Controls.Add(this.comboBox1);
+            this.panel21.Controls.Add(this.button4);
+            this.panel21.Controls.Add(this.button5);
+            this.panel21.Controls.Add(this.button7);
+            this.panel21.Controls.Add(this.textBox1);
+            this.panel21.Controls.Add(this.label19);
+            this.panel21.Controls.Add(this.label51);
+            this.panel21.Controls.Add(this.comboBox2);
+            this.panel21.Enabled = false;
+            this.panel21.Location = new System.Drawing.Point(653, 3);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(281, 105);
+            this.panel21.TabIndex = 24;
+            this.panel21.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(87, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(106, 20);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Filter values";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(107, 31);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 13);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "Comparison:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "LIKE",
+            "=",
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "NOT LIKE",
+            "!="});
+            this.comboBox1.Location = new System.Drawing.Point(109, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(56, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(91, 74);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(102, 23);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Remove all filters";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(8, 74);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Cancel";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(200, 74);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Apply";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(174, 45);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(191, 31);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(61, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Filter value:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(20, 31);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(66, 13);
+            this.label51.TabIndex = 1;
+            this.label51.Text = "Field to filter:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.ItemHeight = 13;
+            this.comboBox2.Location = new System.Drawing.Point(8, 46);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(93, 21);
+            this.comboBox2.TabIndex = 0;
+            // 
             // FrmTuckShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2122,8 +2146,6 @@ namespace Project_Milestone_2
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            this.pnlViewFilter.ResumeLayout(false);
-            this.pnlViewFilter.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.tpOrder.ResumeLayout(false);
@@ -2147,6 +2169,8 @@ namespace Project_Milestone_2
             this.panel20.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2220,16 +2244,6 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cboViewCurrentTable;
-        private System.Windows.Forms.Panel pnlViewFilter;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnRemoveViewFilters;
-        private System.Windows.Forms.Button btnCancelViewFilter;
-        private System.Windows.Forms.Button btnApplyViewFilter;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cboField;
         private System.Windows.Forms.Panel pnlEditFilter;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cboEditFilterComparison;
@@ -2332,6 +2346,17 @@ namespace Project_Milestone_2
         private System.Windows.Forms.TextBox txtEditChangeItemID;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 
