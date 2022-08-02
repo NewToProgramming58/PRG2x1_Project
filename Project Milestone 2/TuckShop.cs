@@ -15,6 +15,7 @@ namespace Project_Milestone_2
 {
     public partial class frmTuckShop : Form
     {
+        public string EditQuery = "SELECT * FROM Items";
         static SqlConnection sqlConnection;
         static ItemManger itemManger;
         static UserManager userManager;
