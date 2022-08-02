@@ -15,10 +15,11 @@ namespace Project_Milestone_2
 {
     public partial class frmTuckShop : Form
     {
-        public string EditQuery = "SELECT * FROM Items";
+        public string editQuery = "SELECT * FROM Items";
+        public string editCurrentTable = "Items";
+
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
-        static UserManager userManager;
 
         public static void ConnectToDB() 
         {
@@ -66,18 +67,17 @@ namespace Project_Milestone_2
                 }
                 catch (System.Exception exeption)
                 {
-                    MessageBox.Show(exeption.ToString());
+                    MessageBox.Show(exeption.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
                 // When DB is 100% then simply open a connection
                 sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
-                sqlConnection.Open();
             }
             //Object to Manage DB control concerning Items
             itemManager = new ItemManager(sqlConnection);
-            userManager = new UserManager(sqlConnection);
+
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
@@ -99,7 +99,6 @@ namespace Project_Milestone_2
                 tab.Text = "";
             }
             Size = new Size(215, 266);
-            dgvEdit.DataSource = itemManager.ShowAllItems();
         }
         // Navigation
         public void OpenMenu()
@@ -158,6 +157,7 @@ namespace Project_Milestone_2
             if (cboEditCurrentTable.SelectedIndex == -1)
                 cboEditCurrentTable.SelectedIndex = cboEditCurrentTable.FindString("Items");
             // LOAD TABLE INTO DATAGRIDVIEW
+            dgvEdit.DataSource = itemManager.ShowAllItems();
         }
 
         private void btnViewRecords_Click(object sender, EventArgs e)
