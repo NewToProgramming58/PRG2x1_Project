@@ -172,8 +172,13 @@ namespace Project_Milestone_2
                 var splitFilters = filter.Split('#');
                 fields.Add(splitFilters[0]);
                 signs.Add(splitFilters[1]);
-                values.Add(splitFilters[2]);
-            }
+                if (!splitFilters[0].Equals("Price"))
+                    values.Add(splitFilters[2]);
+                else if (splitFilters[1].Equals("LIKE") || splitFilters[1].Equals("NOT LIKE"))
+                    values.Add(splitFilters[2]);
+                else
+                    values.Add($"\'{splitFilters[2]}\'");
+            }          
             string cmdString = $"SELECT * FROM Items WHERE {fields[0]} {signs[0]} {values[0]}";
             if (fields.Count > 1)
             {

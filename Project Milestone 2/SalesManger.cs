@@ -10,7 +10,5 @@ namespace Project_Milestone_2
         {
             this.sqlConnection = sqlConnection;
         }
-
-
     }
 }
