@@ -286,18 +286,31 @@ namespace Project_Milestone_2
 
         private void BtnEditFiltersApply_Click(object sender, EventArgs e)
         {
+            string value;
             string filter;
+            double numTest;
 
             EnableEditForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
+
+            // This checks if the value needs to be formatted and puts it in the correct SQL format if needed.
+            try
+            {
+                numTest = double.Parse(txtEditFilterValue.Text);
+                value = numTest.ToString();
+            }
+            catch (Exception)
+            {
+                value = txtEditFilterValue.Text;
+            }
 
 
             // Error check.
             try
             {
                 // Puts the filters in the correct format for the method.
-                filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + txtEditFilterValue.Text;
+                filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + value;
 
                 if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
                 {
@@ -402,18 +415,11 @@ namespace Project_Milestone_2
             try
             {
                 // Stores values in correct format for method.
-                values = txtEditChangeItemID.Text + "#" + txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + 
-                         cboEditChangeItemCategory.SelectedItem + "#" + nudEditChangeItemQuantity.Value.ToString();
-                itemManager.UpdateItemInfo(values);
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                if (editItemsFilterList.Count > 0)
-                {
-                    dgvEdit.DataSource = itemManager.ShowAllItems();
-                }
-                else
-                {
-                    dgvEdit.DataSource = itemManager.FilterItems(editItemsFilterList);
-                }
+                values = txtEditChangeItemID.Text + "#" + txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + cboEditChangeItemCategory.SelectedItem + "#" + 
+                         nudEditChangeItemQuantity.Value.ToString();
+                itemManager.UpdateItemInfo(values);//////////////////////////////////////////////////////
+
+                //REFRESH DATA//////////////////////////////////////////////////////////////////////////////////
             }
             catch (Exception ex)
             {
@@ -446,7 +452,7 @@ namespace Project_Milestone_2
                     {
                         itemManager.RemoveItem(ID);
                         // Refreshes values.
-                        ShowItemData();////////////////////////////////////////////////////////////////////////////////
+                        dgvEdit.DataSource = itemManager.ShowAllItems();
                     }
                     else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                     {
@@ -466,7 +472,8 @@ namespace Project_Milestone_2
         {
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
-                ShowItemData();
+
+                dgvEdit.DataSource = itemManager.ShowAllItems();
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
@@ -492,19 +499,6 @@ namespace Project_Milestone_2
             btnEditRemove.Enabled = true;
             btnEditFilter.Enabled = true;
             btnExitEdit.Enabled = true;
-        }
-
-        // Other methods
-        public void ShowItemData()
-        {
-            if (editItemsFilterList.Count > 0)
-            {
-                dgvEdit.DataSource = itemManager.ShowAllItems();
-            }
-            else
-            {
-                dgvEdit.DataSource = itemManager.FilterItems(editItemsFilterList);
-            }
         }
         //-----------------------------------------------------------------------------------------------
 
@@ -566,30 +560,31 @@ namespace Project_Milestone_2
 
         private void BtnApplyAdminFilter_Click(object sender, EventArgs e)
         {
-            //string value;
-            //double numTest;
+            string value;
+            double numTest;
 
             //EnableForm();
-            //pnlAdminFilter.Visible = false;
-            //pnlAdminFilter.Enabled = false;
+            pnlAdminFilter.Visible = false;
+            pnlAdminFilter.Enabled = false;
 
-            //// This checks correctness of formats.
-            //try
-            //{
-            //    numTest = double.Parse(textBox3.Text);
-            //    value = numTest.ToString();
-            //}
-            //catch (Exception)
-            //{
-            //    if ((comboBox5.SelectedItem.ToString() == "LIKE") || (comboBox5.SelectedItem.ToString() == "NOT LIKE"))
-            //    {
-            //        value = "'%" + textBox3.Text + "%'";
-            //    }
-            //    else
-            //    {
-            //        value = "'" + textBox3.Text + "'";
-            //    }
-            //}
+            // This checks correctness of formats.
+            try
+            {
+                //numTest = double.Parse(textBox3.Text);
+
+                //value = numTest.ToString();
+            }
+            catch (Exception)
+            {
+                if ((comboBox5.SelectedItem.ToString() == "LIKE") || (comboBox5.SelectedItem.ToString() == "NOT LIKE"))
+                {
+                    //value = "'%" + textBox3.Text + "%'";
+                }
+                else
+                {
+                    //value = "'" + textBox3.Text + "'";
+                }
+            }
         }
         //-----------------------------------------------------------------------------------------------
 

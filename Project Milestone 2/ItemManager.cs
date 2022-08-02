@@ -79,9 +79,6 @@ namespace Project_Milestone_2
         // This method changes the an items information.
         public bool UpdateItemInfo(string update)
         {
-            List<string> fields = new List<string>();
-            List<string> signs = new List<string>();
-            List<string> values = new List<string>();
             //id#ItemName#Price#Category#Quantity
             // 0 = id
             // 1 = ItemName
@@ -98,6 +95,7 @@ namespace Project_Milestone_2
 
             bool success = false;
             string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, Category = '{category}', Quantity = {quantity} WHERE ItemID = @id";
+            MessageBox.Show(cmdString);
             SqlCommand sqlCommand = new SqlCommand
             {
                 Connection = sqlConnection,
