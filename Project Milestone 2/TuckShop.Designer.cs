@@ -1933,7 +1933,6 @@ namespace Project_Milestone_2
             this.btnAdminFilter.TabIndex = 18;
             this.btnAdminFilter.Text = "Filter results";
             this.btnAdminFilter.UseVisualStyleBackColor = false;
-            this.btnAdminFilter.Click += new System.EventHandler(this.BtnAdminFilter_Click);
             // 
             // panel18
             // 

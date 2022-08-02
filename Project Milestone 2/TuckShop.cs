@@ -238,20 +238,15 @@ namespace Project_Milestone_2
 
         private void BtnEditFilter_Click(object sender, EventArgs e)
         {
-            // Makes sure user is aware of requirements to do this task.
-            var result = MessageBox.Show("You might need some SQL experience to perform filters. Are you sure you want to continue?", "Filter", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            // Loads the field-titles into an input.
+            cboEditFilterField.Items.Clear();
+            for (int i = 0; i < dgvEdit.ColumnCount; i++)
             {
-                // Loads the field-titles into an input.
-                cboEditFilterField.Items.Clear();
-                for (int i = 0; i < dgvEdit.ColumnCount; i++)
-                {
-                    cboEditFilterField.Items.Add(dgvEdit.Columns[i].HeaderText);
-                }
-                DisableEditForm();
-                pnlEditFilter.Visible = true;
-                pnlEditFilter.Enabled = true;
+                cboEditFilterField.Items.Add(dgvEdit.Columns[i].HeaderText);
             }
+            DisableEditForm();
+            pnlEditFilter.Visible = true;
+            pnlEditFilter.Enabled = true;
         }
 
         private void BtnEditFiltersCancel_Click(object sender, EventArgs e)
@@ -549,14 +544,14 @@ namespace Project_Milestone_2
 
         private void BtnCancelAdminFilter_Click(object sender, EventArgs e)
         {
-            EnableForm();
+            //EnableForm();
             pnlAdminFilter.Visible = false;
             pnlAdminFilter.Enabled = false;
         }
 
         private void BtnRemoveAdminFilters_Click(object sender, EventArgs e)
         {
-            EnableForm();
+            //EnableForm();
             editItemsFilterList.Clear();
 
             pnlAdminFilter.Visible = false;
@@ -565,30 +560,30 @@ namespace Project_Milestone_2
 
         private void BtnApplyAdminFilter_Click(object sender, EventArgs e)
         {
-            string value;
-            double numTest;
+            //string value;
+            //double numTest;
 
-            EnableForm();
-            pnlAdminFilter.Visible = false;
-            pnlAdminFilter.Enabled = false;
+            //EnableForm();
+            //pnlAdminFilter.Visible = false;
+            //pnlAdminFilter.Enabled = false;
 
-            // This checks correctness of formats.
-            try
-            {
-                numTest = double.Parse(textBox3.Text);
-                value = numTest.ToString();
-            }
-            catch (Exception)
-            {
-                if ((comboBox5.SelectedItem.ToString() == "LIKE") || (comboBox5.SelectedItem.ToString() == "NOT LIKE"))
-                {
-                    value = "'%" + textBox3.Text + "%'";
-                }
-                else
-                {
-                    value = "'" + textBox3.Text + "'";
-                }
-            }
+            //// This checks correctness of formats.
+            //try
+            //{
+            //    numTest = double.Parse(textBox3.Text);
+            //    value = numTest.ToString();
+            //}
+            //catch (Exception)
+            //{
+            //    if ((comboBox5.SelectedItem.ToString() == "LIKE") || (comboBox5.SelectedItem.ToString() == "NOT LIKE"))
+            //    {
+            //        value = "'%" + textBox3.Text + "%'";
+            //    }
+            //    else
+            //    {
+            //        value = "'" + textBox3.Text + "'";
+            //    }
+            //}
         }
         //-----------------------------------------------------------------------------------------------
 
