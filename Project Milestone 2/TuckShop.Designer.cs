@@ -167,6 +167,18 @@ namespace Project_Milestone_2
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnExitEditLogin = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
+            this.pnlEditAddItem = new System.Windows.Forms.Panel();
+            this.pnlEditAddSale = new System.Windows.Forms.Panel();
+            this.txtEditAddItemName = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtEditAddItemPrice = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.cboEditAddItemCategory = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.nudEditAddItemQuantity = new System.Windows.Forms.NumericUpDown();
+            this.label36 = new System.Windows.Forms.Label();
+            this.btnEditAddItemSubmit = new System.Windows.Forms.Button();
             this.tcMainScreen.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -203,6 +215,8 @@ namespace Project_Milestone_2
             this.tpEditLogin.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.pnlEditAddItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEditAddItemQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // tcMainScreen
@@ -611,6 +625,8 @@ namespace Project_Milestone_2
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.pnlEditAddSale);
+            this.panel8.Controls.Add(this.pnlEditAddItem);
             this.panel8.Controls.Add(this.dgvEdit);
             this.panel8.Location = new System.Drawing.Point(0, 111);
             this.panel8.Name = "panel8";
@@ -811,6 +827,7 @@ namespace Project_Milestone_2
             // 
             // cboEditCurrentTable
             // 
+            this.cboEditCurrentTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEditCurrentTable.FormattingEnabled = true;
             this.cboEditCurrentTable.Items.AddRange(new object[] {
             "Items",
@@ -1569,6 +1586,123 @@ namespace Project_Milestone_2
             this.label31.TabIndex = 15;
             this.label31.Text = "Edit User Details";
             // 
+            // pnlEditAddItem
+            // 
+            this.pnlEditAddItem.Controls.Add(this.btnEditAddItemSubmit);
+            this.pnlEditAddItem.Controls.Add(this.label36);
+            this.pnlEditAddItem.Controls.Add(this.nudEditAddItemQuantity);
+            this.pnlEditAddItem.Controls.Add(this.label35);
+            this.pnlEditAddItem.Controls.Add(this.cboEditAddItemCategory);
+            this.pnlEditAddItem.Controls.Add(this.label34);
+            this.pnlEditAddItem.Controls.Add(this.txtEditAddItemPrice);
+            this.pnlEditAddItem.Controls.Add(this.label33);
+            this.pnlEditAddItem.Controls.Add(this.label32);
+            this.pnlEditAddItem.Controls.Add(this.txtEditAddItemName);
+            this.pnlEditAddItem.Location = new System.Drawing.Point(113, 57);
+            this.pnlEditAddItem.Name = "pnlEditAddItem";
+            this.pnlEditAddItem.Size = new System.Drawing.Size(221, 196);
+            this.pnlEditAddItem.TabIndex = 5;
+            // 
+            // pnlEditAddSale
+            // 
+            this.pnlEditAddSale.Location = new System.Drawing.Point(518, 57);
+            this.pnlEditAddSale.Name = "pnlEditAddSale";
+            this.pnlEditAddSale.Size = new System.Drawing.Size(221, 227);
+            this.pnlEditAddSale.TabIndex = 6;
+            // 
+            // txtEditAddItemName
+            // 
+            this.txtEditAddItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditAddItemName.Location = new System.Drawing.Point(125, 36);
+            this.txtEditAddItemName.Name = "txtEditAddItemName";
+            this.txtEditAddItemName.Size = new System.Drawing.Size(93, 21);
+            this.txtEditAddItemName.TabIndex = 9;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(51, 8);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(119, 20);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "Add new Item";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(3, 41);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(58, 13);
+            this.label33.TabIndex = 11;
+            this.label33.Text = "ItemName:";
+            // 
+            // txtEditAddItemPrice
+            // 
+            this.txtEditAddItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditAddItemPrice.Location = new System.Drawing.Point(125, 63);
+            this.txtEditAddItemPrice.Name = "txtEditAddItemPrice";
+            this.txtEditAddItemPrice.Size = new System.Drawing.Size(93, 21);
+            this.txtEditAddItemPrice.TabIndex = 12;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(1, 68);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(118, 13);
+            this.label34.TabIndex = 13;
+            this.label34.Text = "Price (only the number):";
+            // 
+            // cboEditAddItemCategory
+            // 
+            this.cboEditAddItemCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEditAddItemCategory.FormattingEnabled = true;
+            this.cboEditAddItemCategory.Items.AddRange(new object[] {
+            "Cooldrink",
+            "Food",
+            "Breakfast",
+            "Snacks"});
+            this.cboEditAddItemCategory.Location = new System.Drawing.Point(125, 90);
+            this.cboEditAddItemCategory.Name = "cboEditAddItemCategory";
+            this.cboEditAddItemCategory.Size = new System.Drawing.Size(93, 21);
+            this.cboEditAddItemCategory.TabIndex = 0;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 93);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(52, 13);
+            this.label35.TabIndex = 14;
+            this.label35.Text = "Category:";
+            // 
+            // nudEditAddItemQuantity
+            // 
+            this.nudEditAddItemQuantity.Location = new System.Drawing.Point(125, 117);
+            this.nudEditAddItemQuantity.Name = "nudEditAddItemQuantity";
+            this.nudEditAddItemQuantity.Size = new System.Drawing.Size(41, 20);
+            this.nudEditAddItemQuantity.TabIndex = 15;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(3, 119);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(94, 13);
+            this.label36.TabIndex = 16;
+            this.label36.Text = "Quantity available:";
+            // 
+            // btnEditAddItemSubmit
+            // 
+            this.btnEditAddItemSubmit.Location = new System.Drawing.Point(77, 152);
+            this.btnEditAddItemSubmit.Name = "btnEditAddItemSubmit";
+            this.btnEditAddItemSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnEditAddItemSubmit.TabIndex = 9;
+            this.btnEditAddItemSubmit.Text = "Submit";
+            this.btnEditAddItemSubmit.UseVisualStyleBackColor = true;
+            this.btnEditAddItemSubmit.Click += new System.EventHandler(this.btnEditAddItemSubmit_Click);
+            // 
             // frmTuckShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1633,6 +1767,9 @@ namespace Project_Milestone_2
             this.panel20.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.pnlEditAddItem.ResumeLayout(false);
+            this.pnlEditAddItem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEditAddItemQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1776,6 +1913,18 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Button btnUserNameChange;
         private System.Windows.Forms.Button btnUserPasswordChange;
         private System.Windows.Forms.Button btnUserEmailChange;
+        private System.Windows.Forms.Panel pnlEditAddSale;
+        private System.Windows.Forms.Panel pnlEditAddItem;
+        private System.Windows.Forms.Button btnEditAddItemSubmit;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.NumericUpDown nudEditAddItemQuantity;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox cboEditAddItemCategory;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtEditAddItemPrice;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtEditAddItemName;
     }
 }
 

@@ -223,6 +223,10 @@ namespace Project_Milestone_2
         {
             //
         }
+        private void btnEditAddItemSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnEditChange_Click(object sender, EventArgs e)
         {
@@ -230,7 +234,6 @@ namespace Project_Milestone_2
         }
         private void btnEditRemove_Click(object sender, EventArgs e)
         {
-            // TEST IT
             var row = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex];
             string ID = row.Cells[0].Value.ToString();
             var result = MessageBox.Show("Are you sure you want to delete record in Items containing: \nItemID: " +
