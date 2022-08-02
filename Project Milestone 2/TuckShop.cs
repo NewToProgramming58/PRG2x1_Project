@@ -405,7 +405,7 @@ namespace Project_Milestone_2
                 values = txtEditChangeItemID.Text + "#" + txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + 
                          cboEditChangeItemCategory.SelectedItem + "#" + nudEditChangeItemQuantity.Value.ToString();
                 itemManager.UpdateItemInfo(values);
-
+                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 if (editItemsFilterList.Count > 0)
                 {
                     dgvEdit.DataSource = itemManager.ShowAllItems();
@@ -446,7 +446,7 @@ namespace Project_Milestone_2
                     {
                         itemManager.RemoveItem(ID);
                         // Refreshes values.
-                        dgvEdit.DataSource = itemManager.ShowAllItems();
+                        ShowItemData();////////////////////////////////////////////////////////////////////////////////
                     }
                     else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                     {
@@ -466,8 +466,7 @@ namespace Project_Milestone_2
         {
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
-
-                dgvEdit.DataSource = itemManager.ShowAllItems();
+                ShowItemData();
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
@@ -493,6 +492,19 @@ namespace Project_Milestone_2
             btnEditRemove.Enabled = true;
             btnEditFilter.Enabled = true;
             btnExitEdit.Enabled = true;
+        }
+
+        // Other methods
+        public void ShowItemData()
+        {
+            if (editItemsFilterList.Count > 0)
+            {
+                dgvEdit.DataSource = itemManager.ShowAllItems();
+            }
+            else
+            {
+                dgvEdit.DataSource = itemManager.FilterItems(editItemsFilterList);
+            }
         }
         //-----------------------------------------------------------------------------------------------
 
