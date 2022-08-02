@@ -77,10 +77,30 @@ namespace Project_Milestone_2
         }
 
         // This method changes the an items information.
-        public bool UpdateItemInfo(String id,ItemDetail itemDetail ,string newValue)
+        public bool UpdateItemInfo(String id, ItemDetail itemDetail, string newValue, List<string> filters)
         {
+            List<string> fields = new List<string>();
+            List<string> signs = new List<string>();
+            List<string> values = new List<string>();
+
+            foreach (string filter in filters)
+            {
+                var splitFilters = filter.Split('#');
+                fields.Add(splitFilters[0]);
+                signs.Add(splitFilters[1]);
+                values.Add(splitFilters[2]);
+            }
+            string whereFilter = $"WHERE {fields[0]} {signs[0]} {values[0]}";
+            if (fields.Count > 1)
+            {
+                for (int i = 1; i < signs.Count; i++)
+                {
+                    whereFilter += $" AND {fields[i]} {signs[i]} {values[i]}";
+                }
+            }
+
             bool success = false;
-            string cmdString = $"UPDATE Items SET \"{itemDetail.ToString()}\" = @value WHERE ItemID = @id";
+            string cmdString = $"UPDATE Items SET \"{itemDetail.ToString()}\" = @value "+whereFilter;
             SqlCommand sqlCommand = new SqlCommand
             {
                 Connection = sqlConnection,

@@ -16,7 +16,7 @@ namespace Project_Milestone_2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTuckShop());
+            Application.Run(new FrmTuckShop());
         }
     }
 }

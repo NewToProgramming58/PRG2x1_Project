@@ -1,7 +1,7 @@
 ﻿
 namespace Project_Milestone_2
 {
-    partial class frmTuckShop
+    partial class FrmTuckShop
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Project_Milestone_2
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTuckShop));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTuckShop));
             this.tcMainScreen = new System.Windows.Forms.TabControl();
             this.tpLogin = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -318,7 +318,7 @@ namespace Project_Milestone_2
             this.btnNavigateToRegister.TabIndex = 7;
             this.btnNavigateToRegister.Text = "Register";
             this.btnNavigateToRegister.UseVisualStyleBackColor = true;
-            this.btnNavigateToRegister.Click += new System.EventHandler(this.btnNavigateToRegister_Click);
+            this.btnNavigateToRegister.Click += new System.EventHandler(this.BtnNavigateToRegister_Click);
             // 
             // btnLogin
             // 
@@ -328,7 +328,7 @@ namespace Project_Milestone_2
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // panel4
             // 
@@ -404,7 +404,7 @@ namespace Project_Milestone_2
             this.btnRegister.TabIndex = 19;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // txbRegPassword
             // 
@@ -488,7 +488,7 @@ namespace Project_Milestone_2
             this.btnExitRegister.TabIndex = 16;
             this.btnExitRegister.Text = "Back";
             this.btnExitRegister.UseVisualStyleBackColor = true;
-            this.btnExitRegister.Click += new System.EventHandler(this.btnExitRegister_Click);
+            this.btnExitRegister.Click += new System.EventHandler(this.BtnExitRegister_Click);
             // 
             // label11
             // 
@@ -550,7 +550,7 @@ namespace Project_Milestone_2
             this.btnExitMenu.TabIndex = 10;
             this.btnExitMenu.Text = "Logout";
             this.btnExitMenu.UseVisualStyleBackColor = true;
-            this.btnExitMenu.Click += new System.EventHandler(this.btnExitMenu_Click);
+            this.btnExitMenu.Click += new System.EventHandler(this.BtnExitMenu_Click);
             // 
             // label10
             // 
@@ -583,7 +583,7 @@ namespace Project_Milestone_2
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // btnEditLogin
             // 
@@ -593,7 +593,7 @@ namespace Project_Milestone_2
             this.btnEditLogin.TabIndex = 8;
             this.btnEditLogin.Text = "Edit Login Details";
             this.btnEditLogin.UseVisualStyleBackColor = true;
-            this.btnEditLogin.Click += new System.EventHandler(this.btnEditLogin_Click);
+            this.btnEditLogin.Click += new System.EventHandler(this.BtnEditLogin_Click);
             // 
             // btnViewRecords
             // 
@@ -603,7 +603,7 @@ namespace Project_Milestone_2
             this.btnViewRecords.TabIndex = 7;
             this.btnViewRecords.Text = "View Records";
             this.btnViewRecords.UseVisualStyleBackColor = true;
-            this.btnViewRecords.Click += new System.EventHandler(this.btnViewRecords_Click);
+            this.btnViewRecords.Click += new System.EventHandler(this.BtnViewRecords_Click);
             // 
             // btnEditRecords
             // 
@@ -613,7 +613,7 @@ namespace Project_Milestone_2
             this.btnEditRecords.TabIndex = 6;
             this.btnEditRecords.Text = "Edit Records";
             this.btnEditRecords.UseVisualStyleBackColor = true;
-            this.btnEditRecords.Click += new System.EventHandler(this.btnEditRecords_Click);
+            this.btnEditRecords.Click += new System.EventHandler(this.BtnEditRecords_Click);
             // 
             // btnPlaceOrder
             // 
@@ -623,7 +623,7 @@ namespace Project_Milestone_2
             this.btnPlaceOrder.TabIndex = 5;
             this.btnPlaceOrder.Text = "Place Order";
             this.btnPlaceOrder.UseVisualStyleBackColor = true;
-            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
+            this.btnPlaceOrder.Click += new System.EventHandler(this.BtnPlaceOrder_Click);
             // 
             // tpEdit
             // 
@@ -796,7 +796,7 @@ namespace Project_Milestone_2
             this.btnEditAddItemCancel.TabIndex = 17;
             this.btnEditAddItemCancel.Text = "Cancel";
             this.btnEditAddItemCancel.UseVisualStyleBackColor = true;
-            this.btnEditAddItemCancel.Click += new System.EventHandler(this.btnEditAddItemCancel_Click);
+            this.btnEditAddItemCancel.Click += new System.EventHandler(this.BtnEditAddItemCancel_Click);
             // 
             // btnEditAddItemSubmit
             // 
@@ -806,7 +806,7 @@ namespace Project_Milestone_2
             this.btnEditAddItemSubmit.TabIndex = 9;
             this.btnEditAddItemSubmit.Text = "Submit";
             this.btnEditAddItemSubmit.UseVisualStyleBackColor = true;
-            this.btnEditAddItemSubmit.Click += new System.EventHandler(this.btnEditAddItemSubmit_Click);
+            this.btnEditAddItemSubmit.Click += new System.EventHandler(this.BtnEditAddItemSubmit_Click);
             // 
             // label36
             // 
@@ -973,7 +973,7 @@ namespace Project_Milestone_2
             this.btnRemoveEditFilters.TabIndex = 6;
             this.btnRemoveEditFilters.Text = "Remove all filters";
             this.btnRemoveEditFilters.UseVisualStyleBackColor = true;
-            this.btnRemoveEditFilters.Click += new System.EventHandler(this.btnRemoveEditFilters_Click);
+            this.btnRemoveEditFilters.Click += new System.EventHandler(this.BtnRemoveEditFilters_Click);
             // 
             // btnCancelEditFilter
             // 
@@ -983,7 +983,7 @@ namespace Project_Milestone_2
             this.btnCancelEditFilter.TabIndex = 5;
             this.btnCancelEditFilter.Text = "Cancel";
             this.btnCancelEditFilter.UseVisualStyleBackColor = true;
-            this.btnCancelEditFilter.Click += new System.EventHandler(this.btnCancelEditFilter_Click);
+            this.btnCancelEditFilter.Click += new System.EventHandler(this.BtnCancelEditFilter_Click);
             // 
             // btnApplyEditFilters
             // 
@@ -993,7 +993,7 @@ namespace Project_Milestone_2
             this.btnApplyEditFilters.TabIndex = 4;
             this.btnApplyEditFilters.Text = "Apply";
             this.btnApplyEditFilters.UseVisualStyleBackColor = true;
-            this.btnApplyEditFilters.Click += new System.EventHandler(this.btnApplyEditFilters_Click);
+            this.btnApplyEditFilters.Click += new System.EventHandler(this.BtnApplyEditFilters_Click);
             // 
             // textBox2
             // 
@@ -1037,7 +1037,7 @@ namespace Project_Milestone_2
             this.btnEditAdd.TabIndex = 20;
             this.btnEditAdd.Text = "Add a new record";
             this.btnEditAdd.UseVisualStyleBackColor = true;
-            this.btnEditAdd.Click += new System.EventHandler(this.btnEditAdd_Click);
+            this.btnEditAdd.Click += new System.EventHandler(this.BtnEditAdd_Click);
             // 
             // richTextBox1
             // 
@@ -1056,7 +1056,7 @@ namespace Project_Milestone_2
             this.btnEditFilter.TabIndex = 18;
             this.btnEditFilter.Text = "Filter results";
             this.btnEditFilter.UseVisualStyleBackColor = false;
-            this.btnEditFilter.Click += new System.EventHandler(this.btnEditFilter_Click);
+            this.btnEditFilter.Click += new System.EventHandler(this.BtnEditFilter_Click);
             // 
             // panel9
             // 
@@ -1076,7 +1076,7 @@ namespace Project_Milestone_2
             this.btnExitEdit.TabIndex = 16;
             this.btnExitEdit.Text = "Back";
             this.btnExitEdit.UseVisualStyleBackColor = true;
-            this.btnExitEdit.Click += new System.EventHandler(this.btnExitEdit_Click);
+            this.btnExitEdit.Click += new System.EventHandler(this.BtnExitEdit_Click);
             // 
             // label14
             // 
@@ -1108,7 +1108,7 @@ namespace Project_Milestone_2
             this.cboEditCurrentTable.Name = "cboEditCurrentTable";
             this.cboEditCurrentTable.Size = new System.Drawing.Size(136, 21);
             this.cboEditCurrentTable.TabIndex = 8;
-            this.cboEditCurrentTable.SelectedValueChanged += new System.EventHandler(this.cboEditCurrentTable_SelectedValueChanged);
+            this.cboEditCurrentTable.SelectedValueChanged += new System.EventHandler(this.CboEditCurrentTable_SelectedValueChanged);
             // 
             // btnEditChange
             // 
@@ -1118,7 +1118,7 @@ namespace Project_Milestone_2
             this.btnEditChange.TabIndex = 7;
             this.btnEditChange.Text = "Change record";
             this.btnEditChange.UseVisualStyleBackColor = true;
-            this.btnEditChange.Click += new System.EventHandler(this.btnEditChange_Click);
+            this.btnEditChange.Click += new System.EventHandler(this.BtnEditChange_Click);
             // 
             // btnEditRemove
             // 
@@ -1128,7 +1128,7 @@ namespace Project_Milestone_2
             this.btnEditRemove.TabIndex = 6;
             this.btnEditRemove.Text = "Remove record";
             this.btnEditRemove.UseVisualStyleBackColor = true;
-            this.btnEditRemove.Click += new System.EventHandler(this.btnEditRemove_Click);
+            this.btnEditRemove.Click += new System.EventHandler(this.BtnEditRemove_Click);
             // 
             // tpView
             // 
@@ -1214,7 +1214,7 @@ namespace Project_Milestone_2
             this.btnRemoveViewFilters.TabIndex = 6;
             this.btnRemoveViewFilters.Text = "Remove all filters";
             this.btnRemoveViewFilters.UseVisualStyleBackColor = true;
-            this.btnRemoveViewFilters.Click += new System.EventHandler(this.btnRemoveViewFilters_Click);
+            this.btnRemoveViewFilters.Click += new System.EventHandler(this.BtnRemoveViewFilters_Click);
             // 
             // btnCancelViewFilter
             // 
@@ -1224,7 +1224,7 @@ namespace Project_Milestone_2
             this.btnCancelViewFilter.TabIndex = 5;
             this.btnCancelViewFilter.Text = "Cancel";
             this.btnCancelViewFilter.UseVisualStyleBackColor = true;
-            this.btnCancelViewFilter.Click += new System.EventHandler(this.btnCancelViewFilter_Click);
+            this.btnCancelViewFilter.Click += new System.EventHandler(this.BtnCancelViewFilter_Click);
             // 
             // btnApplyViewFilter
             // 
@@ -1234,7 +1234,7 @@ namespace Project_Milestone_2
             this.btnApplyViewFilter.TabIndex = 4;
             this.btnApplyViewFilter.Text = "Apply";
             this.btnApplyViewFilter.UseVisualStyleBackColor = true;
-            this.btnApplyViewFilter.Click += new System.EventHandler(this.btnApplyViewFilter_Click);
+            this.btnApplyViewFilter.Click += new System.EventHandler(this.BtnApplyViewFilter_Click);
             // 
             // textBox1
             // 
@@ -1287,7 +1287,7 @@ namespace Project_Milestone_2
             this.btnViewFilter.TabIndex = 18;
             this.btnViewFilter.Text = "Filter results";
             this.btnViewFilter.UseVisualStyleBackColor = false;
-            this.btnViewFilter.Click += new System.EventHandler(this.btnViewFilter_Click);
+            this.btnViewFilter.Click += new System.EventHandler(this.BtnViewFilter_Click);
             // 
             // panel12
             // 
@@ -1307,7 +1307,7 @@ namespace Project_Milestone_2
             this.btnExitView.TabIndex = 16;
             this.btnExitView.Text = "Back";
             this.btnExitView.UseVisualStyleBackColor = true;
-            this.btnExitView.Click += new System.EventHandler(this.btnExitView_Click);
+            this.btnExitView.Click += new System.EventHandler(this.BtnExitView_Click);
             // 
             // label15
             // 
@@ -1479,7 +1479,7 @@ namespace Project_Milestone_2
             this.btnExitOrder.TabIndex = 10;
             this.btnExitOrder.Text = "Back";
             this.btnExitOrder.UseVisualStyleBackColor = true;
-            this.btnExitOrder.Click += new System.EventHandler(this.btnExitOrder_Click);
+            this.btnExitOrder.Click += new System.EventHandler(this.BtnExitOrder_Click);
             // 
             // label27
             // 
@@ -1587,7 +1587,7 @@ namespace Project_Milestone_2
             this.btnRemoveAdminFilters.TabIndex = 6;
             this.btnRemoveAdminFilters.Text = "Remove all filters";
             this.btnRemoveAdminFilters.UseVisualStyleBackColor = true;
-            this.btnRemoveAdminFilters.Click += new System.EventHandler(this.btnRemoveAdminFilters_Click);
+            this.btnRemoveAdminFilters.Click += new System.EventHandler(this.BtnRemoveAdminFilters_Click);
             // 
             // btnCancelAdminFilter
             // 
@@ -1597,7 +1597,7 @@ namespace Project_Milestone_2
             this.btnCancelAdminFilter.TabIndex = 5;
             this.btnCancelAdminFilter.Text = "Cancel";
             this.btnCancelAdminFilter.UseVisualStyleBackColor = true;
-            this.btnCancelAdminFilter.Click += new System.EventHandler(this.btnCancelAdminFilter_Click);
+            this.btnCancelAdminFilter.Click += new System.EventHandler(this.BtnCancelAdminFilter_Click);
             // 
             // btnApplyAdminFilter
             // 
@@ -1607,7 +1607,7 @@ namespace Project_Milestone_2
             this.btnApplyAdminFilter.TabIndex = 4;
             this.btnApplyAdminFilter.Text = "Apply";
             this.btnApplyAdminFilter.UseVisualStyleBackColor = true;
-            this.btnApplyAdminFilter.Click += new System.EventHandler(this.btnApplyAdminFilter_Click);
+            this.btnApplyAdminFilter.Click += new System.EventHandler(this.BtnApplyAdminFilter_Click);
             // 
             // textBox3
             // 
@@ -1670,7 +1670,7 @@ namespace Project_Milestone_2
             this.btnAdminFilter.TabIndex = 18;
             this.btnAdminFilter.Text = "Filter results";
             this.btnAdminFilter.UseVisualStyleBackColor = false;
-            this.btnAdminFilter.Click += new System.EventHandler(this.btnAdminFilter_Click);
+            this.btnAdminFilter.Click += new System.EventHandler(this.BtnAdminFilter_Click);
             // 
             // panel18
             // 
@@ -1690,7 +1690,7 @@ namespace Project_Milestone_2
             this.btnExitAdminEditLogin.TabIndex = 16;
             this.btnExitAdminEditLogin.Text = "Back";
             this.btnExitAdminEditLogin.UseVisualStyleBackColor = true;
-            this.btnExitAdminEditLogin.Click += new System.EventHandler(this.btnExitAdminEditLogin_Click);
+            this.btnExitAdminEditLogin.Click += new System.EventHandler(this.BtnExitAdminEditLogin_Click);
             // 
             // label29
             // 
@@ -1846,7 +1846,7 @@ namespace Project_Milestone_2
             this.btnExitEditLogin.TabIndex = 16;
             this.btnExitEditLogin.Text = "Back";
             this.btnExitEditLogin.UseVisualStyleBackColor = true;
-            this.btnExitEditLogin.Click += new System.EventHandler(this.btnExitEditLogin_Click);
+            this.btnExitEditLogin.Click += new System.EventHandler(this.BtnExitEditLogin_Click);
             // 
             // label31
             // 
@@ -1867,7 +1867,7 @@ namespace Project_Milestone_2
             this.Name = "frmTuckShop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tuck Shop";
-            this.Load += new System.EventHandler(this.frmTuckShop_Load);
+            this.Load += new System.EventHandler(this.FrmTuckShop_Load);
             this.tcMainScreen.ResumeLayout(false);
             this.tpLogin.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
