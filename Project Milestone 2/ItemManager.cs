@@ -159,7 +159,7 @@ namespace Project_Milestone_2
             {
                 for (int i = 1; i < signs.Count; i++)
                 {
-                    cmdString += $"AND {fields[i]} {signs[i]} {values[i]}";
+                    cmdString += $" AND {fields[i]} {signs[i]} {values[i]}";
                 }
             }
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
