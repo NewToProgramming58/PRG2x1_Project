@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SalesManger.cs" />
     <Compile Include="TuckShop.cs">
       <SubType>Form</SubType>
     </Compile>
