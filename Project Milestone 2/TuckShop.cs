@@ -17,6 +17,7 @@ namespace Project_Milestone_2
     {
         static SqlConnection sqlConnection;
         static ItemManger itemManger;
+        static UserManager userManager;
 
         public static void ConnectToDB() 
         {
@@ -63,17 +64,18 @@ namespace Project_Milestone_2
                 }
                 catch (System.Exception exeption)
                 {
-                    MessageBox.Show(exeption.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(exeption.ToString());
                 }
             }
             else
             {
                 // When DB is 100% then simply open a connection
                 sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
+                sqlConnection.Open();
             }
             //Object to Manage DB control concerning Items
             itemManger = new ItemManger(sqlConnection);
-
+            userManager = new UserManger(sqlConnection);
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
