@@ -16,11 +16,11 @@ namespace Project_Milestone_2
         Price,
         Quantity
     }
-    internal class ItemManger
+    internal class ItemManager
     {
         readonly SqlConnection sqlConnection;
 
-        public ItemManger(SqlConnection sqlConnection)
+        public ItemManager(SqlConnection sqlConnection)
         {
             this.sqlConnection = sqlConnection;
         }

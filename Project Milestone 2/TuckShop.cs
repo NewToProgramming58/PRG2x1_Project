@@ -17,7 +17,7 @@ namespace Project_Milestone_2
     {
         public string EditQuery = "SELECT * FROM Items";
         static SqlConnection sqlConnection;
-        static ItemManger itemManger;
+        static ItemManager itemManager;
         static UserManager userManager;
 
         public static void ConnectToDB() 
@@ -75,8 +75,8 @@ namespace Project_Milestone_2
                 sqlConnection.Open();
             }
             //Object to Manage DB control concerning Items
-            itemManger = new ItemManger(sqlConnection);
-            userManager = new UserManger(sqlConnection);
+            itemManager = new ItemManager(sqlConnection);
+            userManager = new UserManager(sqlConnection);
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
