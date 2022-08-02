@@ -32,7 +32,7 @@ namespace Project_Milestone_2
             switch (ex.GetType().ToString())
             {
                 default:
-                    MessageBox.Show("An unknown error has occured, no changes will be made.");
+                    MessageBox.Show("An unknown error has occured, no changes will be made.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
         }
@@ -65,7 +65,7 @@ namespace Project_Milestone_2
                 // This text file conatians the query for items table. (Cant use GO in SQlCommand).
                 string createitems = File.ReadAllText(exepath + @"Queries\CreateItems.txt");
                 // This text file conatians the query for items table. (Cant use GO in SQlCommand).
-                string createusers = File.ReadAllText(exepath + @"Queries\CreateUsers.txt");/////////////////////////////////////////////////////////////
+                string createusers = File.ReadAllText(exepath + @"Queries\CreateUsers.txt");
                 // USE a Master connection to build DB.
                 SqlConnection masterConnection = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master");
 
@@ -81,13 +81,12 @@ namespace Project_Milestone_2
                     sqlConnection.Open();
                     myCommand = new SqlCommand(createitems, sqlConnection);
                     myCommand.ExecuteNonQuery();
-                    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
                     myCommand = new SqlCommand(createusers, sqlConnection);
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    ErrorHandler.Invoke(ex);/////////////////////////////////////////////////////////////////////////////////
+                    ErrorHandler.Invoke(ex);
                 }
             }
             else
@@ -133,7 +132,7 @@ namespace Project_Milestone_2
 
 
         // Login page
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
         private void BtnNavigateToRegister_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpRegister;
@@ -144,12 +143,12 @@ namespace Project_Milestone_2
         {
             OpenMenu();
         }
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
 
 
 
         // Register page
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
         private void BtnExitRegister_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpLogin;
@@ -161,12 +160,12 @@ namespace Project_Milestone_2
             tcMainScreen.SelectedTab = tpLogin;
             Size = new Size(215, 266);
         }
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
 
 
 
         // Menu page
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
         private void BtnExitMenu_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpLogin;
@@ -207,28 +206,28 @@ namespace Project_Milestone_2
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("are you sure you want to exit?", "Exit", MessageBoxButtons.OKCancel);
+            var result = MessageBox.Show("are you sure you want to exit?", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (result == DialogResult.OK)
             {
                 Close();
             }
         }
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
 
 
 
         // Order page
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
         private void BtnExitOrder_Click(object sender, EventArgs e)
         {
             OpenMenu();
         }
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
 
 
 
         // Edit records page
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
         private void BtnExitEdit_Click(object sender, EventArgs e)
         {
             OpenMenu();
@@ -267,10 +266,11 @@ namespace Project_Milestone_2
             // Error check.
             try
             {
+                // Checks to see which table is currently open to remove filter on thet table.
                 if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
                 {
                     editItemsFilterList.Clear();
-                    dgvEdit.DataSource = itemManager.ShowAllItems();
+                    ShowItems();
                 }
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
@@ -286,36 +286,24 @@ namespace Project_Milestone_2
 
         private void BtnEditFiltersApply_Click(object sender, EventArgs e)
         {
-            string value;
             string filter;
-            double numTest;
 
             EnableEditForm();
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
 
-            // This checks if the value needs to be formatted and puts it in the correct SQL format if needed.
-            try
-            {
-                numTest = double.Parse(txtEditFilterValue.Text);
-                value = numTest.ToString();
-            }
-            catch (Exception)
-            {
-                value = txtEditFilterValue.Text;
-            }
-
-
             // Error check.
             try
             {
                 // Puts the filters in the correct format for the method.
-                filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + value;
+                filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + txtEditFilterValue.Text;
 
+                // Checks which table is currently open to be filtered.
                 if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
                 {
                     editItemsFilterList.Add(filter);
-                    dgvEdit.DataSource = itemManager.FilterItems(editItemsFilterList);
+                    // Applies the filter (the list has an added filter so the filter method runs).
+                    ShowItems();
                 }
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
@@ -349,6 +337,14 @@ namespace Project_Milestone_2
                 pnlEditAddSale.Enabled = true;
             }
         }
+
+        private void BtnEditAddItemCancel_Click(object sender, EventArgs e)
+        {
+            EnableEditForm();
+            pnlEditAddItem.Visible = false;
+            pnlEditAddItem.Enabled = false;
+        }
+
         private void BtnEditAddItemSubmit_Click(object sender, EventArgs e)
         {
             // Error check for value conversion.
@@ -361,19 +357,13 @@ namespace Project_Milestone_2
 
                 itemManager.AddItem(itemName, itemCategory, itemQuantity, itemPrice);
                 // Refreshes values.
-                dgvEdit.DataSource = itemManager.ShowAllItems();
+                ShowItems();
             }
             catch (Exception ex)
             {
                 ErrorHandler.Invoke(ex);
             }
 
-            EnableEditForm();
-            pnlEditAddItem.Visible = false;
-            pnlEditAddItem.Enabled = false;
-        }
-        private void BtnEditAddItemCancel_Click(object sender, EventArgs e)
-        {
             EnableEditForm();
             pnlEditAddItem.Visible = false;
             pnlEditAddItem.Enabled = false;
@@ -384,10 +374,9 @@ namespace Project_Milestone_2
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
                 DisableEditForm();
-                dgvEdit.Enabled = false;
                 pnlEditChangeItem.Visible = true;
                 pnlEditChangeItem.Enabled = true;
-                // Outputs the current values selected into the input-areas.
+                // Outputs the current values selected, into the input-areas.
                 txtEditChangeItemID.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 txtEditChangeItemName.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[1].Value.ToString();
                 txtEditChangeItemPrice.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[2].Value.ToString();
@@ -396,7 +385,7 @@ namespace Project_Milestone_2
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
-                MessageBox.Show("Only Items can be changed. Sales can only be Removed or Added");
+                MessageBox.Show("Only Items can be changed. Sales can only be Removed or Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -405,21 +394,37 @@ namespace Project_Milestone_2
             EnableEditForm();
             pnlEditChangeItem.Visible = false;
             pnlEditChangeItem.Enabled = false;
-            dgvEdit.Enabled = true;
         }
 
-        private void btnEditChangeItemSubmit_Click(object sender, EventArgs e)
+        private void BtnEditChangeItemSubmit_Click(object sender, EventArgs e)
         {
             string values;
+            string changedValues = "";
+
             // Error check for value conversion.
             try
             {
                 // Stores values in correct format for method.
                 values = txtEditChangeItemID.Text + "#" + txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + cboEditChangeItemCategory.SelectedItem + "#" + 
                          nudEditChangeItemQuantity.Value.ToString();
-                itemManager.UpdateItemInfo(values);//////////////////////////////////////////////////////
 
-                //REFRESH DATA//////////////////////////////////////////////////////////////////////////////////
+                // Finds the changed values so they can be displayed.
+                for (int i = 0; i < dgvEdit.Columns.Count; i++)
+                {
+                    var newValues = values.Split('#');
+                    if (dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[i].Value.ToString() != newValues[i])
+                    {
+                        changedValues = changedValues + "\n" + dgvEdit.Columns[i].HeaderText + ": " +
+                        dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[i].Value.ToString().Trim() + " >> " + newValues[i].Trim();/////////////////////////////////////////////
+                    }
+                }
+                var result = MessageBox.Show("Are you sure you want to update the following values: " + changedValues, "Change values", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    itemManager.UpdateItemInfo(values);
+                }
+                // Refreshes the data.
+                ShowItems();
             }
             catch (Exception ex)
             {
@@ -429,7 +434,6 @@ namespace Project_Milestone_2
             EnableEditForm();
             pnlEditChangeItem.Visible = false;
             pnlEditChangeItem.Enabled = false;
-            dgvEdit.Enabled = true;
         }
 
         private void BtnEditRemove_Click(object sender, EventArgs e)
@@ -439,10 +443,10 @@ namespace Project_Milestone_2
             // Asks user if he/she is sure they want to delete the record and if Yes is selected, deletes appropriate record.
             var result = MessageBox.Show("Are you sure you want to delete record in Items containing: \nItemID: " +
                                     row.Cells[0].Value.ToString() + "\nItemname: " +
-                                    row.Cells[1].Value.ToString() + "\nPrice: " +
+                                    row.Cells[1].Value.ToString().Trim() + "\nPrice: " +////////////////////////////////////////////////////
                                     row.Cells[2].Value.ToString() + "\nCategory: " +
                                     row.Cells[3].Value.ToString() + "\nQuantity: " +
-                                    row.Cells[4].Value.ToString(), "Remove record", MessageBoxButtons.YesNo);
+                                    row.Cells[4].Value.ToString(), "Remove record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 // Error check.
@@ -452,7 +456,7 @@ namespace Project_Milestone_2
                     {
                         itemManager.RemoveItem(ID);
                         // Refreshes values.
-                        dgvEdit.DataSource = itemManager.ShowAllItems();
+                        ShowItems();
                     }
                     else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                     {
@@ -472,8 +476,7 @@ namespace Project_Milestone_2
         {
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
-
-                dgvEdit.DataSource = itemManager.ShowAllItems();
+                ShowItems();
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
@@ -490,6 +493,7 @@ namespace Project_Milestone_2
             btnEditRemove.Enabled = false;
             btnEditFilter.Enabled = false;
             btnExitEdit.Enabled = false;
+            dgvEdit.Enabled = false;
         }
         public void EnableEditForm()
         {
@@ -499,13 +503,27 @@ namespace Project_Milestone_2
             btnEditRemove.Enabled = true;
             btnEditFilter.Enabled = true;
             btnExitEdit.Enabled = true;
+            dgvEdit.Enabled = true;
         }
-        //-----------------------------------------------------------------------------------------------
+
+        // This method checks if a filter is already applied or not when refreshing the datagrid.
+        public void ShowItems()
+        {
+            if (editItemsFilterList.Count > 0)
+            {
+                dgvEdit.DataSource = itemManager.FilterItems(editItemsFilterList);
+            }
+            else
+            {
+                dgvEdit.DataSource = itemManager.ShowAllItems();
+            }
+        }
+        //===============================================================================================
 
 
 
         // View page
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
         private void BtnExitView_Click(object sender, EventArgs e)
         {
             OpenMenu();
@@ -528,12 +546,12 @@ namespace Project_Milestone_2
         {
             pnlViewFilter.Visible = false;
         }
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
 
 
 
         // Edit login for Admin page
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
         private void BtnExitAdminEditLogin_Click(object sender, EventArgs e)
         {
             OpenMenu();
@@ -586,16 +604,16 @@ namespace Project_Milestone_2
                 }
             }
         }
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
 
 
 
         // Edit login for normal users page
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
         private void BtnExitEditLogin_Click(object sender, EventArgs e)
         {
             OpenMenu();
         }
-        //-----------------------------------------------------------------------------------------------
+        //===============================================================================================
     }
 }
