@@ -132,7 +132,7 @@ namespace Project_Milestone_2
         //Show all
         public DataTable ShowAllItems()
         {
-            string cmdString = "SELECT * FROM Items";             
+            string cmdString = "SELECT * FROM Items ORDER BY ItemID";             
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
             DataSet ds = new DataSet();
