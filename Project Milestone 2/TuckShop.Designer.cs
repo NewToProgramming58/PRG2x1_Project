@@ -622,6 +622,7 @@ namespace Project_Milestone_2
             this.dgvEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEdit.Location = new System.Drawing.Point(0, 0);
             this.dgvEdit.Name = "dgvEdit";
+            this.dgvEdit.ReadOnly = true;
             this.dgvEdit.Size = new System.Drawing.Size(942, 398);
             this.dgvEdit.TabIndex = 4;
             // 
@@ -864,6 +865,7 @@ namespace Project_Milestone_2
             this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvView.Location = new System.Drawing.Point(0, 0);
             this.dgvView.Name = "dgvView";
+            this.dgvView.ReadOnly = true;
             this.dgvView.Size = new System.Drawing.Size(942, 398);
             this.dgvView.TabIndex = 4;
             // 
@@ -1224,6 +1226,7 @@ namespace Project_Milestone_2
             this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdmin.Location = new System.Drawing.Point(0, 0);
             this.dgvAdmin.Name = "dgvAdmin";
+            this.dgvAdmin.ReadOnly = true;
             this.dgvAdmin.Size = new System.Drawing.Size(942, 398);
             this.dgvAdmin.TabIndex = 4;
             // 

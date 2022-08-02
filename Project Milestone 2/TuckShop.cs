@@ -15,9 +15,6 @@ namespace Project_Milestone_2
 {
     public partial class frmTuckShop : Form
     {
-        public string editQuery = "SELECT * FROM Items";
-        public string editCurrentTable = "Items";
-
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
 
@@ -153,10 +150,9 @@ namespace Project_Milestone_2
         {
             tcMainScreen.SelectedTab = tpEdit;
             Size = new Size(966, 558);
+            // Loads the default table as Items
             if (cboEditCurrentTable.SelectedIndex == -1)
                 cboEditCurrentTable.SelectedIndex = cboEditCurrentTable.FindString("Items");
-            // LOAD TABLE INTO DATAGRIDVIEW
-            dgvEdit.DataSource = itemManager.ShowAllItems();
         }
 
         private void btnViewRecords_Click(object sender, EventArgs e)
@@ -231,11 +227,22 @@ namespace Project_Milestone_2
         }
         private void btnEditRemove_Click(object sender, EventArgs e)
         {
-            //
+            string ID = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            MessageBox.Show(ID);
         }
+
+        //Whenever the combobox changes the table viewed changes
         private void cboEditCurrentTable_SelectedValueChanged(object sender, EventArgs e)
         {
-            // CHANGE THE TABLE VIEWED
+            MessageBox.Show(cboEditCurrentTable.SelectedItem.ToString());
+            if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
+            {
+                dgvEdit.DataSource = itemManager.ShowAllItems();
+            }
+            else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
+            {
+                // Show Sales
+            }
         }
         //-----------------------------------------------------------------------------------------------
 
