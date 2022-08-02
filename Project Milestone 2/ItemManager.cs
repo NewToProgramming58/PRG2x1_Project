@@ -77,7 +77,7 @@ namespace Project_Milestone_2
         }
 
         // This method changes the an items information.
-        public bool UpdateItemInfo(String id,ItemDetail itemDetail ,string newValue)
+        public bool UpdateItemInfo(String id, ItemDetail itemDetail, string newValue)
         {
             bool success = false;
             string cmdString = $"UPDATE Items SET \"{itemDetail.ToString()}\" = @value WHERE ItemID = @id";
