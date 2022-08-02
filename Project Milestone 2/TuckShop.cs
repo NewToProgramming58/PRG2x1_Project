@@ -64,6 +64,8 @@ namespace Project_Milestone_2
                 string creationQuery = File.ReadAllText(exepath + @"Queries\CreateDB.txt");
                 // This text file conatians the query for items table. (Cant use GO in SQlCommand).
                 string createitems = File.ReadAllText(exepath + @"Queries\CreateItems.txt");
+                // This text file conatians the query for items table. (Cant use GO in SQlCommand).
+                string createusers = File.ReadAllText(exepath + @"Queries\CreateUsers.txt");/////////////////////////////////////////////////////////////
                 // USE a Master connection to build DB.
                 SqlConnection masterConnection = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master");
 
@@ -79,10 +81,13 @@ namespace Project_Milestone_2
                     sqlConnection.Open();
                     myCommand = new SqlCommand(createitems, sqlConnection);
                     myCommand.ExecuteNonQuery();
+                    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    myCommand = new SqlCommand(createusers, sqlConnection);
+                    myCommand.ExecuteNonQuery();
                 }
-                catch (Exception exeption)
+                catch (Exception ex)
                 {
-                    MessageBox.Show(exeption.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ErrorHandler.Invoke(ex);/////////////////////////////////////////////////////////////////////////////////
                 }
             }
             else
@@ -106,8 +111,8 @@ namespace Project_Milestone_2
         private void FrmTuckShop_Load(object sender, EventArgs e)
         {
             // Database Startup
-            ConnectToDB();
             ErrorHandler += HandleError;
+            ConnectToDB();
             tcMainScreen.Appearance = TabAppearance.FlatButtons;
             tcMainScreen.ItemSize = new Size(0, 1);
             tcMainScreen.SizeMode = TabSizeMode.Fixed;
