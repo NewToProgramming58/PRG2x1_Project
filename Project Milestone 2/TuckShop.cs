@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Project_Milestone_2
 {
-    public partial class frmTuckShop : Form
+    public partial class FrmTuckShop : Form
     {
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
@@ -62,7 +62,7 @@ namespace Project_Milestone_2
                     myCommand = new SqlCommand(createitems, sqlConnection);
                     myCommand.ExecuteNonQuery();
                 }
-                catch (System.Exception exeption)
+                catch (Exception exeption)
                 {
                     MessageBox.Show(exeption.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -79,12 +79,12 @@ namespace Project_Milestone_2
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
-        public frmTuckShop()
+        public FrmTuckShop()
         {
             InitializeComponent();
         }
 
-        private void frmTuckShop_Load(object sender, EventArgs e)
+        private void FrmTuckShop_Load(object sender, EventArgs e)
         {
             // Database Startup
             ConnectToDB();
@@ -107,13 +107,13 @@ namespace Project_Milestone_2
 
         // Login page
         //-----------------------------------------------------------------------------------------------
-        private void btnNavigateToRegister_Click(object sender, EventArgs e)
+        private void BtnNavigateToRegister_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpRegister;
             Size = new Size(229, 418);
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             OpenMenu();
         }
@@ -121,13 +121,13 @@ namespace Project_Milestone_2
 
         // Register page
         //-----------------------------------------------------------------------------------------------
-        private void btnExitRegister_Click(object sender, EventArgs e)
+        private void BtnExitRegister_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpLogin;
             Size = new Size(215, 266);
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void BtnRegister_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpLogin;
             Size = new Size(215, 266);
@@ -136,19 +136,19 @@ namespace Project_Milestone_2
 
         // Menu page
         //-----------------------------------------------------------------------------------------------
-        private void btnExitMenu_Click(object sender, EventArgs e)
+        private void BtnExitMenu_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpLogin;
             Size = new Size(215, 266);
         }
 
-        private void btnPlaceOrder_Click(object sender, EventArgs e)
+        private void BtnPlaceOrder_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpOrder;
             Size = new Size(286, 360);
         }
 
-        private void btnEditRecords_Click(object sender, EventArgs e)
+        private void BtnEditRecords_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpEdit;
             Size = new Size(966, 558);
@@ -158,13 +158,13 @@ namespace Project_Milestone_2
             dgvEdit.DataSource = itemManager.ShowAllItems();
         }
 
-        private void btnViewRecords_Click(object sender, EventArgs e)
+        private void BtnViewRecords_Click(object sender, EventArgs e)
         {
             tcMainScreen.SelectedTab = tpView;
             Size = new Size(966, 558);
         }
 
-        private void btnEditLogin_Click(object sender, EventArgs e)
+        private void BtnEditLogin_Click(object sender, EventArgs e)
         {
             //We have to check if the user is an admin
             tcMainScreen.SelectedTab = tpAdminEditLogin;
@@ -174,7 +174,7 @@ namespace Project_Milestone_2
             //Size = new Size(324, 266);
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("are you sure you want to exit?", "Exit", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
@@ -186,7 +186,7 @@ namespace Project_Milestone_2
 
         // Order page
         //-----------------------------------------------------------------------------------------------
-        private void btnExitOrder_Click(object sender, EventArgs e)
+        private void BtnExitOrder_Click(object sender, EventArgs e)
         {
             OpenMenu();
         }
@@ -194,36 +194,36 @@ namespace Project_Milestone_2
 
         // Edit records page
         //-----------------------------------------------------------------------------------------------
-        private void btnExitEdit_Click(object sender, EventArgs e)
+        private void BtnExitEdit_Click(object sender, EventArgs e)
         {
             OpenMenu();
         }
 
-        private void btnEditFilter_Click(object sender, EventArgs e)
+        private void BtnEditFilter_Click(object sender, EventArgs e)
         {
             pnlEditFilter.Visible = true;
             pnlEditFilter.Enabled = true;
         }
 
-        private void btnCancelEditFilter_Click(object sender, EventArgs e)
+        private void BtnCancelEditFilter_Click(object sender, EventArgs e)
         {
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
         }
 
-        private void btnRemoveEditFilters_Click(object sender, EventArgs e)
+        private void BtnRemoveEditFilters_Click(object sender, EventArgs e)
         {
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
         }
 
-        private void btnApplyEditFilters_Click(object sender, EventArgs e)
+        private void BtnApplyEditFilters_Click(object sender, EventArgs e)
         {
             pnlEditFilter.Visible = false;
             pnlEditFilter.Enabled = false;
         }
 
-        private void btnEditAdd_Click(object sender, EventArgs e)
+        private void BtnEditAdd_Click(object sender, EventArgs e)
         {
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
@@ -237,7 +237,7 @@ namespace Project_Milestone_2
                 pnlEditAddSale.Enabled = true;
             }
         }
-        private void btnEditAddItemSubmit_Click(object sender, EventArgs e)
+        private void BtnEditAddItemSubmit_Click(object sender, EventArgs e)
         {
             string itemName = txtEditAddItemName.Text;
             double itemPrice = double.Parse(txtEditAddItemPrice.Text);
@@ -248,19 +248,19 @@ namespace Project_Milestone_2
             pnlEditAddItem.Visible = false;
             pnlEditAddItem.Enabled = false;
         }
-        private void btnEditAddItemCancel_Click(object sender, EventArgs e)
+        private void BtnEditAddItemCancel_Click(object sender, EventArgs e)
         {
             pnlEditAddItem.Visible = false;
             pnlEditAddItem.Enabled = false;
         }
 
-        private void btnEditChange_Click(object sender, EventArgs e)
+        private void BtnEditChange_Click(object sender, EventArgs e)
         {
             //
         }
 
         // Asks user if he/she is sure they want to delete the record and if Yes is selected, deletes appropriate record
-        private void btnEditRemove_Click(object sender, EventArgs e)
+        private void BtnEditRemove_Click(object sender, EventArgs e)
         {
             var row = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex];
             string ID = row.Cells[0].Value.ToString();
@@ -287,7 +287,7 @@ namespace Project_Milestone_2
         }
 
         //Whenever the combobox changes the table viewed changes
-        private void cboEditCurrentTable_SelectedValueChanged(object sender, EventArgs e)
+        private void CboEditCurrentTable_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
@@ -304,25 +304,25 @@ namespace Project_Milestone_2
 
         // View page
         //-----------------------------------------------------------------------------------------------
-        private void btnExitView_Click(object sender, EventArgs e)
+        private void BtnExitView_Click(object sender, EventArgs e)
         {
             OpenMenu();
         }
 
-        private void btnViewFilter_Click(object sender, EventArgs e)
+        private void BtnViewFilter_Click(object sender, EventArgs e)
         {
             pnlViewFilter.Visible = true;
         }
-        private void btnCancelViewFilter_Click(object sender, EventArgs e)
+        private void BtnCancelViewFilter_Click(object sender, EventArgs e)
         {
             pnlViewFilter.Visible = false;
         }
 
-        private void btnApplyViewFilter_Click(object sender, EventArgs e)
+        private void BtnApplyViewFilter_Click(object sender, EventArgs e)
         {
             pnlViewFilter.Visible = false;
         }
-        private void btnRemoveViewFilters_Click(object sender, EventArgs e)
+        private void BtnRemoveViewFilters_Click(object sender, EventArgs e)
         {
             pnlViewFilter.Visible = false;
         }
@@ -330,27 +330,27 @@ namespace Project_Milestone_2
 
         // Edit login for Admin page
         //-----------------------------------------------------------------------------------------------
-        private void btnExitAdminEditLogin_Click(object sender, EventArgs e)
+        private void BtnExitAdminEditLogin_Click(object sender, EventArgs e)
         {
             OpenMenu();
         }
 
-        private void btnAdminFilter_Click(object sender, EventArgs e)
+        private void BtnAdminFilter_Click(object sender, EventArgs e)
         {
             pnlAdminFilter.Visible = true;
         }
 
-        private void btnCancelAdminFilter_Click(object sender, EventArgs e)
+        private void BtnCancelAdminFilter_Click(object sender, EventArgs e)
         {
             pnlAdminFilter.Visible = false;
         }
 
-        private void btnRemoveAdminFilters_Click(object sender, EventArgs e)
+        private void BtnRemoveAdminFilters_Click(object sender, EventArgs e)
         {
             pnlAdminFilter.Visible = false;
         }
 
-        private void btnApplyAdminFilter_Click(object sender, EventArgs e)
+        private void BtnApplyAdminFilter_Click(object sender, EventArgs e)
         {
             pnlAdminFilter.Visible = false;
         }
@@ -358,7 +358,7 @@ namespace Project_Milestone_2
 
         // Edit login for normal users page
         //-----------------------------------------------------------------------------------------------
-        private void btnExitEditLogin_Click(object sender, EventArgs e)
+        private void BtnExitEditLogin_Click(object sender, EventArgs e)
         {
             OpenMenu();
         }
