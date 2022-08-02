@@ -233,7 +233,7 @@ namespace Project_Milestone_2
             this.tcMainScreen.Location = new System.Drawing.Point(0, 0);
             this.tcMainScreen.Name = "tcMainScreen";
             this.tcMainScreen.SelectedIndex = 0;
-            this.tcMainScreen.Size = new System.Drawing.Size(566, 362);
+            this.tcMainScreen.Size = new System.Drawing.Size(957, 524);
             this.tcMainScreen.TabIndex = 0;
             // 
             // tpLogin
@@ -243,7 +243,7 @@ namespace Project_Milestone_2
             this.tpLogin.Location = new System.Drawing.Point(4, 22);
             this.tpLogin.Name = "tpLogin";
             this.tpLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLogin.Size = new System.Drawing.Size(558, 336);
+            this.tpLogin.Size = new System.Drawing.Size(941, 490);
             this.tpLogin.TabIndex = 0;
             this.tpLogin.Text = "Login";
             this.tpLogin.UseVisualStyleBackColor = true;
@@ -340,7 +340,7 @@ namespace Project_Milestone_2
             this.tpRegister.Location = new System.Drawing.Point(4, 22);
             this.tpRegister.Name = "tpRegister";
             this.tpRegister.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRegister.Size = new System.Drawing.Size(558, 336);
+            this.tpRegister.Size = new System.Drawing.Size(941, 490);
             this.tpRegister.TabIndex = 1;
             this.tpRegister.Text = "Register";
             this.tpRegister.UseVisualStyleBackColor = true;
@@ -491,7 +491,7 @@ namespace Project_Milestone_2
             this.tpMenu.Location = new System.Drawing.Point(4, 22);
             this.tpMenu.Name = "tpMenu";
             this.tpMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMenu.Size = new System.Drawing.Size(798, 449);
+            this.tpMenu.Size = new System.Drawing.Size(856, 428);
             this.tpMenu.TabIndex = 2;
             this.tpMenu.Text = "Menu";
             this.tpMenu.UseVisualStyleBackColor = true;
@@ -616,7 +616,7 @@ namespace Project_Milestone_2
             this.tpEdit.Location = new System.Drawing.Point(4, 22);
             this.tpEdit.Name = "tpEdit";
             this.tpEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEdit.Size = new System.Drawing.Size(798, 449);
+            this.tpEdit.Size = new System.Drawing.Size(949, 498);
             this.tpEdit.TabIndex = 3;
             this.tpEdit.Text = "Edit";
             this.tpEdit.UseVisualStyleBackColor = true;
@@ -690,7 +690,7 @@ namespace Project_Milestone_2
             this.pnlEditFilter.Controls.Add(this.label21);
             this.pnlEditFilter.Controls.Add(this.label22);
             this.pnlEditFilter.Controls.Add(this.comboBox3);
-            this.pnlEditFilter.Location = new System.Drawing.Point(653, 7);
+            this.pnlEditFilter.Location = new System.Drawing.Point(320, 6);
             this.pnlEditFilter.Name = "pnlEditFilter";
             this.pnlEditFilter.Size = new System.Drawing.Size(281, 86);
             this.pnlEditFilter.TabIndex = 23;
@@ -785,6 +785,7 @@ namespace Project_Milestone_2
             this.btnEditAdd.TabIndex = 20;
             this.btnEditAdd.Text = "Add a new record";
             this.btnEditAdd.UseVisualStyleBackColor = true;
+            this.btnEditAdd.Click += new System.EventHandler(this.btnEditAdd_Click);
             // 
             // richTextBox1
             // 
@@ -847,10 +848,14 @@ namespace Project_Milestone_2
             // cboEditCurrentTable
             // 
             this.cboEditCurrentTable.FormattingEnabled = true;
+            this.cboEditCurrentTable.Items.AddRange(new object[] {
+            "Items",
+            "Sales"});
             this.cboEditCurrentTable.Location = new System.Drawing.Point(55, 68);
             this.cboEditCurrentTable.Name = "cboEditCurrentTable";
             this.cboEditCurrentTable.Size = new System.Drawing.Size(136, 21);
             this.cboEditCurrentTable.TabIndex = 8;
+            this.cboEditCurrentTable.SelectedValueChanged += new System.EventHandler(this.cboEditCurrentTable_SelectedValueChanged);
             // 
             // btnEditChange
             // 
@@ -860,6 +865,7 @@ namespace Project_Milestone_2
             this.btnEditChange.TabIndex = 7;
             this.btnEditChange.Text = "Change record";
             this.btnEditChange.UseVisualStyleBackColor = true;
+            this.btnEditChange.Click += new System.EventHandler(this.btnEditChange_Click);
             // 
             // btnEditRemove
             // 
@@ -869,6 +875,7 @@ namespace Project_Milestone_2
             this.btnEditRemove.TabIndex = 6;
             this.btnEditRemove.Text = "Remove record";
             this.btnEditRemove.UseVisualStyleBackColor = true;
+            this.btnEditRemove.Click += new System.EventHandler(this.btnEditRemove_Click);
             // 
             // tpView
             // 
@@ -876,7 +883,7 @@ namespace Project_Milestone_2
             this.tpView.Controls.Add(this.panel11);
             this.tpView.Location = new System.Drawing.Point(4, 22);
             this.tpView.Name = "tpView";
-            this.tpView.Size = new System.Drawing.Size(798, 449);
+            this.tpView.Size = new System.Drawing.Size(941, 490);
             this.tpView.TabIndex = 4;
             this.tpView.Text = "View";
             this.tpView.UseVisualStyleBackColor = true;
@@ -1107,7 +1114,7 @@ namespace Project_Milestone_2
             this.tpOrder.Controls.Add(this.panel13);
             this.tpOrder.Location = new System.Drawing.Point(4, 22);
             this.tpOrder.Name = "tpOrder";
-            this.tpOrder.Size = new System.Drawing.Size(558, 336);
+            this.tpOrder.Size = new System.Drawing.Size(941, 490);
             this.tpOrder.TabIndex = 5;
             this.tpOrder.Text = "Order";
             this.tpOrder.UseVisualStyleBackColor = true;
@@ -1261,7 +1268,7 @@ namespace Project_Milestone_2
             this.tpAdminEditLogin.Controls.Add(this.panel16);
             this.tpAdminEditLogin.Location = new System.Drawing.Point(4, 22);
             this.tpAdminEditLogin.Name = "tpAdminEditLogin";
-            this.tpAdminEditLogin.Size = new System.Drawing.Size(798, 449);
+            this.tpAdminEditLogin.Size = new System.Drawing.Size(856, 428);
             this.tpAdminEditLogin.TabIndex = 6;
             this.tpAdminEditLogin.Text = "Admin Edit Login";
             this.tpAdminEditLogin.UseVisualStyleBackColor = true;
@@ -1514,7 +1521,7 @@ namespace Project_Milestone_2
             this.tpEditLogin.Controls.Add(this.panel17);
             this.tpEditLogin.Location = new System.Drawing.Point(4, 22);
             this.tpEditLogin.Name = "tpEditLogin";
-            this.tpEditLogin.Size = new System.Drawing.Size(558, 336);
+            this.tpEditLogin.Size = new System.Drawing.Size(941, 490);
             this.tpEditLogin.TabIndex = 7;
             this.tpEditLogin.Text = "Edit Login";
             this.tpEditLogin.UseVisualStyleBackColor = true;
@@ -1650,9 +1657,10 @@ namespace Project_Milestone_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 362);
+            this.ClientSize = new System.Drawing.Size(957, 524);
             this.Controls.Add(this.tcMainScreen);
             this.Name = "frmTuckShop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tuck Shop";
             this.Load += new System.EventHandler(this.frmTuckShop_Load);
             this.tcMainScreen.ResumeLayout(false);

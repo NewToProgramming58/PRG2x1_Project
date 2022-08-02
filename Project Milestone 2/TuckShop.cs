@@ -17,7 +17,7 @@ namespace Project_Milestone_2
     {
         static SqlConnection sqlConnection;
         static ItemManger itemManger;
-        static UserManger userManger;
+
         public static void ConnectToDB() 
         {
             ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,14 +41,10 @@ namespace Project_Milestone_2
             // When database doesnt exist, it is created programmatically.
             if (!isExist)
             {
-                string exeFilePath = AppDomain.CurrentDomain.BaseDirectory;
                 // This text file has Query for creation of the DB.
-                string creationQuery = File.ReadAllText(exeFilePath + @"Queries\CreateDB.txt");
+                string creationQuery = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "CreateDB.txt");
                 // This text file conatians the query for items table. (Cant use GO in SQlCommand).
-                string createItems = File.ReadAllText(exeFilePath + @"Queries\CreateItems.txt");
-                // This text file conatians the query for Users table.
-                string createUsers = File.ReadAllText(exeFilePath + @"Queries\CreateUsers.txt");
-
+                string createitems = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "Createitems.txt");
                 // USE a Master connection to build DB.
                 SqlConnection masterConnection = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master");
 
@@ -59,14 +55,10 @@ namespace Project_Milestone_2
                     masterConnection.Open();
                     myCommand.ExecuteNonQuery();
                     masterConnection.Close();
-                    // Create new connection to newly created database and create each table.                   
+                    //Create new connection to newly created database and create each table.
                     sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
                     sqlConnection.Open();
-                    // Items table
-                    myCommand = new SqlCommand(createItems, sqlConnection);
-                    myCommand.ExecuteNonQuery();
-                    // Users table
-                    myCommand = new SqlCommand(createUsers, sqlConnection);
+                    myCommand = new SqlCommand(createitems, sqlConnection);
                     myCommand.ExecuteNonQuery();
                 }
                 catch (System.Exception exeption)
@@ -78,11 +70,10 @@ namespace Project_Milestone_2
             {
                 // When DB is 100% then simply open a connection
                 sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
-                sqlConnection.Open();
             }
             //Object to Manage DB control concerning Items
             itemManger = new ItemManger(sqlConnection);
-            userManger = new UserManger(sqlConnection);
+
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
@@ -105,6 +96,12 @@ namespace Project_Milestone_2
             }
             Size = new Size(215, 266);
         }
+        // Navigation
+        public void OpenMenu()
+        {
+            tcMainScreen.SelectedTab = tpMenu;
+            Size = new Size(275, 312);
+        }
 
         // Login page
         //-----------------------------------------------------------------------------------------------
@@ -116,10 +113,7 @@ namespace Project_Milestone_2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            itemManger.AddItem("Chocolate", "Sweets", 4, 10.99);
-            itemManger.UpdateItemInfo("1", ItemDetail.ItemName, "5 Star");
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
         //-----------------------------------------------------------------------------------------------
 
@@ -156,6 +150,9 @@ namespace Project_Milestone_2
         {
             tcMainScreen.SelectedTab = tpEdit;
             Size = new Size(966, 558);
+            if (cboEditCurrentTable.SelectedIndex == -1)
+                cboEditCurrentTable.SelectedIndex = cboEditCurrentTable.FindString("Items");
+            // LOAD TABLE INTO DATAGRIDVIEW
         }
 
         private void btnViewRecords_Click(object sender, EventArgs e)
@@ -188,8 +185,7 @@ namespace Project_Milestone_2
         //-----------------------------------------------------------------------------------------------
         private void btnExitOrder_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
         //-----------------------------------------------------------------------------------------------
 
@@ -197,8 +193,7 @@ namespace Project_Milestone_2
         //-----------------------------------------------------------------------------------------------
         private void btnExitEdit_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
 
         private void btnEditFilter_Click(object sender, EventArgs e)
@@ -220,14 +215,31 @@ namespace Project_Milestone_2
         {
             pnlEditFilter.Visible = false;
         }
+
+        private void btnEditAdd_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void btnEditChange_Click(object sender, EventArgs e)
+        {
+            //
+        }
+        private void btnEditRemove_Click(object sender, EventArgs e)
+        {
+            //
+        }
+        private void cboEditCurrentTable_SelectedValueChanged(object sender, EventArgs e)
+        {
+            // CHANGE THE TABLE VIEWED
+        }
         //-----------------------------------------------------------------------------------------------
 
         // View page
         //-----------------------------------------------------------------------------------------------
         private void btnExitView_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
 
         private void btnViewFilter_Click(object sender, EventArgs e)
@@ -253,8 +265,7 @@ namespace Project_Milestone_2
         //-----------------------------------------------------------------------------------------------
         private void btnExitAdminEditLogin_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
 
         private void btnAdminFilter_Click(object sender, EventArgs e)
@@ -282,8 +293,7 @@ namespace Project_Milestone_2
         //-----------------------------------------------------------------------------------------------
         private void btnExitEditLogin_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpMenu;
-            Size = new Size(275, 312);
+            OpenMenu();
         }
         //-----------------------------------------------------------------------------------------------
     }
