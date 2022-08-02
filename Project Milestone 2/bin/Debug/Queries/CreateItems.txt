@@ -5,3 +5,26 @@ CREATE TABLE Items (
 	[Category] TEXT NOT NULL,
 	[Quantity] INT DEFAULT(0)
 )
+
+INSERT INTO Items (ItemName, Price, Category, Quantity)
+VALUES
+  ("Meloxicam",8389,"Cooldrink",20),
+  ("Diazepam",5640,"Food",20),
+  ("Ciprofloxacin HCl",5299,"Cooldrink",14),
+  ("Azithromycin",5477,"Cooldrink",20),
+  ("Ranitidine HCl",9883,"Food",4),
+  ("Januvia",9707,"Food",19),
+  ("Zyprexa",2318,"Cooldrink",17),
+  ("Metoprolol Succinatee",1197,"Food",2),
+  ("Furosemide",8587,"Cooldrink",14),
+  ("TriNessa",8555,"Food",20),
+  ("Zetia",184,"Breakfast",10),
+  ("Lorazepam",5122,"Food",3),
+  ("Sertraline HCl",8771,"Breakfast",10),
+  ("Amitriptyline HCl",9011,"Cooldrink",6),
+  ("APAP/Codeine",7414,"Food",18),
+  ("Seroquel",3387,"Cooldrink",20),
+  ("Sulfamethoxazole/Trimethoprim",9006,"Food",10),
+  ("Clindamycin HCl",8379,"Food",11),
+  ("Sertraline HCl",4513,"Food",5),
+  ("Premarin",4578,"Snacks",19);

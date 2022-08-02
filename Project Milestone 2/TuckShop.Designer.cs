@@ -72,10 +72,6 @@ namespace Project_Milestone_2
             this.tpEdit = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dgvEdit = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlEditFilter = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
@@ -243,7 +239,7 @@ namespace Project_Milestone_2
             this.tpLogin.Location = new System.Drawing.Point(4, 22);
             this.tpLogin.Name = "tpLogin";
             this.tpLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLogin.Size = new System.Drawing.Size(941, 490);
+            this.tpLogin.Size = new System.Drawing.Size(949, 498);
             this.tpLogin.TabIndex = 0;
             this.tpLogin.Text = "Login";
             this.tpLogin.UseVisualStyleBackColor = true;
@@ -340,7 +336,7 @@ namespace Project_Milestone_2
             this.tpRegister.Location = new System.Drawing.Point(4, 22);
             this.tpRegister.Name = "tpRegister";
             this.tpRegister.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRegister.Size = new System.Drawing.Size(941, 490);
+            this.tpRegister.Size = new System.Drawing.Size(949, 498);
             this.tpRegister.TabIndex = 1;
             this.tpRegister.Text = "Register";
             this.tpRegister.UseVisualStyleBackColor = true;
@@ -491,7 +487,7 @@ namespace Project_Milestone_2
             this.tpMenu.Location = new System.Drawing.Point(4, 22);
             this.tpMenu.Name = "tpMenu";
             this.tpMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMenu.Size = new System.Drawing.Size(856, 428);
+            this.tpMenu.Size = new System.Drawing.Size(949, 498);
             this.tpMenu.TabIndex = 2;
             this.tpMenu.Text = "Menu";
             this.tpMenu.UseVisualStyleBackColor = true;
@@ -632,35 +628,10 @@ namespace Project_Milestone_2
             // dgvEdit
             // 
             this.dgvEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEdit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
             this.dgvEdit.Location = new System.Drawing.Point(0, 0);
             this.dgvEdit.Name = "dgvEdit";
             this.dgvEdit.Size = new System.Drawing.Size(942, 398);
             this.dgvEdit.TabIndex = 4;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Item ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Item Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Price";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Category";
-            this.Column4.Name = "Column4";
             // 
             // panel1
             // 
@@ -883,7 +854,7 @@ namespace Project_Milestone_2
             this.tpView.Controls.Add(this.panel11);
             this.tpView.Location = new System.Drawing.Point(4, 22);
             this.tpView.Name = "tpView";
-            this.tpView.Size = new System.Drawing.Size(941, 490);
+            this.tpView.Size = new System.Drawing.Size(949, 498);
             this.tpView.TabIndex = 4;
             this.tpView.Text = "View";
             this.tpView.UseVisualStyleBackColor = true;
@@ -1114,7 +1085,7 @@ namespace Project_Milestone_2
             this.tpOrder.Controls.Add(this.panel13);
             this.tpOrder.Location = new System.Drawing.Point(4, 22);
             this.tpOrder.Name = "tpOrder";
-            this.tpOrder.Size = new System.Drawing.Size(941, 490);
+            this.tpOrder.Size = new System.Drawing.Size(949, 498);
             this.tpOrder.TabIndex = 5;
             this.tpOrder.Text = "Order";
             this.tpOrder.UseVisualStyleBackColor = true;
@@ -1268,7 +1239,7 @@ namespace Project_Milestone_2
             this.tpAdminEditLogin.Controls.Add(this.panel16);
             this.tpAdminEditLogin.Location = new System.Drawing.Point(4, 22);
             this.tpAdminEditLogin.Name = "tpAdminEditLogin";
-            this.tpAdminEditLogin.Size = new System.Drawing.Size(856, 428);
+            this.tpAdminEditLogin.Size = new System.Drawing.Size(949, 498);
             this.tpAdminEditLogin.TabIndex = 6;
             this.tpAdminEditLogin.Text = "Admin Edit Login";
             this.tpAdminEditLogin.UseVisualStyleBackColor = true;
@@ -1521,7 +1492,7 @@ namespace Project_Milestone_2
             this.tpEditLogin.Controls.Add(this.panel17);
             this.tpEditLogin.Location = new System.Drawing.Point(4, 22);
             this.tpEditLogin.Name = "tpEditLogin";
-            this.tpEditLogin.Size = new System.Drawing.Size(941, 490);
+            this.tpEditLogin.Size = new System.Drawing.Size(949, 498);
             this.tpEditLogin.TabIndex = 7;
             this.tpEditLogin.Text = "Edit Login";
             this.tpEditLogin.UseVisualStyleBackColor = true;
@@ -1769,10 +1740,6 @@ namespace Project_Milestone_2
         private System.Windows.Forms.TabPage tpEditLogin;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView dgvEdit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEditFilter;
         private System.Windows.Forms.Panel panel9;
