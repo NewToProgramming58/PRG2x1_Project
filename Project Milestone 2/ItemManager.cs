@@ -194,14 +194,24 @@ namespace Project_Milestone_2
                 {
                     cmdString += $" AND I.{fields[i]} {signs[i]} {values[i]}";
                 }
-            }
-            MessageBox.Show(cmdString); 
+            }         
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
 
             return ds.Tables[0];
+        }
+
+        internal DataTable FillNames()
+        {
+            string cmdString = "SELECT ItemName FROM Items";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
+
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+
+            return ds.Tables["ItemName"];
         }
 
         public DataTable FillCategories() 
