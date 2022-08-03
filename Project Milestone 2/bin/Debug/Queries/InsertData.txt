@@ -41,26 +41,26 @@ VALUES
 
 INSERT INTO [Users] (Email,Password,Name,Surname)
 VALUES
-  ('ADMIN',1234,'Ulysses','Cooke'),
-  ('integer.vitae.nibh@yahoo.ca',7145,'Porter','Hewitt'),
-  ('arcu.sed@aol.org',4060,'Kibo','Mcpherson'),
-  ('est.arcu@google.edu',3282,'Warren','Velazquez'),
-  ('id.blandit.at@outlook.org',1249,'Steel','Merritt'),
-  ('tristique.senectus.et@hotmail.net',2704,'Colby','Craft'),
-  ('dapibus.id@protonmail.org',6186,'Lael','Salinas'),
-  ('libero.proin.sed@google.com',9080,'Tatum','Tate'),
-  ('sed@outlook.ca',4801,'Cain','Daniels'),
-  ('eget.massa@aol.net',1826,'Nehru','Heath'),
-  ('non@google.edu',9344,'Colton','Brennan'),
-  ('aliquet@aol.ca',6988,'Oren','Sweeney'),
-  ('nisl.maecenas.malesuada@outlook.edu',7687,'William','Hess'),
-  ('sem.consequat@hotmail.ca',3795,'Richard','Thomas'),
-  ('dolor.elit.pellentesque@hotmail.org',1738,'Lewis','Hunt'),
-  ('est@aol.couk',9298,'Anthony','Stanley'),
-  ('sed.molestie.sed@hotmail.couk',8567,'Clarke','Chen'),
-  ('dolor.fusce@hotmail.net',2283,'Clementine','Ingram'),
-  ('vel.faucibus.id@outlook.org',7310,'Martena','Olson'),
-  ('viverra@icloud.com',1472,'Chaney','Kelly');
+  ('ADMIN','1234','Ulysses','Cooke'),
+  ('integer.vitae.nibh@yahoo.ca','7145','Porter','Hewitt'),
+  ('arcu.sed@aol.org','4060','Kibo','Mcpherson'),
+  ('est.arcu@google.edu','3282','Warren','Velazquez'),
+  ('id.blandit.at@outlook.org','1249','Steel','Merritt'),
+  ('tristique.senectus.et@hotmail.net','2704','Colby','Craft'),
+  ('dapibus.id@protonmail.org','6186','Lael','Salinas'),
+  ('libero.proin.sed@google.com','9080','Tatum','Tate'),
+  ('sed@outlook.ca','4801','Cain','Daniels'),
+  ('eget.massa@aol.net','1826','Nehru','Heath'),
+  ('non@google.edu','9344','Colton','Brennan'),
+  ('aliquet@aol.ca','6988','Oren','Sweeney'),
+  ('nisl.maecenas.malesuada@outlook.edu','7687','William','Hess'),
+  ('sem.consequat@hotmail.ca','3795','Richard','Thomas'),
+  ('dolor.elit.pellentesque@hotmail.org','1738','Lewis','Hunt'),
+  ('est@aol.couk','9298','Anthony','Stanley'),
+  ('sed.molestie.sed@hotmail.couk','8567','Clarke','Chen'),
+  ('dolor.fusce@hotmail.net','2283','Clementine','Ingram'),
+  ('vel.faucibus.id@outlook.org','7310','Martena','Olson'),
+  ('viverra@icloud.com','1472','Chaney','Kelly');
 
 INSERT INTO [Sales] (TotalPrice,TimePlaced)
 VALUES
