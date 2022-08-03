@@ -63,9 +63,9 @@ namespace Project_Milestone_2
                 // This text file has Query for creation of the DB.
                 string creationQuery = File.ReadAllText(exepath + @"Queries\CreateDB.txt");
                 // This text file conatians the query for items table. (Cant use GO in SQlCommand).
-                string createitems = File.ReadAllText(exepath + @"Queries\CreateItems.txt");
-                // This text file conatians the query for items table. (Cant use GO in SQlCommand).
-                string createusers = File.ReadAllText(exepath + @"Queries\CreateUsers.txt");
+                string createTables = File.ReadAllText(exepath + @"Queries\CreateTables.txt");
+                // This text file conatians the query for items table.
+                string addMockData = File.ReadAllText(exepath + @"Queries\InsertData.txt");
                 // USE a Master connection to build DB.
                 SqlConnection masterConnection = new SqlConnection(@"Server=localhost\SQLExpress;Trusted_Connection=True;Integrated security=True;database=master");
 
@@ -79,9 +79,9 @@ namespace Project_Milestone_2
                     //Create new connection to newly created database and create each table.
                     sqlConnection = new SqlConnection(@"Server=localhost\SQLExpress;Integrated Security=True;Trusted_Connection=True;Database=TuckShop");
                     sqlConnection.Open();
-                    myCommand = new SqlCommand(createitems, sqlConnection);
+                    myCommand = new SqlCommand(createTables, sqlConnection);
                     myCommand.ExecuteNonQuery();
-                    myCommand = new SqlCommand(createusers, sqlConnection);
+                    myCommand = new SqlCommand(addMockData, sqlConnection);
                     myCommand.ExecuteNonQuery();
                 }
                 catch (Exception ex)
