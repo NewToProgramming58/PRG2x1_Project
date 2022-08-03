@@ -48,6 +48,32 @@ namespace Project_Milestone_2
             return success;
         }
 
+        // Removes the record of an item from the DB/////////////////////////////////////////////////////
+        public bool RemoveSale(String id)
+        {
+            bool success = false;
+            string cmdString = "DELETE FROM Sales WHERE SaleID = @id";
+            SqlCommand sqlCommand = new SqlCommand
+            {
+                Connection = sqlConnection,
+                CommandText = cmdString
+            };
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            try
+            {
+                int rows = sqlCommand.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return success;
+        }
+
         //Show all sales///////////////////////////////////////////////////
         public DataTable ShowAllSales()
         {
@@ -60,7 +86,7 @@ namespace Project_Milestone_2
             return ds.Tables[0];
         }
 
-        public DataTable FilterItems(List<string> filters)
+        public DataTable FilterSales(List<string> filters)
         {
             List<string> fields = new List<string>();
             List<string> signs = new List<string>();
