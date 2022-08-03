@@ -137,24 +137,20 @@ namespace Project_Milestone_2
 
             return ds.Tables[0];
         }
-        public bool UpdateInfo(string update)
+        public bool UpdateSaleInfo(string update)
         {
             //id#ItemName#Price#Category#Quantity
-            // 0 = id
-            // 1 = ItemName
-            // 2 = Price
-            // 3 = Category
-            // 4 = Quantity
+            // 0 = ID
+            // 1 = TotalPrice
+            // 2 = Time
             var splitUpdate = update.Split('#');
-
+             
             string id = splitUpdate[0];
-            string itemName = splitUpdate[1];
-            string price = splitUpdate[2];
-            string quantity = splitUpdate[3];
-            string category = splitUpdate[4];
+            string totalPrice = splitUpdate[1];
+            string time = splitUpdate[2];
 
             bool success = false;
-            string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, CategoryID = {category}, Quantity = {quantity} WHERE ItemID = @id";
+            string cmdString = $"UPDATE Sales SET TotalPrice = {totalPrice}, TimePlaced = {time} WHERE ItemID = @id";
             SqlCommand sqlCommand = new SqlCommand
             {
                 Connection = sqlConnection,
