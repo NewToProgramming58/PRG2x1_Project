@@ -140,7 +140,6 @@ namespace Project_Milestone_2
                 tab.Text = "";
             }
             Size = new Size(215, 266);
-            tcMainScreen.SelectedTab = tpMenu;
         }
         // Navigation
         public void OpenMenu()

@@ -33,20 +33,19 @@ namespace Project_Milestone_2
             };
             try
             {
-                int rows = sqlCommand.ExecuteNonQuery();
-                if (rows == 1)
+                sqlCommand.ExecuteNonQuery();
+   
+                ableToLogin = true;
+                userEmail = email;
+                using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
                 {
-                    ableToLogin = true;
-                    userEmail = email;
-                    using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
-                    {
-                        while (dataReader.Read())
-                        {                            
-                            userName = (string)dataReader["Name"];
-                            userSurname = (string)dataReader["Surname"];
-                        }
+                    while (dataReader.Read())
+                    {                            
+                        userName = (string)dataReader["Name"];
+                        userSurname = (string)dataReader["Surname"];
                     }
                 }
+                
             }
             catch
             {

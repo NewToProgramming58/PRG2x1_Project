@@ -16,7 +16,7 @@ namespace Project_Milestone_2
             this.sqlConnection = sqlConnection;
         }
 
-        public bool AddSale(List<int> quantities, List<double> prices, List<string> itemIDs)
+        public bool AddSale(List<int> quantities, List<double> prices, List<int> itemIDs)
         {
             bool success = false;
             string values = $"({itemIDs[0]}, {prices[0]}, {quantities[0]})";
