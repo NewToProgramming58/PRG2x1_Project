@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Windows.Forms;
 using System;
+using System.Data;
 
 namespace Project_Milestone_2
 {
@@ -140,6 +141,16 @@ namespace Project_Milestone_2
                 }
                 return success;
             }
+        }
+        public DataTable ShowAll()
+        {
+            string cmdString = "SELECT * FROM Users";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
+
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+
+            return ds.Tables[0];
         }
     }
 }
