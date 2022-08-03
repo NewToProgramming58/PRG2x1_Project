@@ -27,8 +27,9 @@ namespace Project_Milestone_2
         }
 
         // This method simply adds a new item to the sql database.
-        public void AddItem(String name, String cat, int quantity, double price) 
+        public bool AddItem(String name, String cat, int quantity, double price) 
         {
+            bool success = false;
             string cmdString = "INSERT INTO Items (ItemName, Price, Category, Quantity) VALUES (@name, @price, @cat, @quant)";
             SqlCommand sqlCommand = new SqlCommand
             {
@@ -40,13 +41,18 @@ namespace Project_Milestone_2
             sqlCommand.Parameters.AddWithValue("@cat", cat);
             sqlCommand.Parameters.AddWithValue("@quant", quantity);
             try
-            {          
-                sqlCommand.ExecuteNonQuery();
+            {
+                int rows = sqlCommand.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
             }
             catch(SqlException e)
             {
                 MessageBox.Show(e.Message);
             }
+            return success;
         }
 
         // This method increases the quantity of an item by the given amount(Can be negative).

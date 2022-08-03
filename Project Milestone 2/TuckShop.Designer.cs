@@ -878,8 +878,7 @@ namespace Project_Milestone_2
             this.btnEditChangeItemSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnEditChangeItemSubmit.TabIndex = 22;
             this.btnEditChangeItemSubmit.Text = "Submit";
-            this.btnEditChangeItemSubmit.UseVisualStyleBackColor = true;
-            this.btnEditChangeItemSubmit.Click += new System.EventHandler(this.BtnEditChangeItemSubmit_Click);
+            this.btnEditChangeItemSubmit.UseVisualStyleBackColor = true;         
             // 
             // nudEditChangeItemQuantity
             // 
