@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Project_Milestone_2
@@ -29,8 +31,11 @@ namespace Project_Milestone_2
             };
             try
             {
-                int rows = sqlCommand.ExecuteNonQuery();
-                if (rows > 0)
+                int itemRows = sqlCommand.ExecuteNonQuery();
+                cmdString = $"INSERT INTO Sales (TotalPrice, TimePlaced) VALUES ({prices.Sum()}, #{DateTime.Now}#)";
+                int saleRows = sqlCommand.ExecuteNonQuery();
+               
+                if (itemRows > 0 && saleRows > 0)
                 {
                     success = true;
                 }

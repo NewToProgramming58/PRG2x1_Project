@@ -30,7 +30,7 @@ namespace Project_Milestone_2
         public bool AddItem(String name, String cat, int quantity, double price)
         {
             bool success = false;
-            string cmdString = "INSERT INTO Items (ItemName, Price, Category, Quantity) VALUES (@name, @price, @cat, @quant)";
+            string cmdString = "INSERT INTO Items (ItemName, Price, CategoryID, Quantity) VALUES (@name, @price, @cat, @quant)";
             SqlCommand sqlCommand = new SqlCommand
             {
                 Connection = sqlConnection,
@@ -100,7 +100,7 @@ namespace Project_Milestone_2
             string quantity = splitFilters[4];
 
             bool success = false;
-            string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, Category = '{category}', Quantity = {quantity} WHERE ItemID = @id";
+            string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, CategoryID = {category}, Quantity = {quantity} WHERE ItemID = @id";
             SqlCommand sqlCommand = new SqlCommand
             {
                 Connection = sqlConnection,
