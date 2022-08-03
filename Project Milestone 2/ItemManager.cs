@@ -211,7 +211,7 @@ namespace Project_Milestone_2
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
 
-            return ds.Tables["ItemName"];
+            return ds.Tables["Items"];
         }
 
         public DataTable FillCategories() 
