@@ -1410,7 +1410,8 @@ namespace Project_Milestone_2
             this.cboEditCurrentTable.FormattingEnabled = true;
             this.cboEditCurrentTable.Items.AddRange(new object[] {
             "Items",
-            "Sales"});
+            "Sales",
+            "Individual sales"});
             this.cboEditCurrentTable.Location = new System.Drawing.Point(55, 68);
             this.cboEditCurrentTable.Name = "cboEditCurrentTable";
             this.cboEditCurrentTable.Size = new System.Drawing.Size(136, 21);

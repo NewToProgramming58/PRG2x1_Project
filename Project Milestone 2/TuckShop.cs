@@ -496,6 +496,10 @@ namespace Project_Milestone_2
             {
                 ShowSales();
             }
+            else if (cboEditCurrentTable.SelectedItem.ToString() == "Individual sales")
+            {
+                
+            }
         }
 
         // Methods used for validation by disabling/enabling certain inputs.
