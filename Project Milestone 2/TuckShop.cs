@@ -299,8 +299,7 @@ namespace Project_Milestone_2
             try
             {
                 // Puts the filters in the correct format for the method.
-                filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + txtEditFilterValue.Text;
-
+                filter = cboEditFilterField.SelectedItem.ToString() + "#" + gboComparison.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text + "#" + txtEditFilterValue.Text;
                 // Checks which table is currently open to be filtered.
                 if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
                 {
