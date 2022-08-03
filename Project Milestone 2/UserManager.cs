@@ -25,12 +25,12 @@ namespace Project_Milestone_2
         public bool Login(string email, string password)
         {
             bool ableToLogin = false;
-            string cmdString = "SELECT * FROM Users WHERE Email = @email AND Password = @password";
-            SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandText = cmdString;
-            sqlCommand.Parameters.AddWithValue("@email", email);
-            sqlCommand.Parameters.AddWithValue("@password", password);
+            string cmdString = $"SELECT * FROM Users WHERE Email LIKE '{email}' AND Password LIKE '{password}'";
+            SqlCommand sqlCommand = new SqlCommand
+            {
+                Connection = sqlConnection,
+                CommandText = cmdString
+            };
             try
             {
                 int rows = sqlCommand.ExecuteNonQuery();
@@ -48,9 +48,9 @@ namespace Project_Milestone_2
                     }
                 }
             }
-            catch (SqlException e)
+            catch
             {
-                MessageBox.Show(e.Message);
+                
             }
             return ableToLogin;
         }
