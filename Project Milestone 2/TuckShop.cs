@@ -413,13 +413,19 @@ namespace Project_Milestone_2
             try
             {
                 // Stores values in correct format for method.
-                values = txtEditChangeItemID.Text + "#" + txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + cboEditChangeItemCategory.SelectedItem + "#" +
-                         nudEditChangeItemQuantity.Value.ToString();
+                values = txtEditChangeItemID.Text + "#" + txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + nudEditChangeItemQuantity.Value.ToString() + "#" +
+                         cboEditChangeItemCategory.SelectedValue;
 
                 // Finds the changed values so they can be displayed.
                 for (int i = 0; i < dgvEdit.Columns.Count; i++)
                 {
                     var newValues = values.Split('#');
+                    // Converts CategoryID to the name for display
+                    if (i == 4)
+                    {
+                        newValues[i] = cboEditChangeItemCategory.Text;
+                    }
+
                     if (dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[i].Value.ToString() != newValues[i])
                     {
                         changedValues = changedValues + "\n" + dgvEdit.Columns[i].HeaderText + ": " +
