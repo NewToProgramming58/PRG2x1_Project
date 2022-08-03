@@ -357,10 +357,10 @@ namespace Project_Milestone_2
         {
             // Error check for value conversion.
             try
-            {
+            {          
                 string itemName = txtEditAddItemName.Text;
                 double itemPrice = double.Parse(txtEditAddItemPrice.Text);
-                string itemCategory = cboEditAddItemCategory.SelectedItem.ToString();
+                int itemCategory = int.Parse(cboEditAddItemCategory.SelectedValue.ToString());                
                 int itemQuantity = int.Parse(nudEditAddItemQuantity.Value.ToString());
 
                 itemManager.AddItem(itemName, itemCategory, itemQuantity, itemPrice);
@@ -389,6 +389,7 @@ namespace Project_Milestone_2
                 txtEditChangeItemName.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[1].Value.ToString();
                 txtEditChangeItemPrice.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[2].Value.ToString();
                 cboEditChangeItemCategory.SelectedItem = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[3].Value.ToString();
+                MessageBox.Show(dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString());
                 nudEditChangeItemQuantity.Value = int.Parse(dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString());
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")

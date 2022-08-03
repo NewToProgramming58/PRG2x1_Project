@@ -27,7 +27,7 @@ namespace Project_Milestone_2
         }
 
         // This method simply adds a new item to the sql database.
-        public bool AddItem(String name, String cat, int quantity, double price)
+        public bool AddItem(String name, int cat, int quantity, double price)
         {
             bool success = false;
             string cmdString = "INSERT INTO Items (ItemName, Price, CategoryID, Quantity) VALUES (@name, @price, @cat, @quant)";
@@ -180,7 +180,7 @@ namespace Project_Milestone_2
                 else
                     signs.Add(splitFilters[1]);
 
-                if (splitFilters[0].Equals("Price"))
+                if (splitFilters[0].Equals("Price") || splitFilters[0].Equals("Category"))
                     values.Add(splitFilters[2]);
                 else if ((splitFilters[1].Equals("LIKE") || splitFilters[1].Equals("NOT LIKE")) && !splitFilters[1].Equals("="))
                     values.Add($"'%{splitFilters[2]}%'");
