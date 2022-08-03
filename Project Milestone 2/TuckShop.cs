@@ -307,7 +307,7 @@ namespace Project_Milestone_2
 
         private void BtnOrderCheckout(object sender, EventArgs e)
         {
-            saleManager.AddSale(quantities, prices, itemName);
+           // saleManager.AddSale(quantities, prices, itemName);
         }
         //===============================================================================================
 
