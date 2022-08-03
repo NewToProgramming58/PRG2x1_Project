@@ -817,7 +817,7 @@ namespace Project_Milestone_2
             this.pnlEditChangeItem.Controls.Add(this.label46);
             this.pnlEditChangeItem.Controls.Add(this.label42);
             this.pnlEditChangeItem.Enabled = false;
-            this.pnlEditChangeItem.Location = new System.Drawing.Point(346, 65);
+            this.pnlEditChangeItem.Location = new System.Drawing.Point(346, 64);
             this.pnlEditChangeItem.Name = "pnlEditChangeItem";
             this.pnlEditChangeItem.Size = new System.Drawing.Size(236, 227);
             this.pnlEditChangeItem.TabIndex = 8;
@@ -878,7 +878,7 @@ namespace Project_Milestone_2
             this.btnEditChangeItemSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnEditChangeItemSubmit.TabIndex = 22;
             this.btnEditChangeItemSubmit.Text = "Submit";
-            this.btnEditChangeItemSubmit.UseVisualStyleBackColor = true;         
+            this.btnEditChangeItemSubmit.UseVisualStyleBackColor = true;
             // 
             // nudEditChangeItemQuantity
             // 
@@ -988,7 +988,7 @@ namespace Project_Milestone_2
             this.pnlEditAddSale.Controls.Add(this.label41);
             this.pnlEditAddSale.Controls.Add(this.textBox5);
             this.pnlEditAddSale.Enabled = false;
-            this.pnlEditAddSale.Location = new System.Drawing.Point(661, 65);
+            this.pnlEditAddSale.Location = new System.Drawing.Point(662, 65);
             this.pnlEditAddSale.Name = "pnlEditAddSale";
             this.pnlEditAddSale.Size = new System.Drawing.Size(221, 227);
             this.pnlEditAddSale.TabIndex = 6;
