@@ -116,9 +116,15 @@ namespace Project_Milestone_2
             tcMainScreen.ItemSize = new Size(0, 1);
             tcMainScreen.SizeMode = TabSizeMode.Fixed;
 
-            cboEditChangeItemCategory.DataSource = itemManager.FillCategories(); 
+            cboEditChangeItemCategory.DataSource = itemManager.FillCategories();
+            cboEditChangeItemCategory.DisplayMember = "Category";
+            cboEditChangeItemCategory.ValueMember = "CategoryID";
             cboEditAddItemCategory.DataSource = itemManager.FillCategories();
+            cboEditAddItemCategory.DisplayMember = "Category";
+            cboEditAddItemCategory.ValueMember = "CategoryID";
             cboSaleItems.DataSource = itemManager.FillNames();
+            cboSaleItems.DisplayMember = "ItemName";
+            cboSaleItems.ValueMember = "ItemID";
             foreach (TabPage tab in tcMainScreen.TabPages)
             {
                 tab.Text = "";

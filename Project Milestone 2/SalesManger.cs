@@ -16,16 +16,17 @@ namespace Project_Milestone_2
         public bool AddSale(List<int> quantities, List<double> prices, List<int> itemIDs) 
         {            
             bool success = false;
-            string cmdString = "INSERT INTO Items (ItemName, Price, Category, Quantity) VALUES (@name, @price, @cat, @quant)";
+            string values = $"({itemIDs[0]}, {prices[0]}, {quantities[0]})";
+            for (int i = 1; i < quantities.Count; i++)
+            {
+                values += $", ({itemIDs[i]}, {prices[i]}, {quantities[i]})";
+            }
+            string cmdString = $"INSERT INTO SaleItems (ItemID, Price, Quantity) VALUES {values}";
             SqlCommand sqlCommand = new SqlCommand
             {
                 Connection = sqlConnection,
                 CommandText = cmdString
             };
-            //sqlCommand.Parameters.AddWithValue("@name", name);
-            //sqlCommand.Parameters.AddWithValue("@price", price);
-            //sqlCommand.Parameters.AddWithValue("@cat", cat);
-            //sqlCommand.Parameters.AddWithValue("@quant", quantity);
             try
             {
                 int rows = sqlCommand.ExecuteNonQuery();

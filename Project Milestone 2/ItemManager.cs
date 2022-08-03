@@ -205,24 +205,22 @@ namespace Project_Milestone_2
 
         internal DataTable FillNames()
         {
-            string cmdString = "SELECT ItemName FROM Items";
+            string cmdString = "SELECT * FROM Items";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
             DataSet ds = new DataSet();
-            dataAdapter.Fill(ds);
-
+            dataAdapter.Fill(ds);          
             return ds.Tables[0];
         }
 
         public DataTable FillCategories() 
         {
-            string cmdString = "SELECT Category FROM Category";
+            string cmdString = "SELECT * FROM Category";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
-
-            return ds.Tables["Category"];
+            return ds.Tables[0];
         }
     }
 }

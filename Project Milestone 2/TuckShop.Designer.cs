@@ -72,7 +72,7 @@ namespace Project_Milestone_2
             this.tpEdit = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pnlEditFilter = new System.Windows.Forms.Panel();
-            this.gboComparison = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
@@ -90,6 +90,7 @@ namespace Project_Milestone_2
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.cboEditFilterField = new System.Windows.Forms.ComboBox();
+            this.cboEditFilterComparison = new System.Windows.Forms.ComboBox();
             this.pnlEditChangeItem = new System.Windows.Forms.Panel();
             this.txtEditChangeItemID = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -232,7 +233,7 @@ namespace Project_Milestone_2
             this.tpEdit.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pnlEditFilter.SuspendLayout();
-            this.gboComparison.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.pnlEditChangeItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditChangeItemQuantity)).BeginInit();
             this.pnlEditAddSale.SuspendLayout();
@@ -672,6 +673,7 @@ namespace Project_Milestone_2
             // 
             this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel8.Controls.Add(this.pnlEditFilter);
+            this.panel8.Controls.Add(this.cboEditFilterComparison);
             this.panel8.Controls.Add(this.pnlEditChangeItem);
             this.panel8.Controls.Add(this.lblEditFilters);
             this.panel8.Controls.Add(this.pnlEditAddSale);
@@ -686,7 +688,7 @@ namespace Project_Milestone_2
             // 
             this.pnlEditFilter.BackColor = System.Drawing.Color.PowderBlue;
             this.pnlEditFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlEditFilter.Controls.Add(this.gboComparison);
+            this.pnlEditFilter.Controls.Add(this.groupBox1);
             this.pnlEditFilter.Controls.Add(this.label50);
             this.pnlEditFilter.Controls.Add(this.label20);
             this.pnlEditFilter.Controls.Add(this.btnEditFiltersRemove);
@@ -703,21 +705,21 @@ namespace Project_Milestone_2
             this.pnlEditFilter.TabIndex = 23;
             this.pnlEditFilter.Visible = false;
             // 
-            // gboComparison
+            // groupBox1
             // 
-            this.gboComparison.Controls.Add(this.radioButton8);
-            this.gboComparison.Controls.Add(this.radioButton7);
-            this.gboComparison.Controls.Add(this.radioButton6);
-            this.gboComparison.Controls.Add(this.radioButton5);
-            this.gboComparison.Controls.Add(this.radioButton4);
-            this.gboComparison.Controls.Add(this.radioButton3);
-            this.gboComparison.Controls.Add(this.radioButton2);
-            this.gboComparison.Controls.Add(this.radioButton1);
-            this.gboComparison.Location = new System.Drawing.Point(102, 66);
-            this.gboComparison.Name = "gboComparison";
-            this.gboComparison.Size = new System.Drawing.Size(173, 75);
-            this.gboComparison.TabIndex = 24;
-            this.gboComparison.TabStop = false;
+            this.groupBox1.Controls.Add(this.radioButton8);
+            this.groupBox1.Controls.Add(this.radioButton7);
+            this.groupBox1.Controls.Add(this.radioButton6);
+            this.groupBox1.Controls.Add(this.radioButton5);
+            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(102, 66);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(173, 75);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
             // 
             // radioButton8
             // 
@@ -892,6 +894,24 @@ namespace Project_Milestone_2
             this.cboEditFilterField.Size = new System.Drawing.Size(156, 21);
             this.cboEditFilterField.TabIndex = 0;
             // 
+            // cboEditFilterComparison
+            // 
+            this.cboEditFilterComparison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEditFilterComparison.FormattingEnabled = true;
+            this.cboEditFilterComparison.Items.AddRange(new object[] {
+            "LIKE",
+            "=",
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "NOT LIKE",
+            "!="});
+            this.cboEditFilterComparison.Location = new System.Drawing.Point(83, 41);
+            this.cboEditFilterComparison.Name = "cboEditFilterComparison";
+            this.cboEditFilterComparison.Size = new System.Drawing.Size(56, 21);
+            this.cboEditFilterComparison.TabIndex = 7;
+            // 
             // pnlEditChangeItem
             // 
             this.pnlEditChangeItem.BackColor = System.Drawing.Color.PowderBlue;
@@ -912,7 +932,7 @@ namespace Project_Milestone_2
             this.pnlEditChangeItem.Controls.Add(this.label46);
             this.pnlEditChangeItem.Controls.Add(this.label42);
             this.pnlEditChangeItem.Enabled = false;
-            this.pnlEditChangeItem.Location = new System.Drawing.Point(346, 64);
+            this.pnlEditChangeItem.Location = new System.Drawing.Point(32, 65);
             this.pnlEditChangeItem.Name = "pnlEditChangeItem";
             this.pnlEditChangeItem.Size = new System.Drawing.Size(236, 227);
             this.pnlEditChangeItem.TabIndex = 8;
@@ -2239,8 +2259,8 @@ namespace Project_Milestone_2
             this.panel8.PerformLayout();
             this.pnlEditFilter.ResumeLayout(false);
             this.pnlEditFilter.PerformLayout();
-            this.gboComparison.ResumeLayout(false);
-            this.gboComparison.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.pnlEditChangeItem.ResumeLayout(false);
             this.pnlEditChangeItem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditChangeItemQuantity)).EndInit();
@@ -2360,6 +2380,7 @@ namespace Project_Milestone_2
         private System.Windows.Forms.ComboBox cboViewCurrentTable;
         private System.Windows.Forms.Panel pnlEditFilter;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox cboEditFilterComparison;
         private System.Windows.Forms.Button btnEditFiltersRemove;
         private System.Windows.Forms.Button btnEditFiltersCancel;
         private System.Windows.Forms.Button btnEditFiltersApply;
@@ -2471,7 +2492,7 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.GroupBox gboComparison;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton8;
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton6;
