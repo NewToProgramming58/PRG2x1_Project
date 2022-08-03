@@ -90,7 +90,6 @@ namespace Project_Milestone_2
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.cboEditFilterField = new System.Windows.Forms.ComboBox();
-            this.cboEditFilterComparison = new System.Windows.Forms.ComboBox();
             this.pnlEditChangeItem = new System.Windows.Forms.Panel();
             this.txtEditChangeItemID = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -673,7 +672,6 @@ namespace Project_Milestone_2
             // 
             this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel8.Controls.Add(this.pnlEditFilter);
-            this.panel8.Controls.Add(this.cboEditFilterComparison);
             this.panel8.Controls.Add(this.pnlEditChangeItem);
             this.panel8.Controls.Add(this.lblEditFilters);
             this.panel8.Controls.Add(this.pnlEditAddSale);
@@ -893,24 +891,6 @@ namespace Project_Milestone_2
             this.cboEditFilterField.Name = "cboEditFilterField";
             this.cboEditFilterField.Size = new System.Drawing.Size(156, 21);
             this.cboEditFilterField.TabIndex = 0;
-            // 
-            // cboEditFilterComparison
-            // 
-            this.cboEditFilterComparison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEditFilterComparison.FormattingEnabled = true;
-            this.cboEditFilterComparison.Items.AddRange(new object[] {
-            "LIKE",
-            "=",
-            ">",
-            ">=",
-            "<",
-            "<=",
-            "NOT LIKE",
-            "!="});
-            this.cboEditFilterComparison.Location = new System.Drawing.Point(83, 41);
-            this.cboEditFilterComparison.Name = "cboEditFilterComparison";
-            this.cboEditFilterComparison.Size = new System.Drawing.Size(56, 21);
-            this.cboEditFilterComparison.TabIndex = 7;
             // 
             // pnlEditChangeItem
             // 
@@ -2380,7 +2360,6 @@ namespace Project_Milestone_2
         private System.Windows.Forms.ComboBox cboViewCurrentTable;
         private System.Windows.Forms.Panel pnlEditFilter;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox cboEditFilterComparison;
         private System.Windows.Forms.Button btnEditFiltersRemove;
         private System.Windows.Forms.Button btnEditFiltersCancel;
         private System.Windows.Forms.Button btnEditFiltersApply;
