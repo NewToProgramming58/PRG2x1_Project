@@ -25,7 +25,7 @@ namespace Project_Milestone_2
         public bool Login(string email, string password)
         {
             bool ableToLogin = false;
-            string cmdString = "SELECT * FROM Users WHERE Email = @email AND Password = @password";
+            string cmdString = "SELECT * FROM Users WHERE Email = @email AND Password = @password";      
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Connection = sqlConnection;
             sqlCommand.CommandText = cmdString;
