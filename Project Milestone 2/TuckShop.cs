@@ -453,8 +453,8 @@ namespace Project_Milestone_2
                                     row.Cells[0].Value.ToString() + "\nItemname: " +
                                     row.Cells[1].Value.ToString().Trim() + "\nPrice: " +////////////////////////////////////////////////////
                                     row.Cells[2].Value.ToString() + "\nCategory: " +
-                                    row.Cells[3].Value.ToString() + "\nQuantity: " +
-                                    row.Cells[4].Value.ToString(), "Remove record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                    row.Cells[4].Value.ToString() + "\nQuantity: " +
+                                    row.Cells[3].Value.ToString(), "Remove record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 // Error check.
@@ -633,6 +633,11 @@ namespace Project_Milestone_2
         private void BtnExitEditLogin_Click(object sender, EventArgs e)
         {
             OpenMenu();
+        }
+
+        private void btnEditChangeItemSubmit_Click_1(object sender, EventArgs e)
+        {
+
         }
         //===============================================================================================
     }
