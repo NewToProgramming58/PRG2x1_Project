@@ -488,7 +488,7 @@ namespace Project_Milestone_2
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
-                //dgvEdit.DataSource = saleManager.ShowAllItems();///////////////////////////////////////////////////
+                ShowSales();
             }
         }
 
@@ -524,6 +524,18 @@ namespace Project_Milestone_2
             else
             {
                 dgvEdit.DataSource = itemManager.ShowAllItems();
+            }
+        }
+
+        public void ShowSales()
+        {
+            if (editItemsFilterList.Count > 0)
+            {
+                //dgvEdit.DataSource = saleManager.FilterItems(editItemsFilterList);
+            }
+            else
+            {
+                dgvEdit.DataSource = saleManager.ShowAllSales();
             }
         }
         //===============================================================================================
