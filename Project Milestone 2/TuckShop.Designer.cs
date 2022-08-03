@@ -686,7 +686,7 @@ namespace Project_Milestone_2
             this.pnlEditFilter.Enabled = false;
             this.pnlEditFilter.Location = new System.Drawing.Point(326, 62);
             this.pnlEditFilter.Name = "pnlEditFilter";
-            this.pnlEditFilter.Size = new System.Drawing.Size(281, 225);
+            this.pnlEditFilter.Size = new System.Drawing.Size(281, 207);
             this.pnlEditFilter.TabIndex = 23;
             this.pnlEditFilter.Visible = false;
             // 
@@ -703,7 +703,7 @@ namespace Project_Milestone_2
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(25, 93);
+            this.label20.Location = new System.Drawing.Point(23, 70);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(65, 13);
             this.label20.TabIndex = 8;
@@ -729,7 +729,7 @@ namespace Project_Milestone_2
             // 
             // btnEditFiltersRemove
             // 
-            this.btnEditFiltersRemove.Location = new System.Drawing.Point(91, 190);
+            this.btnEditFiltersRemove.Location = new System.Drawing.Point(91, 174);
             this.btnEditFiltersRemove.Name = "btnEditFiltersRemove";
             this.btnEditFiltersRemove.Size = new System.Drawing.Size(102, 23);
             this.btnEditFiltersRemove.TabIndex = 6;
@@ -739,7 +739,7 @@ namespace Project_Milestone_2
             // 
             // btnEditFiltersCancel
             // 
-            this.btnEditFiltersCancel.Location = new System.Drawing.Point(15, 190);
+            this.btnEditFiltersCancel.Location = new System.Drawing.Point(15, 174);
             this.btnEditFiltersCancel.Name = "btnEditFiltersCancel";
             this.btnEditFiltersCancel.Size = new System.Drawing.Size(75, 23);
             this.btnEditFiltersCancel.TabIndex = 5;
@@ -749,7 +749,7 @@ namespace Project_Milestone_2
             // 
             // btnEditFiltersApply
             // 
-            this.btnEditFiltersApply.Location = new System.Drawing.Point(194, 190);
+            this.btnEditFiltersApply.Location = new System.Drawing.Point(194, 174);
             this.btnEditFiltersApply.Name = "btnEditFiltersApply";
             this.btnEditFiltersApply.Size = new System.Drawing.Size(75, 23);
             this.btnEditFiltersApply.TabIndex = 4;
@@ -760,15 +760,15 @@ namespace Project_Milestone_2
             // txtEditFilterValue
             // 
             this.txtEditFilterValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditFilterValue.Location = new System.Drawing.Point(133, 163);
+            this.txtEditFilterValue.Location = new System.Drawing.Point(102, 147);
             this.txtEditFilterValue.Name = "txtEditFilterValue";
-            this.txtEditFilterValue.Size = new System.Drawing.Size(100, 21);
+            this.txtEditFilterValue.Size = new System.Drawing.Size(156, 21);
             this.txtEditFilterValue.TabIndex = 3;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(27, 166);
+            this.label21.Location = new System.Drawing.Point(27, 152);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 13);
             this.label21.TabIndex = 2;
@@ -777,7 +777,7 @@ namespace Project_Milestone_2
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(24, 58);
+            this.label22.Location = new System.Drawing.Point(24, 42);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(66, 13);
             this.label22.TabIndex = 1;
@@ -788,9 +788,9 @@ namespace Project_Milestone_2
             this.cboEditFilterField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEditFilterField.FormattingEnabled = true;
             this.cboEditFilterField.ItemHeight = 13;
-            this.cboEditFilterField.Location = new System.Drawing.Point(133, 56);
+            this.cboEditFilterField.Location = new System.Drawing.Point(102, 39);
             this.cboEditFilterField.Name = "cboEditFilterField";
-            this.cboEditFilterField.Size = new System.Drawing.Size(93, 21);
+            this.cboEditFilterField.Size = new System.Drawing.Size(156, 21);
             this.cboEditFilterField.TabIndex = 0;
             // 
             // panel8
@@ -2135,7 +2135,7 @@ namespace Project_Milestone_2
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(96, 85);
+            this.groupBox1.Location = new System.Drawing.Point(102, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(173, 75);
             this.groupBox1.TabIndex = 24;
