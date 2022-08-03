@@ -212,7 +212,7 @@ namespace Project_Milestone_2
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
 
-            return ds.Tables[0];
+            return ds.Tables["Category"];
         }
     }
 }
