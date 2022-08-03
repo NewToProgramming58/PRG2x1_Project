@@ -25,7 +25,7 @@ namespace Project_Milestone_2
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
         static UserManager userManager;
-        static SalesManger sales;
+        static SalesManger saleManager;
 
         public static void HandleError(Exception ex)
         {
@@ -98,7 +98,7 @@ namespace Project_Milestone_2
             //Object to Manage DB control concerning Items
             itemManager = new ItemManager(sqlConnection);
             userManager = new UserManager(sqlConnection);
-            sales = new SalesManger(sqlConnection);
+            saleManager = new SalesManger(sqlConnection);
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
@@ -305,8 +305,7 @@ namespace Project_Milestone_2
             try
             {
                 // Puts the filters in the correct format for the method.
-                filter = cboEditFilterField.SelectedItem.ToString() + "#" + cboEditFilterComparison.SelectedItem.ToString() + "#" + txtEditFilterValue.Text;
-
+                filter = cboEditFilterField.SelectedItem.ToString() + "#" + gboComparison.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text + "#" + txtEditFilterValue.Text;
                 // Checks which table is currently open to be filtered.
                 if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
                 {
