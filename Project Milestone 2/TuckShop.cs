@@ -22,10 +22,15 @@ namespace Project_Milestone_2
         // Lists used for saving filters to outputs
         public List<string> editItemsFilterList = new List<string>();
         public List<string> editSalesFilterList = new List<string>();
+        // Lists used to transfer Sales infromation
+        public List<int> quantities = new List<int>();
+        public List<double> prices = new List<double>();
+        public List<string> itemName = new List<string>();
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
         static UserManager userManager;
         static SalesManger saleManager;
+        public bool isAdmin;
 
         public static void HandleError(Exception ex)
         {
@@ -153,7 +158,7 @@ namespace Project_Milestone_2
             string email = txbLoginEmail.Text;
             string password = txbLoginPassword.Text;
             string message = "Email or Password incorrect.";
-            if (UserManager.Login(email, password))
+            if (userManager.Login(email, password))
             {
                 OpenMenu();
             }
@@ -183,7 +188,7 @@ namespace Project_Milestone_2
                 string password = txbRegPassword.Text;
                 string name = txbRegName.Text;
                 string surname = txbRegSurname.Text;
-                UserManager.Register(email, password, name, surname) ;
+                userManager.Register(email, password, name, surname) ;
                 tcMainScreen.SelectedTab = tpLogin;
                 Size = new Size(215, 266);
             }
@@ -253,6 +258,52 @@ namespace Project_Milestone_2
         private void BtnExitOrder_Click(object sender, EventArgs e)
         {
             OpenMenu();
+        }
+
+        private void BtnClearOrder_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+            richTextBox1.Focus();
+            quantities.Clear();
+            prices.Clear();
+            itemName.Clear();
+        }
+
+        private void BtnOrderAdd(object sender, EventArgs e)
+        {
+            string cBox = cboSaleItems.Items[cboSaleItems.SelectedIndex].ToString();
+            int nUD1 = Convert.ToInt32(numericUpDown1.Value);
+            quantities.Add(nUD1);
+            itemName.Add(cBox);
+            richTextBox1.Text = cBox + ' ' + nUD1;
+        }
+
+        private void BtnOrderRemove(object sender, EventArgs e)
+        {
+            string cBox = cboSaleItems.Items[cboSaleItems.SelectedIndex].ToString();
+            int nUD1 = Convert.ToInt32(numericUpDown1.Value);
+            string message = "Items removed from list can not be more than was on list";
+            int itemPosition = itemName.BinarySearch(cBox);
+            if (quantities[itemPosition]> nUD1)
+            {
+                quantities[itemPosition] = quantities[itemPosition] - nUD1;
+            }
+            else if(quantities[itemPosition] == nUD1)
+            {
+                itemName.RemoveAt(itemPosition);
+                quantities.RemoveAt(itemPosition);
+            }
+            else
+            {
+                MessageBox.Show(message);
+            }
+            
+            richTextBox1.Text = cBox + ' ' + nUD1 + "has been removed";
+        }
+
+        private void BtnOrderCheckout(object sender, EventArgs e)
+        {
+            salesManger.AddSale(quantities, prices, itemName);
         }
         //===============================================================================================
 
