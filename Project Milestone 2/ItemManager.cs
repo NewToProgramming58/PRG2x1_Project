@@ -95,9 +95,9 @@ namespace Project_Milestone_2
 
             string id = splitUpdate[0];
             string itemName = splitUpdate[1];
-            string price = splitUpdate[2];
-            string category = splitUpdate[3];
-            string quantity = splitUpdate[4];
+            string price = splitUpdate[2];           
+            string quantity = splitUpdate[3];
+            string category = splitUpdate[4];
 
             bool success = false;
             string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, CategoryID = {category}, Quantity = {quantity} WHERE ItemID = @id";
