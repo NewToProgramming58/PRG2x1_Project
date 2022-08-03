@@ -150,7 +150,17 @@ namespace Project_Milestone_2
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            OpenMenu();
+            string email = txbLoginEmail.Text;
+            string password = txbLoginPassword.Text;
+            string message = "Email or Password incorrect.";
+            if (UserManager.Login(email, password))
+            {
+                OpenMenu();
+            }
+            else
+            {
+                MessageBox.Show(message);
+            }
         }
         //===============================================================================================
 
@@ -166,8 +176,21 @@ namespace Project_Milestone_2
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpLogin;
-            Size = new Size(215, 266);
+            string message = "Passwords do not match.";
+            if (txbRegPassword.Text == txbRegConfirm.Text)
+            {
+                string email = txbRegEmail.Text;
+                string password = txbRegPassword.Text;
+                string name = txbRegName.Text;
+                string surname = txbRegSurname.Text;
+                UserManager.Register(email, password, name, surname) ;
+                tcMainScreen.SelectedTab = tpLogin;
+                Size = new Size(215, 266);
+            }
+            else
+            {
+                MessageBox.Show(message);
+            }
         }
         //===============================================================================================
 
