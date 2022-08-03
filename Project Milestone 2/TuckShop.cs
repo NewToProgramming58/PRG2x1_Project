@@ -116,6 +116,9 @@ namespace Project_Milestone_2
             tcMainScreen.ItemSize = new Size(0, 1);
             tcMainScreen.SizeMode = TabSizeMode.Fixed;
 
+            cboEditChangeItemCategory.DataSource = itemManager.FillCategories();
+            cboEditAddItemCategory.DataSource = itemManager.FillCategories();
+
             foreach (TabPage tab in tcMainScreen.TabPages)
             {
                 tab.Text = "";

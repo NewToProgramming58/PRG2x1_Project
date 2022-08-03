@@ -85,9 +85,11 @@ namespace Project_Milestone_2
         {
             bool exists = true;
             string cmdString = $"SELECT * FROM Users WHERE Email = \"{email}\"";
-            SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandText = cmdString;
+            SqlCommand sqlCommand = new SqlCommand
+            {
+                Connection = sqlConnection,
+                CommandText = cmdString
+            };
             try
             {
                 int rows = sqlCommand.ExecuteNonQuery();
@@ -107,8 +109,7 @@ namespace Project_Milestone_2
             else
             {
                 bool success = false;
-                cmdString = "INSERT INTO Users VALUES (@email, @password)";               
-                sqlCommand.Connection = sqlConnection;
+                cmdString = "INSERT INTO Users VALUES (@email, @password)";                      
                 sqlCommand.CommandText = cmdString;
                 sqlCommand.Parameters.AddWithValue("@email", email);
                 sqlCommand.Parameters.AddWithValue("@password", password);

@@ -27,7 +27,7 @@ namespace Project_Milestone_2
         }
 
         // This method simply adds a new item to the sql database.
-        public bool AddItem(String name, String cat, int quantity, double price) 
+        public bool AddItem(String name, String cat, int quantity, double price)
         {
             bool success = false;
             string cmdString = "INSERT INTO Items (ItemName, Price, Category, Quantity) VALUES (@name, @price, @cat, @quant)";
@@ -48,7 +48,7 @@ namespace Project_Milestone_2
                     success = true;
                 }
             }
-            catch(SqlException e)
+            catch (SqlException e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -73,7 +73,7 @@ namespace Project_Milestone_2
                 if (rows > 0)
                 {
                     success = true;
-                }                
+                }
             }
             catch (SqlException e)
             {
@@ -100,13 +100,13 @@ namespace Project_Milestone_2
             string quantity = splitFilters[4];
 
             bool success = false;
-            string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, Category = '{category}', Quantity = {quantity} WHERE ItemID = @id";          
+            string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, Category = '{category}', Quantity = {quantity} WHERE ItemID = @id";
             SqlCommand sqlCommand = new SqlCommand
             {
                 Connection = sqlConnection,
                 CommandText = cmdString
             };
-            sqlCommand.Parameters.AddWithValue("@id", id);                   
+            sqlCommand.Parameters.AddWithValue("@id", id);
             try
             {
                 int rows = sqlCommand.ExecuteNonQuery();
@@ -151,7 +151,7 @@ namespace Project_Milestone_2
         //Show all
         public DataTable ShowAllItems()
         {
-            string cmdString = "SELECT * FROM Items ORDER BY ItemID";             
+            string cmdString = "SELECT I.ItemID, I.ItemName, I.Price, I.Quantity, C.Category FROM Items AS I INNER JOIN Category AS C ON I.CategoryID = C.CategoryID";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
             DataSet ds = new DataSet();
@@ -160,13 +160,13 @@ namespace Project_Milestone_2
             return ds.Tables[0];
         }
 
-        public DataTable FilterItems(List<string> filters) 
+        public DataTable FilterItems(List<string> filters)
         {
             List<string> fields = new List<string>();
             List<string> signs = new List<string>();
             List<string> values = new List<string>();
-                             
-            foreach (string filter in filters) 
+
+            foreach (string filter in filters)
             {
                 // 0 = field
                 // 1 = sign
@@ -177,7 +177,7 @@ namespace Project_Milestone_2
                     signs.Add("LIKE");
                 else if (splitFilters[1].Equals("!="))
                     signs.Add("NOT LIKE");
-                else 
+                else
                     signs.Add(splitFilters[1]);
 
                 if (splitFilters[0].Equals("Price"))
@@ -186,15 +186,26 @@ namespace Project_Milestone_2
                     values.Add($"'%{splitFilters[2]}%'");
                 else
                     values.Add($"'{splitFilters[2]}'");
-            }          
-            string cmdString = $"SELECT * FROM Items WHERE {fields[0]} {signs[0]} {values[0]}";
+            }
+            string cmdString = $"SELECT I.ItemID, I.ItemName, I.Price, I.Quantity, C.Category FROM Items AS I INNER JOIN Category AS C ON I.CategoryID = C.CategoryID WHERE I.{fields[0]} {signs[0]} I.{values[0]}";
             if (fields.Count > 1)
             {
                 for (int i = 1; i < signs.Count; i++)
                 {
                     cmdString += $" AND {fields[i]} {signs[i]} {values[i]}";
                 }
-            }           
+            }
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
+
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+
+            return ds.Tables[0];
+        }
+
+        public DataTable FillCategories() 
+        {
+            string cmdString = "SELECT * FROM Category";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
             DataSet ds = new DataSet();

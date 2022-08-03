@@ -878,7 +878,7 @@ namespace Project_Milestone_2
             this.btnEditChangeItemSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnEditChangeItemSubmit.TabIndex = 22;
             this.btnEditChangeItemSubmit.Text = "Submit";
-            this.btnEditChangeItemSubmit.UseVisualStyleBackColor = true;         
+            this.btnEditChangeItemSubmit.UseVisualStyleBackColor = true;
             // 
             // nudEditChangeItemQuantity
             // 
@@ -891,11 +891,6 @@ namespace Project_Milestone_2
             // 
             this.cboEditChangeItemCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEditChangeItemCategory.FormattingEnabled = true;
-            this.cboEditChangeItemCategory.Items.AddRange(new object[] {
-            "Cooldrink",
-            "Food",
-            "Breakfast",
-            "Snacks"});
             this.cboEditChangeItemCategory.Location = new System.Drawing.Point(130, 137);
             this.cboEditChangeItemCategory.Name = "cboEditChangeItemCategory";
             this.cboEditChangeItemCategory.Size = new System.Drawing.Size(93, 21);
