@@ -31,6 +31,10 @@ namespace Project_Milestone_2
         static UserManager userManager;
         static SalesManger saleManager;
         public bool isAdmin;
+        // Bool used in Edit page.
+        public bool detailSelected;
+        // Counts the number of records in Edit
+        public int editRecordCount;
 
         public static void HandleError(Exception ex)
         {
@@ -303,7 +307,7 @@ namespace Project_Milestone_2
 
         private void BtnOrderCheckout(object sender, EventArgs e)
         {
-            salesManger.AddSale(quantities, prices, itemName);
+            //saleManager.AddSale(quantities, prices, itemName);
         }
         //===============================================================================================
 
@@ -357,8 +361,9 @@ namespace Project_Milestone_2
                 }
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
+                    //Check if it is admin/////////////////////////////////////////////////////////////////////
                     editSalesFilterList.Clear();
-                    //dgvEdit.DataSource = saleManager.ShowAllItems();/////////////////////////////////////////////////////////////
+                    ShowSales();
                 }
             }
             catch (Exception ex)
@@ -390,7 +395,7 @@ namespace Project_Milestone_2
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
                     editSalesFilterList.Add(filter);
-                    dgvEdit.DataSource = saleManager.FilterItems(editSalesFilterList);////////////////////////////////////////////////////////////
+                    dgvEdit.DataSource = saleManager.FilterSales(editSalesFilterList);////////////////////////////////////////////////////////////
                 }
 
                 // Shows the user filters are applied.
@@ -463,11 +468,11 @@ namespace Project_Milestone_2
                 txtEditChangeItemName.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[1].Value.ToString();
                 txtEditChangeItemPrice.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[2].Value.ToString();                         
                 nudEditChangeItemQuantity.Value = int.Parse(dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[3].Value.ToString());
-                cboEditChangeItemCategory.SelectedItem = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString();
+                cboEditChangeItemCategory.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString();
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
-                MessageBox.Show("Only Items can be changed. Sales can only be Removed or Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Only Items and Sale details can be changed. Sales can only be Removed or Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -529,12 +534,12 @@ namespace Project_Milestone_2
             var row = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex];
             string ID = row.Cells[0].Value.ToString();
             // Asks user if he/she is sure they want to delete the record and if Yes is selected, deletes appropriate record.
-            var result = MessageBox.Show("Are you sure you want to delete record in Items containing: \nItemID: " +
-                                    row.Cells[0].Value.ToString() + "\nItemname: " +
-                                    row.Cells[1].Value.ToString().Trim() + "\nPrice: " +////////////////////////////////////////////////////
-                                    row.Cells[2].Value.ToString() + "\nCategory: " +
-                                    row.Cells[4].Value.ToString() + "\nQuantity: " +
-                                    row.Cells[3].Value.ToString(), "Remove record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            string message = "Are you sure you want to delete record in " + cboEditCurrentTable.Text + " containing:";
+            for (int i = 0; i < dgvEdit.Columns.Count; i++)
+            {
+                message = message + "\n" + dgvEdit.Columns[i].HeaderText + ": " + dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[i].Value.ToString();
+            }
+            var result = MessageBox.Show(message, "Remove record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 // Error check.
@@ -548,8 +553,9 @@ namespace Project_Milestone_2
                     }
                     else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                     {
-                        //saleManager.RemoveItem(ID)//////////////////////////////////////////////////////////////////
-                        //dgvEdit.DataSource = saleManager.ShowAllItems();
+                        saleManager.RemoveSale(ID);
+                        // Refreshes values.
+                        ShowSales();
                     }
                 }
                 catch (Exception ex)
@@ -565,15 +571,66 @@ namespace Project_Milestone_2
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
                 ShowItems();
+                // Determines wether the detail-table is selected.
+                detailSelected = false;
+                lblSale.Visible = false;
+                btnSalesBack.Visible = false;
+                btnSalesBack.Enabled = false;
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
+                // Shows the user that they can see details by double-clicking the sale
+                lblSale.Visible = true;
+                btnSalesBack.Visible = false;
+                btnSalesBack.Enabled = false;
                 ShowSales();
+                // Determines wether the detail-table is selected.
+                detailSelected = false;
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Individual sales")
             {
                 
             }
+        }
+        private void btnEditSaleAddCancel_Click(object sender, EventArgs e)
+        {
+            EnableEditForm();///////////////////////////////////////////////////////////////////////////////
+            pnlEditAddSale.Visible = false;
+            pnlEditAddSale.Enabled = false;
+        }
+
+        private void btnEditSaleAddSubmit_Click(object sender, EventArgs e)
+        {
+            string date = dtpEditAddSaleDate.Value.ToString();
+            EnableEditForm();///////////////////////////////////////////////////////////////////////////////
+            pnlEditAddSale.Visible = false;
+            pnlEditAddSale.Enabled = false;
+        }
+
+        // If a person double-clicks a sale, the sale-details will display
+        private void dgvEdit_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (cboEditCurrentTable.Text == "Sales")
+            {
+                //Show details
+                ShowItems();/////////////////////////////////////////////////////////////////////////////////
+                btnSalesBack.Visible = true;
+                btnSalesBack.Enabled = true;
+                lblSale.Visible = false;
+                // Determines wether the detail-table is selected.
+                detailSelected = true;
+
+            }
+        }
+
+        private void btnSalesBack_Click(object sender, EventArgs e)
+        {
+            ShowSales();
+            btnSalesBack.Visible = false;
+            btnSalesBack.Enabled = false;
+            lblSale.Visible = true;
+            // Determines wether the detail-table is selected.
+            detailSelected = false;
         }
 
         // Methods used for validation by disabling/enabling certain inputs.
@@ -603,23 +660,40 @@ namespace Project_Milestone_2
         {
             if (editItemsFilterList.Count > 0)
             {
+                // Gets the actual number of records.
+                dgvEdit.DataSource = itemManager.ShowAllItems();
+                editRecordCount = dgvEdit.Rows.Count - 1;
+
                 dgvEdit.DataSource = itemManager.FilterItems(editItemsFilterList);
+                txtEditRecordCount.Text = (dgvEdit.Rows.Count - 1).ToString() + " of " + editRecordCount.ToString();
             }
             else
             {
                 dgvEdit.DataSource = itemManager.ShowAllItems();
+                // Gets the actual number of records.
+                editRecordCount = dgvEdit.Rows.Count - 1;
+                txtEditRecordCount.Text = editRecordCount.ToString();
             }
         }
 
+        // This method checks if a filter is already applied or not when refreshing the datagrid.
         public void ShowSales()
         {
             if (editItemsFilterList.Count > 0)
             {
-                //dgvEdit.DataSource = saleManager.FilterItems(editItemsFilterList);
+                // Gets the actual number of records.
+                dgvEdit.DataSource = saleManager.ShowAllSales();
+                editRecordCount = dgvEdit.Rows.Count - 1;
+
+                dgvEdit.DataSource = saleManager.FilterSales(editSalesFilterList);
+                txtEditRecordCount.Text = (dgvEdit.Rows.Count - 1).ToString() + " of " + editRecordCount.ToString();
             }
             else
             {
                 dgvEdit.DataSource = saleManager.ShowAllSales();
+                // Gets the actual number of records.
+                editRecordCount = dgvEdit.Rows.Count - 1;
+                txtEditRecordCount.Text = editRecordCount.ToString();
             }
         }
         //===============================================================================================

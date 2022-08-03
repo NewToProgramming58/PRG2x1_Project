@@ -79,7 +79,6 @@ namespace Project_Milestone_2
             this.label41 = new System.Windows.Forms.Label();
             this.txtEditRecordCount = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.btnSalesBack = new System.Windows.Forms.Button();
             this.lblSale = new System.Windows.Forms.Label();
             this.pnlEditFilter = new System.Windows.Forms.Panel();
             this.gboComparison = new System.Windows.Forms.GroupBox();
@@ -134,6 +133,7 @@ namespace Project_Milestone_2
             this.btnEditAdd = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnEditFilter = new System.Windows.Forms.Button();
+            this.btnSalesBack = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnExitEdit = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -764,18 +764,6 @@ namespace Project_Milestone_2
             this.label38.TabIndex = 25;
             this.label38.Text = "Records: ";
             // 
-            // btnSalesBack
-            // 
-            this.btnSalesBack.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSalesBack.Location = new System.Drawing.Point(73, 85);
-            this.btnSalesBack.Name = "btnSalesBack";
-            this.btnSalesBack.Size = new System.Drawing.Size(102, 23);
-            this.btnSalesBack.TabIndex = 24;
-            this.btnSalesBack.Text = "Back to Sales";
-            this.btnSalesBack.UseVisualStyleBackColor = false;
-            this.btnSalesBack.Visible = false;
-            this.btnSalesBack.Click += new System.EventHandler(this.btnSalesBack_Click);
-            // 
             // lblSale
             // 
             this.lblSale.AutoSize = true;
@@ -1348,6 +1336,18 @@ namespace Project_Milestone_2
             this.btnEditFilter.Text = "Filter results";
             this.btnEditFilter.UseVisualStyleBackColor = false;
             this.btnEditFilter.Click += new System.EventHandler(this.BtnEditFilter_Click);
+            // 
+            // btnSalesBack
+            // 
+            this.btnSalesBack.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSalesBack.Location = new System.Drawing.Point(73, 85);
+            this.btnSalesBack.Name = "btnSalesBack";
+            this.btnSalesBack.Size = new System.Drawing.Size(102, 23);
+            this.btnSalesBack.TabIndex = 24;
+            this.btnSalesBack.Text = "Back to Sales";
+            this.btnSalesBack.UseVisualStyleBackColor = false;
+            this.btnSalesBack.Visible = false;
+            this.btnSalesBack.Click += new System.EventHandler(this.btnSalesBack_Click);
             // 
             // panel9
             // 
