@@ -387,10 +387,9 @@ namespace Project_Milestone_2
                 // Outputs the current values selected, into the input-areas.
                 txtEditChangeItemID.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 txtEditChangeItemName.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[1].Value.ToString();
-                txtEditChangeItemPrice.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[2].Value.ToString();
-                cboEditChangeItemCategory.SelectedItem = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[3].Value.ToString();
-                MessageBox.Show(dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString());
-                nudEditChangeItemQuantity.Value = int.Parse(dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString());
+                txtEditChangeItemPrice.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[2].Value.ToString();                         
+                nudEditChangeItemQuantity.Value = int.Parse(dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[3].Value.ToString());
+                cboEditChangeItemCategory.SelectedItem = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString();
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
