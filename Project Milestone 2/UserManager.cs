@@ -35,8 +35,7 @@ namespace Project_Milestone_2
             try
             {
                 sqlCommand.ExecuteNonQuery();
-   
-                
+                   
                 using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
                 {
                     if (dataReader.HasRows) {
