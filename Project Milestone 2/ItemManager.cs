@@ -91,13 +91,13 @@ namespace Project_Milestone_2
             // 2 = Price
             // 3 = Category
             // 4 = Quantity
-            var splitFilters = update.Split('#');
+            var splitUpdate = update.Split('#');
 
-            string id = splitFilters[0];
-            string itemName = splitFilters[1];
-            string price = splitFilters[2];
-            string category = splitFilters[3];
-            string quantity = splitFilters[4];
+            string id = splitUpdate[0];
+            string itemName = splitUpdate[1];
+            string price = splitUpdate[2];
+            string category = splitUpdate[3];
+            string quantity = splitUpdate[4];
 
             bool success = false;
             string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, CategoryID = {category}, Quantity = {quantity} WHERE ItemID = @id";
