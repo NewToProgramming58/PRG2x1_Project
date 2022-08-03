@@ -35,15 +35,18 @@ namespace Project_Milestone_2
             {
                 sqlCommand.ExecuteNonQuery();
    
-                ableToLogin = true;
-                userEmail = email;
+                
                 using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
                 {
-                    while (dataReader.Read())
-                    {                            
-                        userName = (string)dataReader["Name"];
-                        userSurname = (string)dataReader["Surname"];
-                    }
+                    if (dataReader.HasRows) {
+                        ableToLogin = true;
+                        userEmail = email;
+                        while (dataReader.Read())
+                        {
+                            userName = (string)dataReader["Name"];
+                            userSurname = (string)dataReader["Surname"];
+                        }
+                    }                   
                 }
                 
             }
