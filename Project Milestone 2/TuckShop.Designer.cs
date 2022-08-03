@@ -72,7 +72,7 @@ namespace Project_Milestone_2
             this.tpEdit = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pnlEditFilter = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gboComparison = new System.Windows.Forms.GroupBox();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
@@ -233,7 +233,7 @@ namespace Project_Milestone_2
             this.tpEdit.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pnlEditFilter.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gboComparison.SuspendLayout();
             this.pnlEditChangeItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditChangeItemQuantity)).BeginInit();
             this.pnlEditAddSale.SuspendLayout();
@@ -688,7 +688,7 @@ namespace Project_Milestone_2
             // 
             this.pnlEditFilter.BackColor = System.Drawing.Color.PowderBlue;
             this.pnlEditFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlEditFilter.Controls.Add(this.groupBox1);
+            this.pnlEditFilter.Controls.Add(this.gboComparison);
             this.pnlEditFilter.Controls.Add(this.label50);
             this.pnlEditFilter.Controls.Add(this.label20);
             this.pnlEditFilter.Controls.Add(this.btnEditFiltersRemove);
@@ -705,21 +705,21 @@ namespace Project_Milestone_2
             this.pnlEditFilter.TabIndex = 23;
             this.pnlEditFilter.Visible = false;
             // 
-            // groupBox1
+            // gboComparison
             // 
-            this.groupBox1.Controls.Add(this.radioButton8);
-            this.groupBox1.Controls.Add(this.radioButton7);
-            this.groupBox1.Controls.Add(this.radioButton6);
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(102, 66);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 75);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
+            this.gboComparison.Controls.Add(this.radioButton8);
+            this.gboComparison.Controls.Add(this.radioButton7);
+            this.gboComparison.Controls.Add(this.radioButton6);
+            this.gboComparison.Controls.Add(this.radioButton5);
+            this.gboComparison.Controls.Add(this.radioButton4);
+            this.gboComparison.Controls.Add(this.radioButton3);
+            this.gboComparison.Controls.Add(this.radioButton2);
+            this.gboComparison.Controls.Add(this.radioButton1);
+            this.gboComparison.Location = new System.Drawing.Point(102, 66);
+            this.gboComparison.Name = "gboComparison";
+            this.gboComparison.Size = new System.Drawing.Size(173, 75);
+            this.gboComparison.TabIndex = 24;
+            this.gboComparison.TabStop = false;
             // 
             // radioButton8
             // 
@@ -2259,8 +2259,8 @@ namespace Project_Milestone_2
             this.panel8.PerformLayout();
             this.pnlEditFilter.ResumeLayout(false);
             this.pnlEditFilter.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gboComparison.ResumeLayout(false);
+            this.gboComparison.PerformLayout();
             this.pnlEditChangeItem.ResumeLayout(false);
             this.pnlEditChangeItem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditChangeItemQuantity)).EndInit();
@@ -2492,7 +2492,7 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gboComparison;
         private System.Windows.Forms.RadioButton radioButton8;
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton6;
