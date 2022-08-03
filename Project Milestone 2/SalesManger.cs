@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Project_Milestone_2
@@ -12,7 +13,7 @@ namespace Project_Milestone_2
             this.sqlConnection = sqlConnection;
         }
 
-        public bool AddSale() 
+        public bool AddSale(List<int> quantities, List<double> prices, List<int> itemIDs) 
         {            
             bool success = false;
             string cmdString = "INSERT INTO Items (ItemName, Price, Category, Quantity) VALUES (@name, @price, @cat, @quant)";

@@ -163,7 +163,7 @@ namespace Project_Milestone_2
             this.panel14 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboSaleItems = new System.Windows.Forms.ComboBox();
             this.btnClearOrder = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.btnRemoveOrder = new System.Windows.Forms.Button();
@@ -1614,7 +1614,7 @@ namespace Project_Milestone_2
             this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel14.Controls.Add(this.button1);
             this.panel14.Controls.Add(this.label24);
-            this.panel14.Controls.Add(this.comboBox4);
+            this.panel14.Controls.Add(this.cboSaleItems);
             this.panel14.Controls.Add(this.btnClearOrder);
             this.panel14.Controls.Add(this.label23);
             this.panel14.Controls.Add(this.btnRemoveOrder);
@@ -1646,13 +1646,13 @@ namespace Project_Milestone_2
             this.label24.TabIndex = 3;
             this.label24.Text = "Amount:";
             // 
-            // comboBox4
+            // cboSaleItems
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(43, 26);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(103, 21);
-            this.comboBox4.TabIndex = 0;
+            this.cboSaleItems.FormattingEnabled = true;
+            this.cboSaleItems.Location = new System.Drawing.Point(43, 26);
+            this.cboSaleItems.Name = "cboSaleItems";
+            this.cboSaleItems.Size = new System.Drawing.Size(103, 21);
+            this.cboSaleItems.TabIndex = 0;
             // 
             // btnClearOrder
             // 
@@ -2393,7 +2393,7 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboSaleItems;
         private System.Windows.Forms.Button btnClearOrder;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btnRemoveOrder;
