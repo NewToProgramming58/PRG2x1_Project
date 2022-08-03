@@ -79,20 +79,18 @@ namespace Project_Milestone_2
                     signs.Add("NOT LIKE");
                 else
                     signs.Add(splitFilters[1]);
-
-                if (splitFilters[0].Equals("Price") || splitFilters[0].Equals("Category"))
-                    values.Add(splitFilters[2]);
-                else if ((splitFilters[1].Equals("LIKE") || splitFilters[1].Equals("NOT LIKE")) && !splitFilters[1].Equals("="))
-                    values.Add($"'%{splitFilters[2]}%'");
+       
+                if ((splitFilters[1].Equals("LIKE") || splitFilters[1].Equals("NOT LIKE")) && !splitFilters[1].Equals("="))
+                    values.Add($"%{splitFilters[2]}%");
                 else
-                    values.Add($"'{splitFilters[2]}'");
+                    values.Add(splitFilters[2]);
             }
-            string cmdString = $"SELECT I.ItemID, I.ItemName, I.Price, I.Quantity, C.Category FROM Items AS I INNER JOIN Category AS C ON I.CategoryID = C.CategoryID WHERE I.{fields[0]} {signs[0]} {values[0]}";
+            string cmdString = $"SELECT * FROM Sales WHERE {fields[0]} {signs[0]} {values[0]}";
             if (fields.Count > 1)
             {
                 for (int i = 1; i < signs.Count; i++)
                 {
-                    cmdString += $" AND I.{fields[i]} {signs[i]} {values[i]}";
+                    cmdString += $" AND {fields[i]} {signs[i]} {values[i]}";
                 }
             }
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);

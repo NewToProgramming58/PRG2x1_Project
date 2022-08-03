@@ -316,7 +316,7 @@ namespace Project_Milestone_2
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
                     editSalesFilterList.Add(filter);
-                    //dgvEdit.DataSource = saleManager.FilterItems(editSalesFilterList);////////////////////////////////////////////////////////////
+                    dgvEdit.DataSource = saleManager.FilterItems(editSalesFilterList);////////////////////////////////////////////////////////////
                 }
 
                 // Shows the user filters are applied.
