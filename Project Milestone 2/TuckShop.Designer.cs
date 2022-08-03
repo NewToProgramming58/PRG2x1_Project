@@ -211,6 +211,15 @@ namespace Project_Milestone_2
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnExitEditLogin = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.tcMainScreen.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -253,6 +262,7 @@ namespace Project_Milestone_2
             this.tpEditLogin.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMainScreen
@@ -649,7 +659,6 @@ namespace Project_Milestone_2
             // 
             // tpEdit
             // 
-            this.tpEdit.Controls.Add(this.pnlEditFilter);
             this.tpEdit.Controls.Add(this.panel8);
             this.tpEdit.Controls.Add(this.panel1);
             this.tpEdit.Location = new System.Drawing.Point(4, 22);
@@ -664,9 +673,9 @@ namespace Project_Milestone_2
             // 
             this.pnlEditFilter.BackColor = System.Drawing.Color.PowderBlue;
             this.pnlEditFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEditFilter.Controls.Add(this.groupBox1);
             this.pnlEditFilter.Controls.Add(this.label50);
             this.pnlEditFilter.Controls.Add(this.label20);
-            this.pnlEditFilter.Controls.Add(this.cboEditFilterComparison);
             this.pnlEditFilter.Controls.Add(this.btnEditFiltersRemove);
             this.pnlEditFilter.Controls.Add(this.btnEditFiltersCancel);
             this.pnlEditFilter.Controls.Add(this.btnEditFiltersApply);
@@ -675,9 +684,9 @@ namespace Project_Milestone_2
             this.pnlEditFilter.Controls.Add(this.label22);
             this.pnlEditFilter.Controls.Add(this.cboEditFilterField);
             this.pnlEditFilter.Enabled = false;
-            this.pnlEditFilter.Location = new System.Drawing.Point(653, 3);
+            this.pnlEditFilter.Location = new System.Drawing.Point(326, 62);
             this.pnlEditFilter.Name = "pnlEditFilter";
-            this.pnlEditFilter.Size = new System.Drawing.Size(281, 105);
+            this.pnlEditFilter.Size = new System.Drawing.Size(281, 225);
             this.pnlEditFilter.TabIndex = 23;
             this.pnlEditFilter.Visible = false;
             // 
@@ -694,7 +703,7 @@ namespace Project_Milestone_2
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(107, 31);
+            this.label20.Location = new System.Drawing.Point(25, 93);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(65, 13);
             this.label20.TabIndex = 8;
@@ -713,14 +722,14 @@ namespace Project_Milestone_2
             "<=",
             "NOT LIKE",
             "!="});
-            this.cboEditFilterComparison.Location = new System.Drawing.Point(109, 46);
+            this.cboEditFilterComparison.Location = new System.Drawing.Point(83, 41);
             this.cboEditFilterComparison.Name = "cboEditFilterComparison";
             this.cboEditFilterComparison.Size = new System.Drawing.Size(56, 21);
             this.cboEditFilterComparison.TabIndex = 7;
             // 
             // btnEditFiltersRemove
             // 
-            this.btnEditFiltersRemove.Location = new System.Drawing.Point(91, 74);
+            this.btnEditFiltersRemove.Location = new System.Drawing.Point(91, 190);
             this.btnEditFiltersRemove.Name = "btnEditFiltersRemove";
             this.btnEditFiltersRemove.Size = new System.Drawing.Size(102, 23);
             this.btnEditFiltersRemove.TabIndex = 6;
@@ -730,7 +739,7 @@ namespace Project_Milestone_2
             // 
             // btnEditFiltersCancel
             // 
-            this.btnEditFiltersCancel.Location = new System.Drawing.Point(8, 74);
+            this.btnEditFiltersCancel.Location = new System.Drawing.Point(15, 190);
             this.btnEditFiltersCancel.Name = "btnEditFiltersCancel";
             this.btnEditFiltersCancel.Size = new System.Drawing.Size(75, 23);
             this.btnEditFiltersCancel.TabIndex = 5;
@@ -740,7 +749,7 @@ namespace Project_Milestone_2
             // 
             // btnEditFiltersApply
             // 
-            this.btnEditFiltersApply.Location = new System.Drawing.Point(200, 74);
+            this.btnEditFiltersApply.Location = new System.Drawing.Point(194, 190);
             this.btnEditFiltersApply.Name = "btnEditFiltersApply";
             this.btnEditFiltersApply.Size = new System.Drawing.Size(75, 23);
             this.btnEditFiltersApply.TabIndex = 4;
@@ -751,7 +760,7 @@ namespace Project_Milestone_2
             // txtEditFilterValue
             // 
             this.txtEditFilterValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditFilterValue.Location = new System.Drawing.Point(174, 45);
+            this.txtEditFilterValue.Location = new System.Drawing.Point(133, 163);
             this.txtEditFilterValue.Name = "txtEditFilterValue";
             this.txtEditFilterValue.Size = new System.Drawing.Size(100, 21);
             this.txtEditFilterValue.TabIndex = 3;
@@ -759,7 +768,7 @@ namespace Project_Milestone_2
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(191, 31);
+            this.label21.Location = new System.Drawing.Point(27, 166);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 13);
             this.label21.TabIndex = 2;
@@ -768,7 +777,7 @@ namespace Project_Milestone_2
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 31);
+            this.label22.Location = new System.Drawing.Point(24, 58);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(66, 13);
             this.label22.TabIndex = 1;
@@ -779,7 +788,7 @@ namespace Project_Milestone_2
             this.cboEditFilterField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEditFilterField.FormattingEnabled = true;
             this.cboEditFilterField.ItemHeight = 13;
-            this.cboEditFilterField.Location = new System.Drawing.Point(8, 46);
+            this.cboEditFilterField.Location = new System.Drawing.Point(133, 56);
             this.cboEditFilterField.Name = "cboEditFilterField";
             this.cboEditFilterField.Size = new System.Drawing.Size(93, 21);
             this.cboEditFilterField.TabIndex = 0;
@@ -787,6 +796,8 @@ namespace Project_Milestone_2
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel8.Controls.Add(this.pnlEditFilter);
+            this.panel8.Controls.Add(this.cboEditFilterComparison);
             this.panel8.Controls.Add(this.pnlEditChangeItem);
             this.panel8.Controls.Add(this.lblEditFilters);
             this.panel8.Controls.Add(this.pnlEditAddSale);
@@ -2114,6 +2125,110 @@ namespace Project_Milestone_2
             this.label31.TabIndex = 15;
             this.label31.Text = "Edit User Details";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton8);
+            this.groupBox1.Controls.Add(this.radioButton7);
+            this.groupBox1.Controls.Add(this.radioButton6);
+            this.groupBox1.Controls.Add(this.radioButton5);
+            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(96, 85);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(173, 75);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 4);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(48, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "LIKE";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 21);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(31, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "=";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 38);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(37, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = ">=";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(6, 55);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(31, 17);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = ">";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(88, 4);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(74, 17);
+            this.radioButton5.TabIndex = 4;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "NOT LIKE";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(88, 21);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(34, 17);
+            this.radioButton6.TabIndex = 5;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "!=";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(88, 38);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(37, 17);
+            this.radioButton7.TabIndex = 6;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "<=";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(88, 55);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(31, 17);
+            this.radioButton8.TabIndex = 7;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "<";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
             // FrmTuckShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2188,6 +2303,8 @@ namespace Project_Milestone_2
             this.panel20.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2375,6 +2492,15 @@ namespace Project_Milestone_2
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 
