@@ -1,0 +1,45 @@
+USE TuckShop;
+
+CREATE TABLE Users (
+	[UserID] INT IDENTITY(1,1),
+	[Email] TEXT NOT NULL,
+	[Password] VARCHAR(100) NOT NULL,
+	[Name] VARCHAR(200) NULL,
+	[Surname] VARCHAR(100) NOT NULL,
+	CONSTRAINT [PK_UserID] PRIMARY KEY ([UserID]),
+)
+
+CREATE TABLE Sales (
+	[SaleID] INT IDENTITY(1,1),
+	[TotalPrice] FLOAT DEFAULT(0.0),
+	[TimePlaced] DATETIME NOT NULL,
+	CONSTRAINT [PK_SaleID] PRIMARY KEY ([SaleID]),
+)
+CREATE INDEX [IN_Sales] ON [Sales]([SaleID])
+
+CREATE TABLE SaleItems(
+	[SaleID] INT NOT NULL,
+	[Quantity] INT NOT NULL,
+	[Price] FLOAT DEFAULT(0.0) NOT NULL,
+	[ItemID] INT NOT NULL,
+	CONSTRAINT [FK_SalesID] FOREIGN KEY ([SaleID]) 
+		REFERENCES [Sales] ([SaleID]),
+)
+
+CREATE TABLE Category (
+	[CategoryID] INT IDENTITY(1,1),
+	[Category] TEXT NOT NULL,
+	CONSTRAINT [PL_CategoryID] PRIMARY KEY ([CategoryID]),
+)
+
+CREATE TABLE Items (
+	[ItemID] INT IDENTITY(1,1),
+	[ItemName] VARCHAR (100) NOT NULL,
+	[Price] FLOAT DEFAULT(0.0),
+	[CategoryID] INT NOT NULL,
+	[Quantity] INT DEFAULT(0)
+	CONSTRAINT [PK_ItemID] PRIMARY KEY ([ItemID]),
+	CONSTRAINT [FK_CategoryID] FOREIGN KEY ([CategoryID]) 
+		REFERENCES [Category] ([CategoryID]),
+)
+CREATE INDEX [IN_Item] ON [Items]([ItemName])
