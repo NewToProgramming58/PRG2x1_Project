@@ -25,6 +25,7 @@ namespace Project_Milestone_2
         // Lists used to transfer Sales infromation
         public List<int> quantities = new List<int>();
         public List<double> prices = new List<double>();
+        public List<int> itemID = new List<int>();
         public List<string> itemName = new List<string>();
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
@@ -296,6 +297,7 @@ namespace Project_Milestone_2
             {
                 itemName.RemoveAt(itemPosition);
                 quantities.RemoveAt(itemPosition);
+                itemID.RemoveAt(itemPosition);
             }
             else
             {
@@ -307,7 +309,7 @@ namespace Project_Milestone_2
 
         private void BtnOrderCheckout(object sender, EventArgs e)
         {
-            //saleManager.AddSale(quantities, prices, itemName);
+            saleManager.AddSale(quantities, prices, itemID);
         }
         //===============================================================================================
 
