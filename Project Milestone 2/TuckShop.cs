@@ -634,11 +634,6 @@ namespace Project_Milestone_2
         {
             OpenMenu();
         }
-
-        private void btnEditChangeItemSubmit_Click_1(object sender, EventArgs e)
-        {
-
-        }
         //===============================================================================================
     }
 }
