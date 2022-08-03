@@ -13,23 +13,24 @@ using System.Windows.Forms;
 
 namespace Project_Milestone_2
 {
-    // Delegate to be used as container for event.
+    // Delegate to be used as container for event
     public delegate void EventHandler(Exception exception);
     public partial class FrmTuckShop : Form
     {
-        // Event used to handle errors/exceptions so the program does not crash.
+        // Event used to handle errors/exceptions so the program does not crash
         public static event EventHandler ErrorHandler;
-        // Lists used for saving filters to outputs.
+        // Lists used for saving filters to outputs
         public List<string> editItemsFilterList = new List<string>();
         public List<string> editSalesFilterList = new List<string>();
+        // Lists used to transfer Sales infromation
+        public List<int> quantities = new List<int>();
+        public List<double> prices = new List<double>();
+        public List<string> itemName = new List<string>();
         static SqlConnection sqlConnection;
         static ItemManager itemManager;
         static UserManager userManager;
         static SalesManger saleManager;
-        // Bool used in Edit page.
-        public bool detailSelected;
-        // Counts the number of records in Edit
-        public int editRecordCount;
+        public bool isAdmin;
 
         public static void HandleError(Exception ex)
         {
@@ -154,7 +155,17 @@ namespace Project_Milestone_2
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            OpenMenu();
+            string email = txbLoginEmail.Text;
+            string password = txbLoginPassword.Text;
+            string message = "Email or Password incorrect.";
+            if (userManager.Login(email, password))
+            {
+                OpenMenu();
+            }
+            else
+            {
+                MessageBox.Show(message);
+            }
         }
         //===============================================================================================
 
@@ -170,8 +181,21 @@ namespace Project_Milestone_2
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            tcMainScreen.SelectedTab = tpLogin;
-            Size = new Size(215, 266);
+            string message = "Passwords do not match.";
+            if (txbRegPassword.Text == txbRegConfirm.Text)
+            {
+                string email = txbRegEmail.Text;
+                string password = txbRegPassword.Text;
+                string name = txbRegName.Text;
+                string surname = txbRegSurname.Text;
+                userManager.Register(email, password, name, surname) ;
+                tcMainScreen.SelectedTab = tpLogin;
+                Size = new Size(215, 266);
+            }
+            else
+            {
+                MessageBox.Show(message);
+            }
         }
         //===============================================================================================
 
@@ -235,6 +259,52 @@ namespace Project_Milestone_2
         {
             OpenMenu();
         }
+
+        private void BtnClearOrder_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+            richTextBox1.Focus();
+            quantities.Clear();
+            prices.Clear();
+            itemName.Clear();
+        }
+
+        private void BtnOrderAdd(object sender, EventArgs e)
+        {
+            string cBox = cboSaleItems.Items[cboSaleItems.SelectedIndex].ToString();
+            int nUD1 = Convert.ToInt32(numericUpDown1.Value);
+            quantities.Add(nUD1);
+            itemName.Add(cBox);
+            richTextBox1.Text = cBox + ' ' + nUD1;
+        }
+
+        private void BtnOrderRemove(object sender, EventArgs e)
+        {
+            string cBox = cboSaleItems.Items[cboSaleItems.SelectedIndex].ToString();
+            int nUD1 = Convert.ToInt32(numericUpDown1.Value);
+            string message = "Items removed from list can not be more than was on list";
+            int itemPosition = itemName.BinarySearch(cBox);
+            if (quantities[itemPosition]> nUD1)
+            {
+                quantities[itemPosition] = quantities[itemPosition] - nUD1;
+            }
+            else if(quantities[itemPosition] == nUD1)
+            {
+                itemName.RemoveAt(itemPosition);
+                quantities.RemoveAt(itemPosition);
+            }
+            else
+            {
+                MessageBox.Show(message);
+            }
+            
+            richTextBox1.Text = cBox + ' ' + nUD1 + "has been removed";
+        }
+
+        private void BtnOrderCheckout(object sender, EventArgs e)
+        {
+            salesManger.AddSale(quantities, prices, itemName);
+        }
         //===============================================================================================
 
 
@@ -288,7 +358,7 @@ namespace Project_Milestone_2
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
                     editSalesFilterList.Clear();
-                    ShowSales();
+                    //dgvEdit.DataSource = saleManager.ShowAllItems();/////////////////////////////////////////////////////////////
                 }
             }
             catch (Exception ex)
@@ -320,7 +390,7 @@ namespace Project_Milestone_2
                 else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                 {
                     editSalesFilterList.Add(filter);
-                    dgvEdit.DataSource = saleManager.FilterSales(editSalesFilterList);
+                    dgvEdit.DataSource = saleManager.FilterItems(editSalesFilterList);////////////////////////////////////////////////////////////
                 }
 
                 // Shows the user filters are applied.
@@ -344,7 +414,6 @@ namespace Project_Milestone_2
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
                 // STILL HAVE TO DO//////////////////////////////////////////////////////////////////////////////////////
-                // Check if it is admin//////////////////////////////////////////
                 DisableEditForm();
                 pnlEditAddSale.Visible = true;
                 pnlEditAddSale.Enabled = true;
@@ -382,21 +451,6 @@ namespace Project_Milestone_2
             pnlEditAddItem.Enabled = false;
         }
 
-        private void btnEditSaleAddCancel_Click(object sender, EventArgs e)
-        {
-            EnableEditForm();///////////////////////////////////////////////////////////////////////////////
-            pnlEditAddSale.Visible = false;
-            pnlEditAddSale.Enabled = false;
-        }
-
-        private void btnEditSaleAddSubmit_Click(object sender, EventArgs e)
-        {
-            string date = dtpEditAddSaleDate.Value.ToString();
-            EnableEditForm();///////////////////////////////////////////////////////////////////////////////
-            pnlEditAddSale.Visible = false;
-            pnlEditAddSale.Enabled = false;
-        }
-
         private void BtnEditChange_Click(object sender, EventArgs e)
         {
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
@@ -409,11 +463,11 @@ namespace Project_Milestone_2
                 txtEditChangeItemName.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[1].Value.ToString();
                 txtEditChangeItemPrice.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[2].Value.ToString();                         
                 nudEditChangeItemQuantity.Value = int.Parse(dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[3].Value.ToString());
-                cboEditChangeItemCategory.Text = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString();
+                cboEditChangeItemCategory.SelectedItem = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[4].Value.ToString();
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
-                MessageBox.Show("Only Items and Sale details can be changed. Sales can only be Removed or Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Only Items can be changed. Sales can only be Removed or Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -474,13 +528,13 @@ namespace Project_Milestone_2
         {
             var row = dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex];
             string ID = row.Cells[0].Value.ToString();
-            string message = "Are you sure you want to delete record in " + cboEditCurrentTable.Text +  " containing:";
-            for (int i = 0; i < dgvEdit.Columns.Count; i++)
-            {
-                message = message + "\n" + dgvEdit.Columns[i].HeaderText + ": " + dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[i].Value.ToString();
-            }
             // Asks user if he/she is sure they want to delete the record and if Yes is selected, deletes appropriate record.
-            var result = MessageBox.Show(message, "Remove record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var result = MessageBox.Show("Are you sure you want to delete record in Items containing: \nItemID: " +
+                                    row.Cells[0].Value.ToString() + "\nItemname: " +
+                                    row.Cells[1].Value.ToString().Trim() + "\nPrice: " +////////////////////////////////////////////////////
+                                    row.Cells[2].Value.ToString() + "\nCategory: " +
+                                    row.Cells[4].Value.ToString() + "\nQuantity: " +
+                                    row.Cells[3].Value.ToString(), "Remove record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 // Error check.
@@ -494,10 +548,8 @@ namespace Project_Milestone_2
                     }
                     else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
                     {
-                        // Only Admins can remove Sales//////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        saleManager.RemoveSale(ID);
-                        // Refreshes values.
-                        ShowSales();
+                        //saleManager.RemoveItem(ID)//////////////////////////////////////////////////////////////////
+                        //dgvEdit.DataSource = saleManager.ShowAllItems();
                     }
                 }
                 catch (Exception ex)
@@ -513,44 +565,15 @@ namespace Project_Milestone_2
             if (cboEditCurrentTable.SelectedItem.ToString() == "Items")
             {
                 ShowItems();
-                // Determines wether the detail-table is selected.
-                detailSelected = false;
             }
             else if (cboEditCurrentTable.SelectedItem.ToString() == "Sales")
             {
-                // Shows the user that they can see details by double-clicking the sale
-                lblSale.Visible = true;
-                btnSalesBack.Visible = false;
-                btnSalesBack.Enabled = false;
                 ShowSales();
-                // Determines wether the detail-table is selected.
-                detailSelected = false;
             }
-        }
-
-        // If a person double-clicks a sale, the sale-details will display
-        private void dgvEdit_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (cboEditCurrentTable.Text == "Sales")
+            else if (cboEditCurrentTable.SelectedItem.ToString() == "Individual sales")
             {
-                //Show details
-                cboEditCurrentTable.Text = "Sale Details for SaleID " + dgvEdit.Rows[dgvEdit.CurrentCell.RowIndex].Cells[0].Value;
-                ShowItems();///////////////////////////////////
-                btnSalesBack.Visible = true;
-                btnSalesBack.Enabled = true;
-                lblSale.Visible = false;
-                // Determines wether the detail-table is selected.
-                detailSelected = true;
+                
             }
-        }
-        private void btnSalesBack_Click(object sender, EventArgs e)
-        {
-            ShowSales();
-            btnSalesBack.Visible = false;
-            btnSalesBack.Enabled = false;
-            lblSale.Visible = true;
-            // Determines wether the detail-table is selected.
-            detailSelected = false;
         }
 
         // Methods used for validation by disabling/enabling certain inputs.
@@ -580,19 +603,11 @@ namespace Project_Milestone_2
         {
             if (editItemsFilterList.Count > 0)
             {
-                // Gets the actual number of records.
-                dgvEdit.DataSource = itemManager.ShowAllItems();
-                editRecordCount = dgvEdit.Rows.Count - 1;
-
                 dgvEdit.DataSource = itemManager.FilterItems(editItemsFilterList);
-                txtEditRecordCount.Text = (dgvEdit.Rows.Count - 1).ToString() + " of " + editRecordCount.ToString();
             }
             else
             {
                 dgvEdit.DataSource = itemManager.ShowAllItems();
-                // Gets the actual number of records.
-                editRecordCount = dgvEdit.Rows.Count - 1;
-                txtEditRecordCount.Text = editRecordCount.ToString();
             }
         }
 
@@ -600,19 +615,11 @@ namespace Project_Milestone_2
         {
             if (editItemsFilterList.Count > 0)
             {
-                // Gets the actual number of records.
-                dgvEdit.DataSource = saleManager.ShowAllSales();
-                editRecordCount = dgvEdit.Rows.Count - 1;
-
-                dgvEdit.DataSource = saleManager.FilterSales(editSalesFilterList);
-                txtEditRecordCount.Text = (dgvEdit.Rows.Count - 1).ToString() + " of " + editRecordCount.ToString();
+                //dgvEdit.DataSource = saleManager.FilterItems(editItemsFilterList);
             }
             else
             {
                 dgvEdit.DataSource = saleManager.ShowAllSales();
-                // Gets the actual number of records.
-                editRecordCount = dgvEdit.Rows.Count - 1;
-                txtEditRecordCount.Text = editRecordCount.ToString();
             }
         }
         //===============================================================================================
