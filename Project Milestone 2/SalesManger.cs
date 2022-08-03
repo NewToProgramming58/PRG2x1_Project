@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Project_Milestone_2
 {
@@ -45,6 +46,18 @@ namespace Project_Milestone_2
                 MessageBox.Show(e.Message);
             }           
             return success;
+        }
+
+        //Show all sales///////////////////////////////////////////////////
+        public DataTable ShowAllSales()
+        {
+            string cmdString = "SELECT SaleID, TotalPrice, TimePlaced FROM Sales";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
+
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+
+            return ds.Tables[0];
         }
     }
 }
