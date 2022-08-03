@@ -974,7 +974,7 @@ namespace Project_Milestone_2
             this.btnEditChangeItemSubmit.TabIndex = 22;
             this.btnEditChangeItemSubmit.Text = "Submit";
             this.btnEditChangeItemSubmit.UseVisualStyleBackColor = true;
-            this.btnEditChangeItemSubmit.Click += new System.EventHandler(this.btnEditChangeItemSubmit_Click);
+            this.btnEditChangeItemSubmit.Click += new System.EventHandler(this.btnEditChangeItemSubmit_Click_1);
             // 
             // nudEditChangeItemQuantity
             // 
