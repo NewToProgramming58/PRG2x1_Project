@@ -61,7 +61,7 @@ namespace Project_Milestone_2
         public bool RemoveSale(String id)
         {
             bool success = false;
-            string cmdString = "DELETE FROM Sales WHERE SaleID = @id";
+            string cmdString = "DELETE FROM SaleItems WHERE SaleID = @id";
             SqlCommand sqlCommand = new SqlCommand
             {
                 Connection = sqlConnection,
@@ -70,8 +70,10 @@ namespace Project_Milestone_2
             sqlCommand.Parameters.AddWithValue("@id", id);
             try
             {
-                int rows = sqlCommand.ExecuteNonQuery();
-                if (rows > 0)
+                int itemRows = sqlCommand.ExecuteNonQuery();
+                cmdString = "DELETE FROM Sales WHERE SaleID = @id";
+                int saleRows = sqlCommand.ExecuteNonQuery();
+                if (itemRows > 0 && saleRows > 0)
                 {
                     success = true;
                 }
@@ -134,6 +136,44 @@ namespace Project_Milestone_2
             dataAdapter.Fill(ds);
 
             return ds.Tables[0];
+        }
+        public bool UpdateInfo(string update)
+        {
+            //id#ItemName#Price#Category#Quantity
+            // 0 = id
+            // 1 = ItemName
+            // 2 = Price
+            // 3 = Category
+            // 4 = Quantity
+            var splitUpdate = update.Split('#');
+
+            string id = splitUpdate[0];
+            string itemName = splitUpdate[1];
+            string price = splitUpdate[2];
+            string quantity = splitUpdate[3];
+            string category = splitUpdate[4];
+
+            bool success = false;
+            string cmdString = $"UPDATE Items SET ItemName = '{itemName}', Price = {price}, CategoryID = {category}, Quantity = {quantity} WHERE ItemID = @id";
+            SqlCommand sqlCommand = new SqlCommand
+            {
+                Connection = sqlConnection,
+                CommandText = cmdString
+            };
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            try
+            {
+                int rows = sqlCommand.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    success = true;
+                }
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return success;
         }
     }
 }
