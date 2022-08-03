@@ -404,7 +404,7 @@ namespace Project_Milestone_2
             pnlEditChangeItem.Enabled = false;
         }
 
-        private void BtnEditChangeItemSubmit_Click(object sender, EventArgs e)
+        private void btnEditChangeItemSubmit_Click(object sender, EventArgs e)
         {
             string values;
             string changedValues = "";
@@ -413,7 +413,7 @@ namespace Project_Milestone_2
             try
             {
                 // Stores values in correct format for method.
-                values = txtEditChangeItemID.Text + "#" + txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + cboEditChangeItemCategory.SelectedItem + "#" + 
+                values = txtEditChangeItemID.Text + "#" + txtEditChangeItemName.Text + "#" + txtEditChangeItemPrice.Text + "#" + cboEditChangeItemCategory.SelectedItem + "#" +
                          nudEditChangeItemQuantity.Value.ToString();
 
                 // Finds the changed values so they can be displayed.
