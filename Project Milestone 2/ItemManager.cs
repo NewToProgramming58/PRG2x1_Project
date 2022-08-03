@@ -187,14 +187,15 @@ namespace Project_Milestone_2
                 else
                     values.Add($"'{splitFilters[2]}'");
             }
-            string cmdString = $"SELECT I.ItemID, I.ItemName, I.Price, I.Quantity, C.Category FROM Items AS I INNER JOIN Category AS C ON I.CategoryID = C.CategoryID WHERE I.{fields[0]} {signs[0]} I.{values[0]}";
+            string cmdString = $"SELECT I.ItemID, I.ItemName, I.Price, I.Quantity, C.Category FROM Items AS I INNER JOIN Category AS C ON I.CategoryID = C.CategoryID WHERE I.{fields[0]} {signs[0]} {values[0]}";
             if (fields.Count > 1)
             {
                 for (int i = 1; i < signs.Count; i++)
                 {
-                    cmdString += $" AND {fields[i]} {signs[i]} {values[i]}";
+                    cmdString += $" AND I.{fields[i]} {signs[i]} {values[i]}";
                 }
             }
+            MessageBox.Show(cmdString); 
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
             DataSet ds = new DataSet();
@@ -205,7 +206,7 @@ namespace Project_Milestone_2
 
         public DataTable FillCategories() 
         {
-            string cmdString = "SELECT * FROM Category";
+            string cmdString = "SELECT Category FROM Category";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmdString, sqlConnection);
 
             DataSet ds = new DataSet();
