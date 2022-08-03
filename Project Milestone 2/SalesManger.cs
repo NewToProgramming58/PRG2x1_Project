@@ -33,6 +33,15 @@ namespace Project_Milestone_2
             try
             {
                 int itemRows = sqlCommand.ExecuteNonQuery();
+                for (int i = 0; i < quantities.Count; i++)
+                {
+
+                    cmdString = "UPDATE Items SET Quantity = Quantity - @quant WHERE ItemID = @id";
+                    sqlCommand.Parameters.AddWithValue("@id", itemIDs[i]);
+                    sqlCommand.Parameters.AddWithValue("@quant", quantities[i]);
+                    sqlCommand.ExecuteNonQuery();
+                }
+                
                 cmdString = $"INSERT INTO Sales (TotalPrice, TimePlaced) VALUES ({prices.Sum()}, #{DateTime.Now}#)";
                 int saleRows = sqlCommand.ExecuteNonQuery();
 
