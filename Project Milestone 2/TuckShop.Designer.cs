@@ -70,10 +70,19 @@ namespace Project_Milestone_2
             this.btnEditRecords = new System.Windows.Forms.Button();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.tpEdit = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.pnlEditFilter = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label50 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.cboEditFilterComparison = new System.Windows.Forms.ComboBox();
             this.btnEditFiltersRemove = new System.Windows.Forms.Button();
             this.btnEditFiltersCancel = new System.Windows.Forms.Button();
             this.btnEditFiltersApply = new System.Windows.Forms.Button();
@@ -81,7 +90,7 @@ namespace Project_Milestone_2
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.cboEditFilterField = new System.Windows.Forms.ComboBox();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.cboEditFilterComparison = new System.Windows.Forms.ComboBox();
             this.pnlEditChangeItem = new System.Windows.Forms.Panel();
             this.txtEditChangeItemID = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -211,15 +220,6 @@ namespace Project_Milestone_2
             this.panel17 = new System.Windows.Forms.Panel();
             this.btnExitEditLogin = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
             this.tcMainScreen.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -231,8 +231,9 @@ namespace Project_Milestone_2
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tpEdit.SuspendLayout();
-            this.pnlEditFilter.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.pnlEditFilter.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.pnlEditChangeItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditChangeItemQuantity)).BeginInit();
             this.pnlEditAddSale.SuspendLayout();
@@ -262,7 +263,6 @@ namespace Project_Milestone_2
             this.tpEditLogin.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel17.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMainScreen
@@ -669,6 +669,21 @@ namespace Project_Milestone_2
             this.tpEdit.Text = "Edit";
             this.tpEdit.UseVisualStyleBackColor = true;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel8.Controls.Add(this.pnlEditFilter);
+            this.panel8.Controls.Add(this.cboEditFilterComparison);
+            this.panel8.Controls.Add(this.pnlEditChangeItem);
+            this.panel8.Controls.Add(this.lblEditFilters);
+            this.panel8.Controls.Add(this.pnlEditAddSale);
+            this.panel8.Controls.Add(this.pnlEditAddItem);
+            this.panel8.Controls.Add(this.dgvEdit);
+            this.panel8.Location = new System.Drawing.Point(0, 111);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(942, 382);
+            this.panel8.TabIndex = 8;
+            // 
             // pnlEditFilter
             // 
             this.pnlEditFilter.BackColor = System.Drawing.Color.PowderBlue;
@@ -690,6 +705,110 @@ namespace Project_Milestone_2
             this.pnlEditFilter.TabIndex = 23;
             this.pnlEditFilter.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton8);
+            this.groupBox1.Controls.Add(this.radioButton7);
+            this.groupBox1.Controls.Add(this.radioButton6);
+            this.groupBox1.Controls.Add(this.radioButton5);
+            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(102, 66);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(173, 75);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(88, 55);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(31, 17);
+            this.radioButton8.TabIndex = 7;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "<";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(88, 38);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(37, 17);
+            this.radioButton7.TabIndex = 6;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "<=";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(88, 21);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(34, 17);
+            this.radioButton6.TabIndex = 5;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "!=";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(88, 4);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(74, 17);
+            this.radioButton5.TabIndex = 4;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "NOT LIKE";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(6, 55);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(31, 17);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = ">";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 38);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(37, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = ">=";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 21);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(31, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "=";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 4);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(48, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "LIKE";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // label50
             // 
             this.label50.AutoSize = true;
@@ -708,24 +827,6 @@ namespace Project_Milestone_2
             this.label20.Size = new System.Drawing.Size(65, 13);
             this.label20.TabIndex = 8;
             this.label20.Text = "Comparison:";
-            // 
-            // cboEditFilterComparison
-            // 
-            this.cboEditFilterComparison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEditFilterComparison.FormattingEnabled = true;
-            this.cboEditFilterComparison.Items.AddRange(new object[] {
-            "LIKE",
-            "=",
-            ">",
-            ">=",
-            "<",
-            "<=",
-            "NOT LIKE",
-            "!="});
-            this.cboEditFilterComparison.Location = new System.Drawing.Point(83, 41);
-            this.cboEditFilterComparison.Name = "cboEditFilterComparison";
-            this.cboEditFilterComparison.Size = new System.Drawing.Size(56, 21);
-            this.cboEditFilterComparison.TabIndex = 7;
             // 
             // btnEditFiltersRemove
             // 
@@ -793,20 +894,23 @@ namespace Project_Milestone_2
             this.cboEditFilterField.Size = new System.Drawing.Size(156, 21);
             this.cboEditFilterField.TabIndex = 0;
             // 
-            // panel8
+            // cboEditFilterComparison
             // 
-            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel8.Controls.Add(this.pnlEditFilter);
-            this.panel8.Controls.Add(this.cboEditFilterComparison);
-            this.panel8.Controls.Add(this.pnlEditChangeItem);
-            this.panel8.Controls.Add(this.lblEditFilters);
-            this.panel8.Controls.Add(this.pnlEditAddSale);
-            this.panel8.Controls.Add(this.pnlEditAddItem);
-            this.panel8.Controls.Add(this.dgvEdit);
-            this.panel8.Location = new System.Drawing.Point(0, 111);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(942, 382);
-            this.panel8.TabIndex = 8;
+            this.cboEditFilterComparison.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEditFilterComparison.FormattingEnabled = true;
+            this.cboEditFilterComparison.Items.AddRange(new object[] {
+            "LIKE",
+            "=",
+            ">",
+            ">=",
+            "<",
+            "<=",
+            "NOT LIKE",
+            "!="});
+            this.cboEditFilterComparison.Location = new System.Drawing.Point(83, 41);
+            this.cboEditFilterComparison.Name = "cboEditFilterComparison";
+            this.cboEditFilterComparison.Size = new System.Drawing.Size(56, 21);
+            this.cboEditFilterComparison.TabIndex = 7;
             // 
             // pnlEditChangeItem
             // 
@@ -828,7 +932,7 @@ namespace Project_Milestone_2
             this.pnlEditChangeItem.Controls.Add(this.label46);
             this.pnlEditChangeItem.Controls.Add(this.label42);
             this.pnlEditChangeItem.Enabled = false;
-            this.pnlEditChangeItem.Location = new System.Drawing.Point(346, 64);
+            this.pnlEditChangeItem.Location = new System.Drawing.Point(32, 65);
             this.pnlEditChangeItem.Name = "pnlEditChangeItem";
             this.pnlEditChangeItem.Size = new System.Drawing.Size(236, 227);
             this.pnlEditChangeItem.TabIndex = 8;
@@ -2125,110 +2229,6 @@ namespace Project_Milestone_2
             this.label31.TabIndex = 15;
             this.label31.Text = "Edit User Details";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton8);
-            this.groupBox1.Controls.Add(this.radioButton7);
-            this.groupBox1.Controls.Add(this.radioButton6);
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(102, 66);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 75);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "LIKE";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 21);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(31, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "=";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 38);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(37, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = ">=";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(6, 55);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(31, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = ">";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(88, 4);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(74, 17);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "NOT LIKE";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(88, 21);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(34, 17);
-            this.radioButton6.TabIndex = 5;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "!=";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(88, 38);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(37, 17);
-            this.radioButton7.TabIndex = 6;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "<=";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(88, 55);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(31, 17);
-            this.radioButton8.TabIndex = 7;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "<";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
             // FrmTuckShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2255,10 +2255,12 @@ namespace Project_Milestone_2
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.tpEdit.ResumeLayout(false);
-            this.pnlEditFilter.ResumeLayout(false);
-            this.pnlEditFilter.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.pnlEditFilter.ResumeLayout(false);
+            this.pnlEditFilter.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.pnlEditChangeItem.ResumeLayout(false);
             this.pnlEditChangeItem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEditChangeItemQuantity)).EndInit();
@@ -2303,8 +2305,6 @@ namespace Project_Milestone_2
             this.panel20.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
